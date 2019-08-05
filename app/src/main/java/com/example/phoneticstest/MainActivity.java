@@ -1,17 +1,11 @@
 package com.example.phoneticstest;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
-import android.os.ParcelFileDescriptor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 
 import android.text.SpannableStringBuilder;
@@ -19,11 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import org.w3c.dom.Text;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final String[] word_omoji = {""};
         final EditText textvi = findViewById(R.id.editText);
-        final TextView textvi2 = findViewById(R.id.textView2);
+        final TextView textvi2 = findViewById(R.id.main_textview);
         final int[] testfile = {-1};
-        Button henkan = findViewById(R.id.button);
+        Button henkan = findViewById(R.id.button3);
+        Button next_button = findViewById(R.id.button4);
         henkan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -467,7 +460,15 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                         }
                     }
+                //b = b.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+                //成功
                   textvi2.setText(b);
+                  //  if( b.equals("dìɔr")){
+                  //      textvi2.setText("正解");
+                  //  }
+                  //  else{
+                  //      textvi2.setText("発音が違います");
+                  //  }
                     if( text == ""){
                         textvi2.setText("該当なし");
                     }
@@ -475,7 +476,15 @@ public class MainActivity extends AppCompatActivity {
                 }
 
         });
+        next_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent intent = new Intent(getApplication(), TestActivity.class);
+                    startActivity(intent);
 
+
+            }
+        });
     }
 }
 
