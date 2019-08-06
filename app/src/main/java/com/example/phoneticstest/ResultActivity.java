@@ -37,15 +37,41 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent1 = getIntent();
         String message = intent1.getStringExtra(TestActivity.EXTRA_MESSAGE);
         textview6.setText(message);
-        String result_phonetics = calculateBmi(message);
-        if( mondai_phonetics.equals(result_phonetics)){
-            textview7.setText("正解です");
+        String result_phonetics = "";
+        String result_phonetics1 = "";
+        String result_phonetics2 = "";
+        String result_phonetics3 = "";
+
+        String[] message_number = message.split(" ",0);
+        if( message_number.length > 1) {
+             result_phonetics1  =  calculateBmi(message_number[0]);
+             result_phonetics2 =    calculateBmi(message_number[1]);
+             result_phonetics3 = result_phonetics1 + " " + result_phonetics2;
+        }
+        if( message_number.length == 1){
+             result_phonetics = calculateBmi(message);
+        }
+     //   if( message_number.length == 1) {
+     //       textview7.setText(result_phonetics);
+    //    }
+    //    if( message_number.length == 2) {
+    //        textview7.setText(result_phonetics3);
+    //    }
+        if( message_number.length == 1) {
+            if (mondai_phonetics.equals(result_phonetics)) {
+                textview7.setText("正解です");
+            } else {
+                textview7.setText("不正解です");
+            }
+        }
+        if( message_number.length > 1) {
+            if (mondai_phonetics.equals(result_phonetics3)) {
+                textview7.setText("正解です");
+            } else {
+                textview7.setText("不正解です");
+            }
         }
 
-
-        else{
-            textview7.setText("不正解です");
-        }
         //textview2.setText(result_phonetics);
         //b = b.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
         class Levenstein_distance {
@@ -153,8 +179,16 @@ public class ResultActivity extends AppCompatActivity {
             }
         }
         //b = b.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
-        String right = result_phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");//ゴジラ";
-        String left = mondai_phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");//"キングゴジラ";
+        String right = "";
+        String left = "";
+        if( message_number.length == 1) {
+             right = result_phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");//ゴジラ";
+             left = mondai_phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");//"キングゴジラ";
+        }
+        if( message_number.length > 1){
+            right = result_phonetics3.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+            left = mondai_phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        }
         Levenstein_distance LD = new Levenstein_distance();
         String distance = LD.LevensteinDistance(left, right);
         textview2.setText(right);
