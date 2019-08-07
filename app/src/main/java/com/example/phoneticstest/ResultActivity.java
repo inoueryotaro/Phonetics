@@ -33,7 +33,7 @@ public class ResultActivity extends AppCompatActivity {
         String mondai = intent2.getStringExtra(TestActivity.EXTRA_MESSAGE2);
         textview5.setText(mondai);
         //textview4.setText("tʃɔ́klət");
-        String mondai_phonetics = "tʃɔ́klət";
+        String mondai_phonetics = "kɑ́mən";
         Intent intent1 = getIntent();
         String message = intent1.getStringExtra(TestActivity.EXTRA_MESSAGE);
         textview6.setText(message);
