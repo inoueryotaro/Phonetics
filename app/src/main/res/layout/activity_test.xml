@@ -47,4 +47,14 @@
         app:layout_constraintEnd_toEndOf="@+id/readbutton"
         app:layout_constraintStart_toStartOf="@+id/readbutton"
         app:layout_constraintTop_toBottomOf="@+id/readbutton" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="170dp"
+        android:text="[kɑ́mən]"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/readbutton"
+        app:layout_constraintStart_toStartOf="@+id/textView" />
 </android.support.constraint.ConstraintLayout>
