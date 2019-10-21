@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoryActivity">
+
+    <TextView
+        android:id="@+id/TEXTVIEW"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="メニュー"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/category_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="カテゴリー1"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                    app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                    app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            </LinearLayout>
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="horizontal">
+             <Button
+                 android:id="@+id/category_2"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="カテゴリー2"
+                 android:textSize="30sp"
+                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+         </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/category_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="カテゴリー3"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                    app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                    app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー4"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー5"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー6"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー7"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー8"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー9"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー10"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー11"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー12"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー13"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー14"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー15"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー16"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー17"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー18"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー19"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー20"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー21"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー22"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout> <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー23"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+        </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
