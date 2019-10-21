@@ -32,11 +32,21 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent2= getIntent();
         String mondai = intent2.getStringExtra(TestActivity.EXTRA_MESSAGE2);
         textview5.setText(mondai);
-        //textview4.setText("tʃɔ́klət");
-        String mondai_phonetics = "kɑ́mən";
+        Intent intent3 = getIntent();
+        String mondai_phonetics_before = intent3.getStringExtra(TestActivity.EXTRA_MESSAGE3);
+        String mondai_phonetics_before2 = mondai_phonetics_before.replace("[", " ");
+        String mondai_phonetics = mondai_phonetics_before2.replace("]"," ");
+         //textview4.setText("tʃɔ́klət");
+        //String mondai_phonetics = "kɑ́mən";
         Intent intent1 = getIntent();
         String message = intent1.getStringExtra(TestActivity.EXTRA_MESSAGE);
         textview6.setText(message);
+        if( mondai.equals(message)){
+            textview7.setText("正解です!!");
+        }
+        else{
+            textview7.setText("不正解です");
+        }
         String result_phonetics = "";
         String result_phonetics1 = "";
         String result_phonetics2 = "";
@@ -57,20 +67,20 @@ public class ResultActivity extends AppCompatActivity {
     //    if( message_number.length == 2) {
     //        textview7.setText(result_phonetics3);
     //    }
-        if( message_number.length == 1) {
-            if (mondai_phonetics.equals(result_phonetics)) {
-                textview7.setText("正解です");
-            } else {
-                textview7.setText("不正解です");
-            }
-        }
-        if( message_number.length > 1) {
-            if (mondai_phonetics.equals(result_phonetics3)) {
-                textview7.setText("正解です");
-            } else {
-                textview7.setText("不正解です");
-            }
-        }
+   //     if( message_number.length == 1) {
+   //         if (mondai_phonetics.equals(result_phonetics)) {
+   //             textview7.setText("正解です");
+   //         } else {
+   //             textview7.setText("不正解です");
+   //         }
+   //     }
+   //     if( message_number.length > 1) {
+   //         if (mondai_phonetics.equals(result_phonetics3)) {
+    //            textview7.setText("正解です");
+    //        } else {
+    //            textview7.setText("不正解です");
+    //        }
+     //   }
 
         //textview2.setText(result_phonetics);
         //b = b.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
@@ -154,6 +164,8 @@ public class ResultActivity extends AppCompatActivity {
                         position_left = position_left;
                         position_right = position_right - 1;
                         if (score > score_left) {
+
+
                             //seikai += "-1";
                             //seikai += " ";
                             //seikai += String.valueOf(position_right + 1);
@@ -193,6 +205,8 @@ public class ResultActivity extends AppCompatActivity {
         String distance = LD.LevensteinDistance(left, right);
         textview2.setText(right);
         textview4.setText(left);
+
+
         int spanColor = Color.RED;
         if( distance.length() != 0) {
             SpannableStringBuilder ssb = new SpannableStringBuilder(left);
@@ -203,6 +217,7 @@ public class ResultActivity extends AppCompatActivity {
                 ssb.setSpan(new ForegroundColorSpan(spanColor), place-1,place, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 textview4.setText(ssb);
             }
+
         }
 
     }

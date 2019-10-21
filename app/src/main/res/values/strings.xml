@@ -4,7 +4,6 @@
     <string name="question_number3">come</string>
     <string name="question_number4">up</string>
     <string name="question_number5">tough</string>
-    <string name="question_number6">glove</string>
     <string name="question_number7">study</string>
     <string name="question_number8">honey</string>
     <string name="question_number9">luck</string>
@@ -19,6 +18,27 @@
     <string name="question_number18">today</string>
     <string name="question_number19">lemon</string>
     <string name="question_number20">moment</string>
-    <string name="phonetics_symbols1">[lʌ́v]</string>
+    <string name="phonetics_symbols1">[lʌv]</string>
     <string name="question_number1">love</string>
+    <string name="phonetics_symbols2">[kʌp]</string>
+    <string name="phonetics_symbols3">[kʌm]</string>
+    <string name="phonetics_symbols4">[ʌp]</string>
+    <string name="phonetics_symbols5">[tʌf]</string>
+    <string name="phonetics_symbols6">[fʌni]</string>
+    <string name="phonetics_symbols7">[stʌdi]</string>
+    <string name="phonetics_symbols8">[hʌni]</string>
+    <string name="phonetics_symbols9">[lʌk]</string>
+    <string name="phonetics_symbols10">[kʌntri]</string>
+    <string name="question_number6">funny</string>
+    <string name="phonetics_symbols11">[əgoʊ]</string>
+    <string name="phonetics_symbols12">[əbaʊt]</string>
+    <string name="photics_symbols13">[soʊfə]</string>
+    <string name="phonetics_symbols13">[soʊfə]</string>
+    <string name="phonetics_symbols14">[səkses]</string>
+    <string name="phonetics_symbols15">[feɪməs]</string>
+    <string name="phonetics_symbols16">[əgen]</string>
+    <string name="phonetics_symbols17">[əweɪ]</string>
+    <string name="phonetics_symbols18">[tədeɪ]</string>
+    <string name="phonetics_symbols19">[lemən]</string>
+    <string name="phonetics_symbols20">[moʊmənt]</string>
 </resources>
