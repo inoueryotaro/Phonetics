@@ -18,12 +18,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Random;
 
 public  class TestActivity extends AppCompatActivity implements View.OnClickListener, TextToSpeech.OnInitListener {
 
     private SpeechRecognizer sr;
     private static final int REQUEST_CODE = 1000;
     private TextView resulttext;
+    private TextView textView2;
     private TextToSpeech tts;
     private TextView textView;
     private static final String TAG = "TestTTS";
@@ -40,6 +42,58 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         tts = new TextToSpeech(this, this);
         resulttext = findViewById(R.id.textView3);
          textView =  findViewById(R.id.textView);
+        textView2 =  findViewById(R.id.textView8);
+
+         int questionnumber_variable=1;
+     //   Random rand = new Random();
+     //    questionnumber_variable = rand.nextInt(20) + 1;
+         if( questionnumber_variable == 1) {
+             textView.setText(R.string.question_number1);
+             textView2.setText(R.string.phonetics_symbols1);
+         }
+         if ( questionnumber_variable ==2) {
+             textView.setText(R.string.question_number2);
+         }
+        if ( questionnumber_variable ==3) {
+            textView.setText(R.string.question_number3);
+        }
+        if ( questionnumber_variable ==4) {
+            textView.setText(R.string.question_number4);
+        } if ( questionnumber_variable ==5) {
+            textView.setText(R.string.question_number5);
+        } if ( questionnumber_variable ==6
+        ) {
+            textView.setText(R.string.question_number6);
+        } if ( questionnumber_variable ==7) {
+            textView.setText(R.string.question_number7);
+        } if ( questionnumber_variable ==8) {
+            textView.setText(R.string.question_number8);
+        } if ( questionnumber_variable ==9) {
+            textView.setText(R.string.question_number9);
+        }
+        if ( questionnumber_variable ==10) {
+            textView.setText(R.string.question_number10);
+        } if ( questionnumber_variable ==11) {
+            textView.setText(R.string.question_number11);
+        }if ( questionnumber_variable ==12) {
+            textView.setText(R.string.question_number12);
+        } if ( questionnumber_variable ==13) {
+            textView.setText(R.string.question_number13);
+        } if ( questionnumber_variable ==14) {
+            textView.setText(R.string.question_number14);
+        } if ( questionnumber_variable ==15) {
+            textView.setText(R.string.question_number15);
+        } if ( questionnumber_variable ==16) {
+            textView.setText(R.string.question_number16);
+        } if ( questionnumber_variable ==17) {
+            textView.setText(R.string.question_number17);
+        } if ( questionnumber_variable ==18) {
+            textView.setText(R.string.question_number18);
+        } if ( questionnumber_variable ==19) {
+            textView.setText(R.string.question_number19);
+        } if ( questionnumber_variable ==20) {
+            textView.setText(R.string.question_number20);
+        }
         Button speakingbutton = (Button) findViewById(R.id.speakingbutton);
         speakingbutton.setOnClickListener(new View.OnClickListener() {
 

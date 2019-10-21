@@ -618,6 +618,7 @@ public class ResultActivity extends AppCompatActivity {
         map2.put("AXR2", "ə̀r");
         map2.put("W", "w");
         map2.put("Y", "j");
+
         String[] alphabet = text.split(" ", 0);
         for (int i = 0; i < alphabet.length; i++) {
             if (map2.containsKey(alphabet[i])) {

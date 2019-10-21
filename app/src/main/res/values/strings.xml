@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">PhoneticsTest</string>
+    <string name="question_number2">cup</string>
+    <string name="question_number3">come</string>
+    <string name="question_number4">up</string>
+    <string name="question_number5">tough</string>
+    <string name="question_number6">glove</string>
+    <string name="question_number7">study</string>
+    <string name="question_number8">honey</string>
+    <string name="question_number9">luck</string>
+    <string name="question_number10">country</string>
+    <string name="question_number11">ago</string>
+    <string name="question_number12">about</string>
+    <string name="question_number13">sofa</string>
+    <string name="question_number14">success</string>
+    <string name="question_number15">famous</string>
+    <string name="question_number16">again</string>
+    <string name="question_number17">away</string>
+    <string name="question_number18">today</string>
+    <string name="question_number19">lemon</string>
+    <string name="question_number20">moment</string>
+    <string name="phonetics_symbols1">[lʌ́v]</string>
+    <string name="question_number1">love</string>
 </resources>

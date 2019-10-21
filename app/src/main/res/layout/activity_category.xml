@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="メニュー"
-        android:textSize="30dp"
+        android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
     <ScrollView
@@ -27,15 +27,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/category_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="カテゴリー1"
-                    android:textSize="30sp"
+                    android:text="カテゴリー1[ʌ][ə]計20問"
+                    android:textSize="25dp"
                     app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                     app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                     app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+
             </LinearLayout>
          <LinearLayout
              android:layout_width="match_parent"
@@ -45,8 +47,8 @@
                  android:id="@+id/category_2"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="カテゴリー2"
-                 android:textSize="30sp"
+                 android:text="カテゴリー2[ɑ][ӕ]計20問"
+                 android:textSize="25dp"
                  app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                  app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                  app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -59,8 +61,8 @@
                     android:id="@+id/category_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="カテゴリー3"
-                    android:textSize="30sp"
+                    android:text="カテゴリー3[iː][i]計20問"
+                    android:textSize="25dp"
                     app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                     app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                     app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -72,8 +74,8 @@
                 android:id="@+id/category_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー4"
-                android:textSize="30sp"
+                android:text="カテゴリー4[ʊ][uː]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -85,8 +87,8 @@
                 android:id="@+id/category_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー5"
-                android:textSize="30sp"
+                android:text="カテゴリー5[e][i]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -98,8 +100,8 @@
                 android:id="@+id/category_6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー6"
-                android:textSize="30sp"
+                android:text="カテゴリー6[ɔ][oʊ]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -111,8 +113,8 @@
                 android:id="@+id/category_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー7"
-                android:textSize="30sp"
+                android:text="カテゴリー7[s][z]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -124,8 +126,8 @@
                 android:id="@+id/category_8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー8"
-                android:textSize="30sp"
+                android:text="カテゴリー8[∫][ʒ]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -137,8 +139,8 @@
                 android:id="@+id/category_9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー9"
-                android:textSize="30sp"
+                android:text="カテゴリー9[θ][ð]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -150,8 +152,8 @@
                 android:id="@+id/category_10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー10"
-                android:textSize="30sp"
+                android:text="カテゴリー10[f][v]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -163,8 +165,8 @@
                 android:id="@+id/category_11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー11"
-                android:textSize="30sp"
+                android:text="カテゴリー11[l][r]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -176,8 +178,8 @@
                 android:id="@+id/category_12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー12"
-                android:textSize="30sp"
+                android:text="カテゴリー12[t][d]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -189,8 +191,8 @@
                 android:id="@+id/category_13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー13"
-                android:textSize="30sp"
+                android:text="カテゴリー13[p][b]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -202,8 +204,8 @@
                 android:id="@+id/category_14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー14"
-                android:textSize="30sp"
+                android:text="カテゴリー14[k][g]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -215,8 +217,8 @@
                 android:id="@+id/category_15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー15"
-                android:textSize="30sp"
+                android:text="カテゴリー15[t∫][dʒ]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -228,8 +230,8 @@
                 android:id="@+id/category_16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー16"
-                android:textSize="30sp"
+                android:text="カテゴリー16[m][n]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -241,8 +243,8 @@
                 android:id="@+id/category_17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー17"
-                android:textSize="30sp"
+                android:text="カテゴリー17[f][h]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -254,8 +256,8 @@
                 android:id="@+id/category_18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー18"
-                android:textSize="30sp"
+                android:text="カテゴリー18[w][v]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -267,8 +269,8 @@
                 android:id="@+id/category_19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー19"
-                android:textSize="30sp"
+                android:text="カテゴリー19[n][ŋ]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -280,8 +282,8 @@
                 android:id="@+id/category_20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー20"
-                android:textSize="30sp"
+                android:text="カテゴリー20[i][j]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -293,8 +295,8 @@
                 android:id="@+id/category_21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー21"
-                android:textSize="30sp"
+                android:text="カテゴリー21[ai][ei][ɔi]計30問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -306,8 +308,8 @@
                 android:id="@+id/category_22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー22"
-                android:textSize="30sp"
+                android:text="カテゴリー22[aʊ][oʊ]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
@@ -319,8 +321,8 @@
                 android:id="@+id/category_23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー23"
-                android:textSize="30sp"
+                android:text="カテゴリー23[ər][r]計20問"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
