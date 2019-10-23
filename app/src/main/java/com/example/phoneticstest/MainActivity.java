@@ -390,7 +390,7 @@ public class MainActivity extends AppCompatActivity {
                     map2.put("UH1", "ʊ́");
                     map2.put("UH2", "ʊ̀");
                     map2.put("AH", "ʌ");
-                    map2.put("AH0", "ə");
+                    map2.put("AH0", "ʌ");
                     map2.put("AH1", "ʌ́");
                     map2.put("AH2", "ʌ̀");
                     map2.put("AE", "æ");

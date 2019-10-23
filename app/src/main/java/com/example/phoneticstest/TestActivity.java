@@ -40,6 +40,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     public static final String EXTRA_MESSAGE3
             ="com.example.phoneticstest.TestActivity.MESSAGE3";
     private int mTransitionCount;
+    private int mmiss_phonetics_symbols;//前半ブロック
+    private int mmiss_phonetics_symbols2;//後半ブロック
 
     // リストの並びをシャッフルします。
 
@@ -50,10 +52,13 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        Intent intent2 = getIntent();//ミスの回数
         Intent intent1 = getIntent(); //遷移回数データ
         mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
         mTransitionCount++;
+        Intent intent2 = getIntent();//ミスの回数
+        mmiss_phonetics_symbols = intent2.getIntExtra("miss_phonetics_symbols",0);
+        Intent intent3 = getIntent();
+        mmiss_phonetics_symbols2 = intent3.getIntExtra("miss_phonetics_symbols2",0);
        // List<Integer> list = new ArrayList<Integer>();
        // List<Integer> list2 = new ArrayList<Integer>();
        // if( mTransitionCount == 1) {
@@ -296,11 +301,11 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                 }
                 sr.setRecognitionListener(new listener());
             }
-            Intent intent2 = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-            intent2.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
-            intent2.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH.toString());
-            intent2.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS,1);
-            sr.startListening(intent2);
+            Intent intent4 = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+            intent4.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
+            intent4.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH.toString());
+            intent4.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS,1);
+            sr.startListening(intent4);
             //インテント発行
             // startActivityForResult(intent, REQUEST_CODE);
 
@@ -405,22 +410,23 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             if (results_array.size() > 0){
                 resulttext.setText(results_array.get(0));}
             //Toast.makeText(getApplicationContext(), resultsString, Toast.LENGTH_LONG).show();
-            Intent intent1 = new Intent(getApplication(), ResultActivity.class);
+            Intent intent5 = new Intent(getApplication(), ResultActivity.class);
 
             if (resulttext.getText() != null) {
                 String str = resulttext.getText().toString();
-                intent1.putExtra(EXTRA_MESSAGE, str);
+                intent5.putExtra(EXTRA_MESSAGE, str);
             }
 
             if(textView.getText() != null ){
                 String str2 = textView.getText().toString();
-                intent1.putExtra(EXTRA_MESSAGE2, str2);
+                intent5.putExtra(EXTRA_MESSAGE2, str2);
                 String str3 = textView2.getText().toString();
-                intent1.putExtra(EXTRA_MESSAGE3,str3);
-                intent1.putExtra("TransitionCount", mTransitionCount);
-
+                intent5.putExtra(EXTRA_MESSAGE3,str3);
+                intent5.putExtra("TransitionCount", mTransitionCount);
+                intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
+                intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
             }
-            startActivity(intent1);
+            startActivity(intent5);
             resulttext.setText("");
             //    restartListeningService();
         }

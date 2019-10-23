@@ -1,6 +1,7 @@
 package com.example.phoneticstest;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -21,10 +22,14 @@ import java.util.HashMap;
 
 public class ResultActivity extends AppCompatActivity {
     private int mTransitionCount;
+    private int mmiss_phonetics_symbols;
+    private int mmiss_phonetics_symbols2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+
         TextView textview2 = findViewById(R.id.textView2);
         TextView textview4 = findViewById(R.id.textView4);
         TextView textview5 = findViewById(R.id.textView5);
@@ -33,26 +38,29 @@ public class ResultActivity extends AppCompatActivity {
         Button   nextbutton = findViewById(R.id.button5);
         Intent intent4 = getIntent();
         mTransitionCount = intent4.getIntExtra("TransitionCount", 0);
-        nextbutton.setOnClickListener(new View.OnClickListener() {
+        Intent intent5 = getIntent();
+        mmiss_phonetics_symbols = intent5.getIntExtra("miss_phonetics_symbols",0);
+        Intent intent6 = getIntent();
+        mmiss_phonetics_symbols2 = intent6.getIntExtra("miss_phonetics_symbols2",0);
+        //nextbutton.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View v) {
-                function();
-            }
+          //  public void onClick(View v) {
+          //      function();
+          //  }
+            //private void function() {
+              //  if( mTransitionCount  >= 20){
+              //      Intent intent6 = new Intent(getApplication(),FinishscreenActivity.class);
+              //      startActivity(intent6);
+              //  }
+              //  else {
+               //     Intent intent5 = new Intent(getApplication(), TestActivity.class);
+               //     intent5.putExtra("TransitionCount", mTransitionCount);
+              //      startActivity(intent5);
+            //    }
+          //  }
 
-            private void function() {
-                if( mTransitionCount  >= 20){
-                    Intent intent6 = new Intent(getApplication(),FinishscreenActivity.class);
-                    startActivity(intent6);
-                }
-                else {
-                    Intent intent5 = new Intent(getApplication(), TestActivity.class);
-                    intent5.putExtra("TransitionCount", mTransitionCount);
-                    startActivity(intent5);
-                }
-            }
-        });
+        //});
         //データを受け取る
-
         Intent intent2= getIntent();
         String mondai = intent2.getStringExtra(TestActivity.EXTRA_MESSAGE2); //問題の受け取り
         textview5.setText(mondai);
@@ -244,7 +252,33 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
+        if( mTransitionCount <= 10 && distance.length() > 4) {
+             mmiss_phonetics_symbols++;
+        }
+        if( mTransitionCount > 10 && distance.length() > 4){
+            mmiss_phonetics_symbols2++;
+        }
+        nextbutton.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View v) {
+                speech();
+            }
+        });
+    }
+    private void speech(){
+        if( mTransitionCount  >= 20){
+            Intent intent6 = new Intent(getApplication(),FinishscreenActivity.class);
+            intent6.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
+            intent6.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+            startActivity(intent6);
+        }
+        else {
+            Intent intent5 = new Intent(getApplication(), TestActivity.class);
+            intent5.putExtra("TransitionCount", mTransitionCount);
+            intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
+            intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+            startActivity(intent5);
+        }
     }
     private String  calculateBmi(String word) {
 
