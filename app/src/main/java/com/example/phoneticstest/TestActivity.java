@@ -10,6 +10,7 @@ import android.speech.tts.UtteranceProgressListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,20 +37,31 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             = "com.example.phoneticstest.TestActivity.MESSAGE2";
     public static final String EXTRA_MESSAGE3
             ="com.example.phoneticstest.TestActivity.MESSAGE3";
-
-
+    private int mTransitionCount;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-
+        Intent intent1 = getIntent(); //遷移回数データ
+        mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
+        mTransitionCount++;
+        Toast toast = Toast.makeText(this, String.format("遷移した回数：%d", mTransitionCount), Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.TOP, 0, 150);
+        toast.show();
         tts = new TextToSpeech(this, this);
         resulttext = findViewById(R.id.textView3);
          textView =  findViewById(R.id.textView);
         textView2 =  findViewById(R.id.textView8);
 
-         int questionnumber_variable=20;
+         int questionnumber_variable=0;
+         if( mTransitionCount <= 10){
+             questionnumber_variable = (int)(Math.random()*10)+1;
+             //randomメソッドで1以上10未満の整数を生成
+         }
+         else{
+             questionnumber_variable = (int)(Math.random() * 10 ) + 11;
+         }
      //   Random rand = new Random();
      //    questionnumber_variable = rand.nextInt(20) + 1;
          if( questionnumber_variable == 1) {
@@ -353,6 +365,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                 intent1.putExtra(EXTRA_MESSAGE2, str2);
                 String str3 = textView2.getText().toString();
                 intent1.putExtra(EXTRA_MESSAGE3,str3);
+                intent1.putExtra("TransitionCount", mTransitionCount);
+
             }
             startActivity(intent1);
             resulttext.setText("");

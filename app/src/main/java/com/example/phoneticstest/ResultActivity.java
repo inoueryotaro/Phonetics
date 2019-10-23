@@ -8,7 +8,11 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -16,7 +20,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class ResultActivity extends AppCompatActivity {
-
+    private int mTransitionCount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,20 +30,40 @@ public class ResultActivity extends AppCompatActivity {
         TextView textview5 = findViewById(R.id.textView5);
         TextView textview6 = findViewById(R.id.textView6);
         TextView textview7 = findViewById(R.id.textView7);
+        Button   nextbutton = findViewById(R.id.button5);
+        Intent intent4 = getIntent();
+        mTransitionCount = intent4.getIntExtra("TransitionCount", 0);
+        nextbutton.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View v) {
+                function();
+            }
+
+            private void function() {
+                if( mTransitionCount  >= 20){
+                    Intent intent6 = new Intent(getApplication(),FinishscreenActivity.class);
+                    startActivity(intent6);
+                }
+                else {
+                    Intent intent5 = new Intent(getApplication(), TestActivity.class);
+                    intent5.putExtra("TransitionCount", mTransitionCount);
+                    startActivity(intent5);
+                }
+            }
+        });
         //データを受け取る
 
         Intent intent2= getIntent();
-        String mondai = intent2.getStringExtra(TestActivity.EXTRA_MESSAGE2);
+        String mondai = intent2.getStringExtra(TestActivity.EXTRA_MESSAGE2); //問題の受け取り
         textview5.setText(mondai);
         Intent intent3 = getIntent();
-        String mondai_phonetics_before = intent3.getStringExtra(TestActivity.EXTRA_MESSAGE3);
+        String mondai_phonetics_before = intent3.getStringExtra(TestActivity.EXTRA_MESSAGE3); //問題発音の受け取り
         String mondai_phonetics_before2 = mondai_phonetics_before.replace("[", " ");
         String mondai_phonetics = mondai_phonetics_before2.replace("]"," ");
          //textview4.setText("tʃɔ́klət");
         //String mondai_phonetics = "kɑ́mən";
         Intent intent1 = getIntent();
-        String message = intent1.getStringExtra(TestActivity.EXTRA_MESSAGE);
+        String message = intent1.getStringExtra(TestActivity.EXTRA_MESSAGE);//認識の受け取り
         textview6.setText(message);
         if( mondai.equals(message)){
             textview7.setText("正解です!!");

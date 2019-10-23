@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".FinishscreenActivity"></activity>
         <activity android:name=".First_screenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +24,6 @@
         <activity android:name=".ResultActivity" />
         <activity android:name=".TestActivity" />
         <activity android:name=".CategoryActivity" />
-
     </application>
 
 </manifest>
