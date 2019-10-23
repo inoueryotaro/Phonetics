@@ -17,7 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -38,98 +40,148 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     public static final String EXTRA_MESSAGE3
             ="com.example.phoneticstest.TestActivity.MESSAGE3";
     private int mTransitionCount;
+
+    // リストの並びをシャッフルします。
+
+    // シャッフルされたリストの先頭を取得します。
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-
+        Intent intent2 = getIntent();//ミスの回数
         Intent intent1 = getIntent(); //遷移回数データ
         mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
         mTransitionCount++;
-        Toast toast = Toast.makeText(this, String.format("遷移した回数：%d", mTransitionCount), Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.TOP, 0, 150);
-        toast.show();
-        tts = new TextToSpeech(this, this);
-        resulttext = findViewById(R.id.textView3);
-         textView =  findViewById(R.id.textView);
-        textView2 =  findViewById(R.id.textView8);
+       // List<Integer> list = new ArrayList<Integer>();
+       // List<Integer> list2 = new ArrayList<Integer>();
+       // if( mTransitionCount == 1) {
+       //     list.add(1);
+       //     list.add(2);
+       //     list.add(3);
+       //     list.add(4);
+       //     list.add(5);
+       //     list.add(6);
+       //     list.add(7);
+       //     list.add(8);
+       //     list.add(9);
+        //    list.add(10);
+        //    list2.add(11);
+        //    list2.add(12);
+        //    list2.add(13);
+        //    list2.add(14);
+        //    list2.add(15);
+        //    list2.add(16);
+        //    list2.add(17);
+        //    list2.add(18);
+        //    list2.add(19);
+        //    list2.add(20);
+        //    Collections.shuffle(list);
+        //    Collections.shuffle(list2);
+       // }
 
-         int questionnumber_variable=0;
-         if( mTransitionCount <= 10){
-             questionnumber_variable = (int)(Math.random()*10)+1;
-             //randomメソッドで1以上10未満の整数を生成
-         }
-         else{
-             questionnumber_variable = (int)(Math.random() * 10 ) + 11;
-         }
-     //   Random rand = new Random();
-     //    questionnumber_variable = rand.nextInt(20) + 1;
-         if( questionnumber_variable == 1) {
-             textView.setText(R.string.question_number1);
-             textView2.setText(R.string.phonetics_symbols1);
-         }
-         if ( questionnumber_variable ==2) {
-             textView.setText(R.string.question_number2);
-             textView2.setText(R.string.phonetics_symbols2);
-         }
-        if ( questionnumber_variable ==3) {
-            textView.setText(R.string.question_number3);
-            textView2.setText(R.string.phonetics_symbols3);
-        }
-        if ( questionnumber_variable ==4) {
-            textView.setText(R.string.question_number4);
-            textView2.setText(R.string.phonetics_symbols4);
-        } if ( questionnumber_variable ==5) {
-            textView.setText(R.string.question_number5);
-            textView2.setText(R.string.phonetics_symbols5);
-        } if ( questionnumber_variable ==6
-        ) {
-            textView.setText(R.string.question_number6);
-            textView2.setText(R.string.phonetics_symbols6);
-        } if ( questionnumber_variable ==7) {
-            textView.setText(R.string.question_number7);
-            textView2.setText(R.string.phonetics_symbols7);
-        } if ( questionnumber_variable ==8) {
-            textView.setText(R.string.question_number8);
-            textView2.setText(R.string.phonetics_symbols8);
-        } if ( questionnumber_variable ==9) {
-            textView.setText(R.string.question_number9);
-            textView2.setText(R.string.phonetics_symbols9);
-        }
-        if ( questionnumber_variable ==10) {
-            textView.setText(R.string.question_number10);
-            textView2.setText(R.string.phonetics_symbols10);
-        } if ( questionnumber_variable ==11) {
-            textView.setText(R.string.question_number11);
-            textView2.setText(R.string.phonetics_symbols11);
-        }if ( questionnumber_variable ==12) {
-            textView.setText(R.string.question_number12);
-            textView2.setText(R.string.phonetics_symbols12);
-        } if ( questionnumber_variable ==13) {
-            textView.setText(R.string.question_number13);
-            textView2.setText(R.string.phonetics_symbols13);
-        } if ( questionnumber_variable ==14) {
-            textView.setText(R.string.question_number14);
-            textView2.setText(R.string.phonetics_symbols14);
-        } if ( questionnumber_variable ==15) {
-            textView.setText(R.string.question_number15);
-            textView2.setText(R.string.phonetics_symbols15);
-        } if ( questionnumber_variable ==16) {
-            textView.setText(R.string.question_number16);
-            textView2.setText(R.string.phonetics_symbols16);
-        } if ( questionnumber_variable ==17) {
-            textView.setText(R.string.question_number17);
-            textView2.setText(R.string.phonetics_symbols17);
-        } if ( questionnumber_variable ==18) {
-            textView.setText(R.string.question_number18);
-            textView2.setText(R.string.phonetics_symbols18);
-        } if ( questionnumber_variable ==19) {
-            textView.setText(R.string.question_number19);
-            textView2.setText(R.string.phonetics_symbols19);
-        } if ( questionnumber_variable ==20) {
-            textView.setText(R.string.question_number20);
-            textView2.setText(R.string.phonetics_symbols20);
-        }
+
+            Toast toast = Toast.makeText(this, String.format("遷移した回数：%d", mTransitionCount), Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP, 0, 150);
+            toast.show();
+            tts = new TextToSpeech(this, this);
+            resulttext = findViewById(R.id.textView3);
+            textView = findViewById(R.id.textView);
+            textView2 = findViewById(R.id.textView8);
+
+            int questionnumber_variable = mTransitionCount;
+            if (mTransitionCount <= 10) {
+                questionnumber_variable = mTransitionCount;
+                //randomメソッドで1以上10未満の整数を生成
+            } else {
+                questionnumber_variable = mTransitionCount;
+            }
+
+            //   Random rand = new Random();
+            //    questionnumber_variable = rand.nextInt(20) + 1;
+            if (questionnumber_variable == 1) {
+                textView.setText(R.string.question_number1);
+                textView2.setText(R.string.phonetics_symbols1);
+            }
+            if (questionnumber_variable == 2) {
+                textView.setText(R.string.question_number2);
+                textView2.setText(R.string.phonetics_symbols2);
+            }
+            if (questionnumber_variable == 3) {
+                textView.setText(R.string.question_number3);
+                textView2.setText(R.string.phonetics_symbols3);
+            }
+            if (questionnumber_variable == 4) {
+                textView.setText(R.string.question_number4);
+                textView2.setText(R.string.phonetics_symbols4);
+            }
+            if (questionnumber_variable == 5) {
+                textView.setText(R.string.question_number5);
+                textView2.setText(R.string.phonetics_symbols5);
+            }
+            if (questionnumber_variable == 6
+            ) {
+                textView.setText(R.string.question_number6);
+                textView2.setText(R.string.phonetics_symbols6);
+            }
+            if (questionnumber_variable == 7) {
+                textView.setText(R.string.question_number7);
+                textView2.setText(R.string.phonetics_symbols7);
+            }
+            if (questionnumber_variable == 8) {
+                textView.setText(R.string.question_number8);
+                textView2.setText(R.string.phonetics_symbols8);
+            }
+            if (questionnumber_variable == 9) {
+                textView.setText(R.string.question_number9);
+                textView2.setText(R.string.phonetics_symbols9);
+            }
+            if (questionnumber_variable == 10) {
+                textView.setText(R.string.question_number10);
+                textView2.setText(R.string.phonetics_symbols10);
+            }
+            if (questionnumber_variable == 11) {
+                textView.setText(R.string.question_number11);
+                textView2.setText(R.string.phonetics_symbols11);
+            }
+            if (questionnumber_variable == 12) {
+                textView.setText(R.string.question_number12);
+                textView2.setText(R.string.phonetics_symbols12);
+            }
+            if (questionnumber_variable == 13) {
+                textView.setText(R.string.question_number13);
+                textView2.setText(R.string.phonetics_symbols13);
+            }
+            if (questionnumber_variable == 14) {
+                textView.setText(R.string.question_number14);
+                textView2.setText(R.string.phonetics_symbols14);
+            }
+            if (questionnumber_variable == 15) {
+                textView.setText(R.string.question_number15);
+                textView2.setText(R.string.phonetics_symbols15);
+            }
+            if (questionnumber_variable == 16) {
+                textView.setText(R.string.question_number16);
+                textView2.setText(R.string.phonetics_symbols16);
+            }
+            if (questionnumber_variable == 17) {
+                textView.setText(R.string.question_number17);
+                textView2.setText(R.string.phonetics_symbols17);
+            }
+            if (questionnumber_variable == 18) {
+                textView.setText(R.string.question_number18);
+                textView2.setText(R.string.phonetics_symbols18);
+            }
+            if (questionnumber_variable == 19) {
+                textView.setText(R.string.question_number19);
+                textView2.setText(R.string.phonetics_symbols19);
+            }
+            if (questionnumber_variable == 20) {
+                textView.setText(R.string.question_number20);
+                textView2.setText(R.string.phonetics_symbols20);
+            }
+
         Button speakingbutton = (Button) findViewById(R.id.speakingbutton);
         speakingbutton.setOnClickListener(new View.OnClickListener() {
 

@@ -62,6 +62,7 @@ public class ResultActivity extends AppCompatActivity {
         String mondai_phonetics = mondai_phonetics_before2.replace("]"," ");
          //textview4.setText("tʃɔ́klət");
         //String mondai_phonetics = "kɑ́mən";
+
         Intent intent1 = getIntent();
         String message = intent1.getStringExtra(TestActivity.EXTRA_MESSAGE);//認識の受け取り
         textview6.setText(message);
