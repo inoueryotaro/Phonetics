@@ -41,4 +41,8 @@
     <string name="phonetics_symbols18">[tədeɪ]</string>
     <string name="phonetics_symbols19">[lemən]</string>
     <string name="phonetics_symbols20">[moʊmənt]</string>
+    <string name="weak_message">ありませんでした!!!あなたの発音は完璧です!!!!</string>
+    <string name="weak_message2">[ʌ]です.</string>
+    <string name="weak_message3">[ə]です.</string>
+    <string name="weak_message4">[ə][ʌ]の両方です.</string>
 </resources>
