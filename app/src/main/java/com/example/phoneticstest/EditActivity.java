@@ -35,6 +35,7 @@ public class EditActivity extends AppCompatActivity {
             "category11.csv","category12.csv","category13.csv","category14.csv","category15.csv","category16.csv","category17.csv","category18.csv","category19.csv",
             "category20.csv","category21.csv","category22.csv","category23.csv"};
     private EditText editText;
+    private EditText editText2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,8 @@ public class EditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit);
         textView = findViewById(R.id.kakunin_view);
         textView2 = findViewById(R.id.kakunin_view2);
-        editText = findViewById(R.id.edit_text);
+        editText = findViewById(R.id.edit_text);//id
+        editText2 = findViewById(R.id.edit_text2);//単語
         Spinner spinner = findViewById(R.id.spinner);
         // ArrayAdapter
         ArrayAdapter<String> adapter
@@ -77,9 +79,10 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // エディットテキストのテキストを取得
                 String textFile = textView.getText().toString();
-                String  mondai_tango = editText.getText().toString();
-                saveFile(textFile, mondai_tango);
-                if ( mondai_tango.length() > 0 || textFile.length() > 0) {
+                String  id = editText.getText().toString();
+                String  mondai_tango = editText2.getText().toString();
+                saveFile(textFile, id,mondai_tango);
+                if ( mondai_tango.length() > 0 && textFile.length() > 0 && id.length() > 0) {
                     textView2.setText("成功");
                 } else  {
                     textView2.setText("失敗");
@@ -98,17 +101,17 @@ public class EditActivity extends AppCompatActivity {
 
 
     // ファイルを保存
-    public void saveFile(String file, String str) {
+    public void saveFile(String file, String id, String  str) {
 
         // try-with-resources
             String csv = "";
+            String id_number;
             String mondai_tango;
             String phonetics_symobols;
-            int id;
-            id = 1;
+            id_number = id;
             mondai_tango = str;
             phonetics_symobols = calculateBmi(mondai_tango);
-            csv += id +"," + mondai_tango+"," + phonetics_symobols + "\n";
+            csv += id_number +"," + mondai_tango+"," + phonetics_symobols + "\n";
 
         try{
             FileOutputStream fileOutputStream = openFileOutput(file, MODE_PRIVATE);
