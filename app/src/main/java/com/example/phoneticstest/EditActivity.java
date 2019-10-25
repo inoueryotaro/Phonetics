@@ -557,6 +557,7 @@ public class EditActivity extends AppCompatActivity {
         for (int i = 0; i < alphabet.length; i++) {
             if (map2.containsKey(alphabet[i])) {
                 phonetics += map2.get(alphabet[i]);
+                phonetics = phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");//ゴジラ";
             } else {
             }
         }

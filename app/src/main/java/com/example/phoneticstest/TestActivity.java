@@ -34,11 +34,11 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG = "TestTTS";
 
     public static final String EXTRA_MESSAGE
-            = "com.example.phoneticstest.TestActivity.MESSAGE";
+            = "com.example.phoneticstest.TestActivity.MESSAGE";//認識結果の単語
     public static final String EXTRA_MESSAGE2
-            = "com.example.phoneticstest.TestActivity.MESSAGE2";
+            = "com.example.phoneticstest.TestActivity.MESSAGE2";//出題単語
     public static final String EXTRA_MESSAGE3
-            ="com.example.phoneticstest.TestActivity.MESSAGE3";
+            ="com.example.phoneticstest.TestActivity.MESSAGE3";//出題単語の発音記号
     private int mTransitionCount;
     private int mmiss_phonetics_symbols;//前半ブロック
     private int mmiss_phonetics_symbols2;//後半ブロック
@@ -414,14 +414,14 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
             if (resulttext.getText() != null) {
                 String str = resulttext.getText().toString();
-                intent5.putExtra(EXTRA_MESSAGE, str);
+                intent5.putExtra(EXTRA_MESSAGE, str); //認識結果の単語
             }
 
             if(textView.getText() != null ){
                 String str2 = textView.getText().toString();
-                intent5.putExtra(EXTRA_MESSAGE2, str2);
+                intent5.putExtra(EXTRA_MESSAGE2, str2);//出題単語
                 String str3 = textView2.getText().toString();
-                intent5.putExtra(EXTRA_MESSAGE3,str3);
+                intent5.putExtra(EXTRA_MESSAGE3,str3);//出題単語の発音記号
                 intent5.putExtra("TransitionCount", mTransitionCount);
                 intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
                 intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
