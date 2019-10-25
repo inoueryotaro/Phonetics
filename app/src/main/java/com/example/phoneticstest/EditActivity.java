@@ -114,7 +114,7 @@ public class EditActivity extends AppCompatActivity {
             csv += id_number +"," + mondai_tango+"," + phonetics_symobols + "\n";
 
         try{
-            FileOutputStream fileOutputStream = openFileOutput(file, MODE_PRIVATE);
+            FileOutputStream fileOutputStream = openFileOutput(file, MODE_APPEND);
             // String writeString = dIdo + "\n";
             fileOutputStream.write(csv.getBytes());
         }
