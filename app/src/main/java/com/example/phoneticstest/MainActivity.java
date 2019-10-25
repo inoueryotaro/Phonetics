@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final String[] word_omoji = {""};
-        final EditText textvi = findViewById(R.id.editText);
+        final EditText textvi = findViewById(R.id.edit_text);
         final TextView textvi2 = findViewById(R.id.main_textview);
         final int[] testfile = {-1};
         Button henkan = findViewById(R.id.button3);

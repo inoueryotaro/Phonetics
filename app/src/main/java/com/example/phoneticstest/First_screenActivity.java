@@ -14,6 +14,8 @@ public class First_screenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         Button TestButton = findViewById(R.id.button);
         Button PractideButton = findViewById(R.id.button2);
+        Button EditButton = findViewById(R.id.button7);
+
         TestButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -23,6 +25,16 @@ public class First_screenActivity extends AppCompatActivity {
             private void function() {
                 Intent intent1 = new Intent(getApplication(), CategoryActivity.class);
                 startActivity(intent1);
+            }
+        });
+        EditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                function2();
+            }
+            private void function2() {
+                Intent intent2 = new Intent(getApplication(), EditActivity.class);
+                startActivity(intent2);
             }
         });
     }
