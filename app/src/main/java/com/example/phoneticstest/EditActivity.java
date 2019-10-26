@@ -109,7 +109,7 @@ public class EditActivity extends AppCompatActivity {
                 String textFile = textView.getText().toString();
                 String  id = editText.getText().toString();
                 String  mondai_tango = editText2.getText().toString();
-                String text = null;
+                String text = "";
                 text = readFile(textFile, id, mondai_tango);
                 textView.setText(text);
 
@@ -177,28 +177,28 @@ public class EditActivity extends AppCompatActivity {
 
     // ファイルを読み出し
     public String readFile(String file, String id,String str){
-        String text = null;
-        String text2 = null;
+        String text = "";
+        //String text2 = null;
         try(FileInputStream fileInputStream = openFileInput(file);
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(fileInputStream,StandardCharsets.UTF_8)))
         {
         String lineBuffer;
         while((lineBuffer = reader.readLine()) != null){
-            text = lineBuffer;
-            String[] search = text.split(",", 0);
-            if( search[0].equals(id) || search[1].equals(str) ){
-                text2 = lineBuffer;
-                break;
-            }
-            else{
-                text2 = "ありませんでした";
-            }
+            text += lineBuffer;
+            //String[] search = text.split(",", 0);
+            //if( search[0].equals(id) || search[1].equals(str) ){
+            //    text2 = lineBuffer;
+            //    break;
+            //}
+            //else{
+            //    text2 = "ありませんでした";
+            //}
         }
         }catch (IOException e){
             e.printStackTrace();
         }
-            return text2;
+            return text;
     }
     private String  calculateBmi(String word) {
 
