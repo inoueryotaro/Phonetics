@@ -1,30 +1,24 @@
 package com.example.phoneticstest;
 
 import android.content.res.AssetManager;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.os.Bundle;
-import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EditActivity extends AppCompatActivity {
@@ -72,8 +66,6 @@ public class EditActivity extends AppCompatActivity {
         });
 
         Button savebutton = findViewById(R.id.save);
-        Button displaybutton = findViewById(R.id.read);
-
         savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,12 +82,50 @@ public class EditActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonRead = findViewById(R.id.read);
-        buttonRead.setOnClickListener(new View.OnClickListener() {
+        Button buttoncreate = findViewById(R.id.create);
+        buttoncreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String textFile = textView.getText().toString();
+                String  id = editText.getText().toString();
+                String  mondai_tango = editText2.getText().toString();
+                String text = "";
+                 createFile(textFile, id, mondai_tango);
+                if ( mondai_tango.length() > 0 && textFile.length() > 0 && id.length() > 0) {
+                    textView2.setText("成功");
+                } else  {
+                    textView2.setText("失敗");
+                }
 
             }
+
+
+        });
+        Button buttondisplay = findViewById(R.id.display);
+        buttondisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String textFile = textView.getText().toString();
+                String  id = editText.getText().toString();
+                String  mondai_tango = editText2.getText().toString();
+                String text = null;
+                text = readFile(textFile, id, mondai_tango);
+                textView.setText(text);
+
+            }
+
+
+        });
+
+        Button buttondelete = findViewById(R.id.delete);
+        buttondelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String textFile = textView.getText().toString();
+                deleteFile(textFile);
+            }
+
+
         });
     }
 
@@ -122,26 +152,52 @@ public class EditActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-    // ファイルを読み出し
-    public String readFile(String file) {
-        String text = null;
+    public void createFile(String file, String id, String  str) {
 
         // try-with-resources
-        try (FileInputStream fileInputStream = openFileInput(file);
-             BufferedReader reader= new BufferedReader(
-                     new InputStreamReader(fileInputStream, StandardCharsets.UTF_8))) {
+        String csv = "";
+        String id_number;
+        String mondai_tango;
+        String phonetics_symobols;
+        id_number = id;
+        mondai_tango = str;
+        phonetics_symobols = calculateBmi(mondai_tango);
+        csv += id_number +"," + mondai_tango+"," + phonetics_symobols + "\n";
 
-            String lineBuffer;
-            while( (lineBuffer = reader.readLine()) != null ) {
-                text = lineBuffer ;
-            }
-
-        } catch (IOException e) {
+        try{
+            FileOutputStream fileOutputStream = openFileOutput(file, MODE_PRIVATE);
+            // String writeString = dIdo + "\n";
+            fileOutputStream.write(csv.getBytes());
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-        return text;
+    // ファイルを読み出し
+    public String readFile(String file, String id,String str){
+        String text = null;
+        String text2 = null;
+        try(FileInputStream fileInputStream = openFileInput(file);
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(fileInputStream,StandardCharsets.UTF_8)))
+        {
+        String lineBuffer;
+        while((lineBuffer = reader.readLine()) != null){
+            text = lineBuffer;
+            String[] search = text.split(",", 0);
+            if( search[0].equals(id) || search[1].equals(str) ){
+                text2 = lineBuffer;
+                break;
+            }
+            else{
+                text2 = "ありませんでした";
+            }
+        }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+            return text2;
     }
     private String  calculateBmi(String word) {
 
