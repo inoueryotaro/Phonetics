@@ -77,11 +77,11 @@ public class EditActivity extends AppCompatActivity {
                 String  id = editText.getText().toString();
                 String  mondai_tango = editText2.getText().toString();
                 saveFile(textFile, id,mondai_tango);
-                if ( mondai_tango.length() > 0 && textFile.length() > 0 && id.length() > 0) {
-                    textView2.setText("成功");
-                } else  {
-                    textView2.setText("失敗");
-                }
+            //    if ( mondai_tango.length() > 0 && textFile.length() > 0 && id.length() > 0) {
+            //        textView2.setText("成功");
+            //    } else  {
+            //        textView2.setText("失敗");
+           //     }
             }
         });
 
@@ -94,11 +94,11 @@ public class EditActivity extends AppCompatActivity {
                 String  mondai_tango = editText2.getText().toString();
                 String text = "";
                  createFile(textFile, id, mondai_tango);
-                if ( mondai_tango.length() > 0 && textFile.length() > 0 && id.length() > 0) {
-                    textView2.setText("成功");
-                } else  {
-                    textView2.setText("失敗");
-                }
+           //     if ( mondai_tango.length() > 0 && textFile.length() > 0 && id.length() > 0) {
+           //         textView2.setText("成功");
+           //     } else  {
+           //         textView2.setText("失敗");
+           //     }
 
             }
 
