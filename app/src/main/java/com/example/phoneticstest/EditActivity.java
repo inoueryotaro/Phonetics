@@ -15,10 +15,12 @@ import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.RandomAccessFile;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
@@ -165,13 +167,13 @@ public class EditActivity extends AppCompatActivity {
         mondai_tango = str;
         phonetics_symobols = calculateBmi(mondai_tango);
         csv += id_number +"," + mondai_tango+"," + phonetics_symobols + "\n";
-
         try{
-            FileOutputStream fileOutputStream = openFileOutput(file, MODE_PRIVATE);
-            // String writeString = dIdo + "\n";
-            fileOutputStream.write(csv.getBytes());
-        }
-        catch (IOException e) {
+            RandomAccessFile randomfile = new RandomAccessFile(file,"rw");
+            randomfile.seek(2);
+            randomfile.write(csv.getBytes());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
