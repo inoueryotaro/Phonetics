@@ -1,5 +1,6 @@
 package com.example.phoneticstest;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +32,8 @@ public class EditActivity extends AppCompatActivity {
     ,"category26.csv","category27.csv","category28.csv","category29.csv","category30.csv"};
     private EditText editText;
     private EditText editText2;
-
+    public static final String EXTRA_MESSAGE
+            = "com.example.phoneticstest.EditActivity.MESSAGE";//認識結果の単語
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,18 +106,17 @@ public class EditActivity extends AppCompatActivity {
         });
         Button buttondisplay = findViewById(R.id.display);
         buttondisplay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String textFile = textView.getText().toString();
-                String  id = editText.getText().toString();
-                String  mondai_tango = editText2.getText().toString();
-                String text = "";
-                text = readFile(textFile, id, mondai_tango);
-                textView.setText(text);
 
+            public void onClick(View v) {
+                function();
             }
 
-
+            private void function() {
+                Intent intent1 = new Intent(getApplication(), ListActivity.class);
+                String textFile = textView.getText().toString();
+                intent1.putExtra(  EXTRA_MESSAGE,textFile);
+                startActivity(intent1);
+            }
         });
 
         Button buttondelete = findViewById(R.id.delete);
