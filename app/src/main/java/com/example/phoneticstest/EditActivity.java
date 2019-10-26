@@ -27,7 +27,8 @@ public class EditActivity extends AppCompatActivity {
     private TextView textView2;
     private String spinnerItems[] = {"category1.csv", "category2.csv", "category3.csv", "category4.csv","category5.csv","category6.csv","category7.csv","category8.csv","category9.csv","category10.csv",
             "category11.csv","category12.csv","category13.csv","category14.csv","category15.csv","category16.csv","category17.csv","category18.csv","category19.csv",
-            "category20.csv","category21.csv","category22.csv","category23.csv"};
+            "category20.csv","category21.csv","category22.csv","category23.csv","category24.csv","category25.csv"
+    ,"category26.csv","category27.csv","category28.csv","category29.csv","category30.csv"};
     private EditText editText;
     private EditText editText2;
 
