@@ -36,7 +36,18 @@ public class CategoryActivity extends AppCompatActivity {
         Button Category_21Button = findViewById(R.id.category_21);
         Button Category_22Button = findViewById(R.id.category_22);
         Button Category_23Button = findViewById(R.id.category_23);
+        Button backButton = findViewById(R.id.button10);
+        backButton.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View v) {
+                function();
+            }
+
+            private void function() {
+                Intent intent = new Intent(getApplication(), First_screenActivity.class);
+                startActivity(intent);
+            }
+        });
         Category_1Button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
