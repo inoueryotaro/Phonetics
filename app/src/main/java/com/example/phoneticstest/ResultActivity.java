@@ -24,6 +24,9 @@ public class ResultActivity extends AppCompatActivity {
     private int mTransitionCount;
     private int mmiss_phonetics_symbols;
     private int mmiss_phonetics_symbols2;
+    public static final String EXTRA_MESSAGE
+            = "com.example.phoneticstest.ResultActivity.MESSAGE";//認識結果の単語
+    private String category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +76,8 @@ public class ResultActivity extends AppCompatActivity {
 
         Intent intent1 = getIntent();
         String message = intent1.getStringExtra(TestActivity.EXTRA_MESSAGE);//認識の受け取り
+        Intent intent7 = getIntent();
+        category = intent7.getStringExtra(TestActivity.EXTRA_MESSAGE4);
         textview6.setText(message);
         if( mondai.equals(message)){
             textview7.setText("正解です!!");
@@ -277,6 +282,8 @@ public class ResultActivity extends AppCompatActivity {
             intent5.putExtra("TransitionCount", mTransitionCount);
             intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
             intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+            String str = category;
+            intent5.putExtra(EXTRA_MESSAGE,str);
             startActivity(intent5);
         }
     }

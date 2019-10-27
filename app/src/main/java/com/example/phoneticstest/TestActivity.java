@@ -44,6 +44,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             = "com.example.phoneticstest.TestActivity.MESSAGE2";//出題単語
     public static final String EXTRA_MESSAGE3
             ="com.example.phoneticstest.TestActivity.MESSAGE3";//出題単語の発音記号
+    public static final String EXTRA_MESSAGE4
+            ="com.example.phoneticstest.TestActivity.MESSAGE4";//カテゴリー
     private int mTransitionCount;
     private int mmiss_phonetics_symbols;//前半ブロック
     private int mmiss_phonetics_symbols2;//後半ブロック
@@ -58,18 +60,27 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        resulttext = findViewById(R.id.textView3);
+        textView = findViewById(R.id.textView);
+        textView2 = findViewById(R.id.textView8);
         Intent intent1 = getIntent(); //遷移回数データ
         mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
         mTransitionCount++;
         Intent intent2 = getIntent();//前半ミスの回数
-        mmiss_phonetics_symbols = intent2.getIntExtra("miss_phonetics_symbols",0);
+        mmiss_phonetics_symbols = intent2.getIntExtra("miss_phonetics_symbols", 0);
         Intent intent3 = getIntent();//後半ミスの回数
-        mmiss_phonetics_symbols2 = intent3.getIntExtra("miss_phonetics_symbols2",0);
-        if( mTransitionCount == 1) {
-            Intent intent4 = getIntent();//カテゴリーの番号
-            categoryname = intent4.getStringExtra(CategoryActivity.EXTRA_MESSAGE);
-        }
-        String text= readFile(categoryname);
+        mmiss_phonetics_symbols2 = intent3.getIntExtra("miss_phonetics_symbols2", 0);
+       if( mTransitionCount == 1) {
+           Intent intent4 = getIntent();//カテゴリーの番号
+           categoryname = intent4.getStringExtra(CategoryActivity.EXTRA_MESSAGE);
+       }
+       else{
+           Intent intent5 = getIntent();
+           categoryname =  intent5.getStringExtra(ResultActivity.EXTRA_MESSAGE);
+       }
+        String number = String.valueOf(mTransitionCount);
+
+        String text= readFile(categoryname,number);
        // List<Integer> list = new ArrayList<Integer>();
        // List<Integer> list2 = new ArrayList<Integer>();
        // if( mTransitionCount == 1) {
@@ -102,9 +113,10 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             toast.setGravity(Gravity.TOP, 0, 150);
             toast.show();
             tts = new TextToSpeech(this, this);
-            resulttext = findViewById(R.id.textView3);
-            textView = findViewById(R.id.textView);
-            textView2 = findViewById(R.id.textView8);
+
+            String[] question = text.split(",",0);
+            textView.setText(question[1]);
+            textView2.setText(question[2]);
             int questionnumber_variable = mTransitionCount;
             if (mTransitionCount <= 10) {
                 questionnumber_variable = mTransitionCount;
@@ -115,6 +127,9 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
             //   Random rand = new Random();
             //    questionnumber_variable = rand.nextInt(20) + 1;
+     //   String[] question = text.split(",",0);
+     //       textView.setText(question[0]);
+     //       textView2.setText(question[1]);
          //   if (questionnumber_variable == 1) {
          //       textView.setText(R.string.question_number1);
          //       textView2.setText(R.string.phonetics_symbols1);
@@ -209,7 +224,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         ttsButton.setOnClickListener(this);
 
     }
-    public String readFile(String file){
+    public String readFile(String file, String count){
         String text = "";
         //String text2 = null;
         try(FileInputStream fileInputStream = openFileInput(file);
@@ -218,9 +233,16 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         {
             String lineBuffer;
             while((lineBuffer = reader.readLine()) != null){
-                text += lineBuffer;
-                text += "\n";
-                //String[] search = text.split(",", 0);
+                text = lineBuffer;
+                //text += "\n";
+                String[] search = lineBuffer.split(",", 0);
+               // if(search[1].equals(id) )
+               // {
+               //     text = lineBuffer;
+               // }
+               // else{
+               //     text = "ありません";
+                //}
                 //if( search[0].equals(id) || search[1].equals(str) ){
                 //    text2 = lineBuffer;
                 //    break;
@@ -457,9 +479,11 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                 intent5.putExtra(EXTRA_MESSAGE2, str2);//出題単語
                 String str3 = textView2.getText().toString();
                 intent5.putExtra(EXTRA_MESSAGE3,str3);//出題単語の発音記号
+                String str4 = categoryname;
                 intent5.putExtra("TransitionCount", mTransitionCount);
                 intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
                 intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+                intent5.putExtra(EXTRA_MESSAGE4,str4);
             }
             startActivity(intent5);
             resulttext.setText("");
