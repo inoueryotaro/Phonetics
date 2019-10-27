@@ -79,7 +79,6 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
            categoryname =  intent5.getStringExtra(ResultActivity.EXTRA_MESSAGE);
        }
         String number = String.valueOf(mTransitionCount);
-
         String text= readFile(categoryname,number);
        // List<Integer> list = new ArrayList<Integer>();
        // List<Integer> list2 = new ArrayList<Integer>();
@@ -117,100 +116,9 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             String[] question = text.split(",",0);
             textView.setText(question[1]);
             textView2.setText(question[2]);
-            int questionnumber_variable = mTransitionCount;
-            if (mTransitionCount <= 10) {
-                questionnumber_variable = mTransitionCount;
-                //randomメソッドで1以上10未満の整数を生成
-            } else {
-                questionnumber_variable = mTransitionCount;
-            }
 
             //   Random rand = new Random();
             //    questionnumber_variable = rand.nextInt(20) + 1;
-     //   String[] question = text.split(",",0);
-     //       textView.setText(question[0]);
-     //       textView2.setText(question[1]);
-         //   if (questionnumber_variable == 1) {
-         //       textView.setText(R.string.question_number1);
-         //       textView2.setText(R.string.phonetics_symbols1);
-         //   }
-         //   if (questionnumber_variable == 2) {
-         //       textView.setText(R.string.question_number2);
-        //        textView2.setText(R.string.phonetics_symbols2);
-        //    }
-          //  if (questionnumber_variable == 3) {
-          //      textView.setText(R.string.question_number3);
-           //     textView2.setText(R.string.phonetics_symbols3);
-         //   }
-          //  if (questionnumber_variable == 4) {
-               // textView.setText(R.string.question_number4);
-             //   textView2.setText(R.string.phonetics_symbols4);
-           // }
-           // if (questionnumber_variable == 5) {
-           //     textView.setText(R.string.question_number5);
-         //       textView2.setText(R.string.phonetics_symbols5);
-       //     }
-       //     if (questionnumber_variable == 6
-       //     ) {
-        //        textView.setText(R.string.question_number6);
-        //        textView2.setText(R.string.phonetics_symbols6);
-       //     }
-       //     if (questionnumber_variable == 7) {
-       //         textView.setText(R.string.question_number7);
-       //         textView2.setText(R.string.phonetics_symbols7);
-       //     }
-       //     if (questionnumber_variable == 8) {
-       //         textView.setText(R.string.question_number8);
-       //         textView2.setText(R.string.phonetics_symbols8);
-       //     }
-       //     if (questionnumber_variable == 9) {
-       //         textView.setText(R.string.question_number9);
-       //         textView2.setText(R.string.phonetics_symbols9);
-       //     }
-       //     if (questionnumber_variable == 10) {
-       //         textView.setText(R.string.question_number10);
-        //        textView2.setText(R.string.phonetics_symbols10);
-       //     }
-        //    if (questionnumber_variable == 11) {
-        //        textView.setText(R.string.question_number11);
-       //         textView2.setText(R.string.phonetics_symbols11);
-       //     }
-       //     if (questionnumber_variable == 12) {
-       //         textView.setText(R.string.question_number12);
-       //         textView2.setText(R.string.phonetics_symbols12);
-       //     }
-       //     if (questionnumber_variable == 13) {
-       //         textView.setText(R.string.question_number13);
-       //         textView2.setText(R.string.phonetics_symbols13);
-       //     }
-       //     if (questionnumber_variable == 14) {
-       //         textView.setText(R.string.question_number14);
-       //         textView2.setText(R.string.phonetics_symbols14);
-       //     }
-        //    if (questionnumber_variable == 15) {
-        //        textView.setText(R.string.question_number15);
-       //         textView2.setText(R.string.phonetics_symbols15);
-       //     }
-        //    if (questionnumber_variable == 16) {
-       //         textView.setText(R.string.question_number16);
-       //         textView2.setText(R.string.phonetics_symbols16);
-       //     }
-       //     if (questionnumber_variable == 17) {
-       //         textView.setText(R.string.question_number17);
-       //         textView2.setText(R.string.phonetics_symbols17);
-        //    }
-        //    if (questionnumber_variable == 18) {
-        //        textView.setText(R.string.question_number18);
-        //        textView2.setText(R.string.phonetics_symbols18);
-        //    }
-         //   if (questionnumber_variable == 19) {
-         //       textView.setText(R.string.question_number19);
-         //       textView2.setText(R.string.phonetics_symbols19);
-        //    }
-        //    if (questionnumber_variable == 20) {
-      //          textView.setText(R.string.question_number20);
-    //            textView2.setText(R.string.phonetics_symbols20);
-  //          }
 
         Button speakingbutton = (Button) findViewById(R.id.speakingbutton);
         speakingbutton.setOnClickListener(new View.OnClickListener() {
@@ -233,23 +141,14 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         {
             String lineBuffer;
             while((lineBuffer = reader.readLine()) != null){
-                text = lineBuffer;
-                //text += "\n";
-                String[] search = lineBuffer.split(",", 0);
-               // if(search[1].equals(id) )
-               // {
-               //     text = lineBuffer;
-               // }
-               // else{
-               //     text = "ありません";
-                //}
-                //if( search[0].equals(id) || search[1].equals(str) ){
-                //    text2 = lineBuffer;
-                //    break;
-                //}
-                //else{
-                //    text2 = "ありませんでした";
-                //}
+                String[] search = lineBuffer.split(",",0);
+                if (search[0].equals(count)){
+                    text = lineBuffer;
+                    break;
+                }
+                else{
+                   text = "ありません";
+                }
             }
         }catch (IOException e){
             e.printStackTrace();
@@ -397,41 +296,47 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             switch (error) {
                 // Audio recording error
                 case SpeechRecognizer.ERROR_AUDIO:
-                    reason = "ERROR_AUDIO";
+                    //reason = "ERROR_AUDIO";
+                    reason = "音声データの保存に失敗しました";
                     break;
                 // Other client side errors
                 case SpeechRecognizer.ERROR_CLIENT:
-                    reason = "ERROR_CLIENT";
+                    //reason = "ERROR_CLIENT";
+                    reason = "Android端末内のエラーです";
                     break;
                 // Insufficient permissions
                 case SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS:
-                    reason = "ERROR_INSUFFICIENT_PERMISSIONS";
+                    reason = "権限があたえられていません．設定してください";
                     break;
                 // 	Other network related errors
                 case SpeechRecognizer.ERROR_NETWORK:
-                    reason = "ERROR_NETWORK";
+                    reason = "ネットワークのエラーです．ネットワークを確認してください";
                     /* ネットワーク接続をチェックする処理をここに入れる */
                     break;
                 // Network operation timed out
                 case SpeechRecognizer.ERROR_NETWORK_TIMEOUT:
-                    reason = "ERROR_NETWORK_TIMEOUT";
+                    //reason = "ERROR_NETWORK_TIMEOUT";
+                    reason = "時間切れです．もう一度お願いします";
                     break;
                 // No recognition result matched
                 case SpeechRecognizer.ERROR_NO_MATCH:
-                    reason = "ERROR_NO_MATCH";
+                    //reason = "ERROR_NO_MATCH";
+                    reason = "該当する音声認識結果がありません．もう一度，お願いします";
                     break;
                 // RecognitionService busy
                 case SpeechRecognizer.ERROR_RECOGNIZER_BUSY:
-                    reason = "ERROR_RECOGNIZER_BUSY";
+                    //reason = "ERROR_RECOGNIZER_BUSY";
+                    reason = "少し，時間をおき，もう一度，お願いします";
                     break;
                 // Server sends error status
                 case SpeechRecognizer.ERROR_SERVER:
-                    reason = "ERROR_SERVER";
+                    //reason = "ERROR_SERVER";
+                    reason = "サーバーからのエラーを受け取りました";
                     /* ネットワーク接続をチェックをする処理をここに入れる */
                     break;
                 // No speech input
                 case SpeechRecognizer.ERROR_SPEECH_TIMEOUT:
-                    reason = "ERROR_SPEECH_TIMEOUT";
+                    reason = "音声入力がありません．しゃべってください";
                     break;
             }
             Toast.makeText(getApplicationContext(), reason, Toast.LENGTH_SHORT).show();

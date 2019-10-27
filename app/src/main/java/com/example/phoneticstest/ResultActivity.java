@@ -243,8 +243,6 @@ public class ResultActivity extends AppCompatActivity {
         String distance = LD.LevensteinDistance(left, right);
         textview2.setText(right);
         textview4.setText(left);
-
-        textview7.setText(String.valueOf(distance.length()));
         int spanColor = Color.RED;
         if( distance.length() != 0) {
             SpannableStringBuilder ssb = new SpannableStringBuilder(left);
@@ -257,10 +255,10 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
-        if( mTransitionCount <= 10 && distance.length() > 0) {
+        if( mTransitionCount <= 10 && !(mondai.equals(message))) {
              mmiss_phonetics_symbols++;
         }
-        if( mTransitionCount > 10 && distance.length() > 0){
+        if( mTransitionCount > 10 && !(mondai.equals(message))){
             mmiss_phonetics_symbols2++;
         }
         nextbutton.setOnClickListener(new View.OnClickListener() {
