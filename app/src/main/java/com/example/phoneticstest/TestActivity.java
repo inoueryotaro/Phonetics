@@ -80,32 +80,6 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
        }
         String number = String.valueOf(mTransitionCount);
         String text= readFile(categoryname,number);
-       // List<Integer> list = new ArrayList<Integer>();
-       // List<Integer> list2 = new ArrayList<Integer>();
-       // if( mTransitionCount == 1) {
-       //     list.add(1);
-       //     list.add(2);
-       //     list.add(3);
-       //     list.add(4);
-       //     list.add(5);
-       //     list.add(6);
-       //     list.add(7);
-       //     list.add(8);
-       //     list.add(9);
-        //    list.add(10);
-        //    list2.add(11);
-        //    list2.add(12);
-        //    list2.add(13);
-        //    list2.add(14);
-        //    list2.add(15);
-        //    list2.add(16);
-        //    list2.add(17);
-        //    list2.add(18);
-        //    list2.add(19);
-        //    list2.add(20);
-        //    Collections.shuffle(list);
-        //    Collections.shuffle(list2);
-       // }
 
 
             Toast toast = Toast.makeText(this, String.format("遷移した回数：%d", mTransitionCount), Toast.LENGTH_LONG);
@@ -348,7 +322,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     reason = "音声入力がありません．しゃべってください";
                     break;
             }
-            Toast.makeText(getApplicationContext(), reason, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), reason, Toast.LENGTH_SHORT).show();
+            resulttext.setText(reason);
             //      restartListeningService();
         }
         public void onEvent(int eventType, Bundle params) {
