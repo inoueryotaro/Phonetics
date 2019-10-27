@@ -117,7 +117,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         else{
             id_number = (int)(Math.random()*10) + 11;
         }
-        resulttext.setText(String.valueOf(id_number));
+        //resulttext.setText(String.valueOf(id_number));
         try(FileInputStream fileInputStream = openFileInput(file);
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(fileInputStream, StandardCharsets.UTF_8)))

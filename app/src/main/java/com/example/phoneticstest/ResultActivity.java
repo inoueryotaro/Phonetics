@@ -26,7 +26,7 @@ public class ResultActivity extends AppCompatActivity {
     private int mmiss_phonetics_symbols2;
     private int id_number;
     public static final String EXTRA_MESSAGE
-            = "com.example.phoneticstest.ResultActivity.MESSAGE";//認識結果の単語
+            = "com.example.phoneticstest.ResultActivity.MESSAGE";//カテゴリー名
     private String category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -276,6 +276,8 @@ public class ResultActivity extends AppCompatActivity {
             Intent intent6 = new Intent(getApplication(),FinishscreenActivity.class);
             intent6.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
             intent6.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+            String str = category;
+            intent6.putExtra(EXTRA_MESSAGE,str);
             startActivity(intent6);
         }
         else {

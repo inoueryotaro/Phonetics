@@ -12,6 +12,8 @@ public class FinishscreenActivity extends AppCompatActivity {
     private TextView textView;
     private TextView textView2;
     private Button resultbutton;
+    public static final String EXTRA_MESSAGE
+            = "com.example.phoneticstest.FinishscreenActivity.MESSAGE";//カテゴリー名
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,8 @@ public class FinishscreenActivity extends AppCompatActivity {
         final int miss_count = intent1.getIntExtra("miss_phonetics_symbols", 0);
         Intent intent2 = getIntent();
         final int miss_count2 = intent2.getIntExtra("miss_phonetics_symbols2",0);
-
+        Intent intent3 = getIntent();
+        final String category_name = intent3.getStringExtra(ResultActivity.EXTRA_MESSAGE);//ex "category1.csv"
         resultbutton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -34,6 +37,7 @@ public class FinishscreenActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplication(), WeakActivity.class);
                 intent.putExtra("miss_zenhan",miss_count);
                 intent.putExtra("miss_kohan",miss_count2);
+                intent.putExtra(EXTRA_MESSAGE,category_name);
                 startActivity(intent);
             }
         });
