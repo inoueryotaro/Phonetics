@@ -24,6 +24,7 @@ public class ResultActivity extends AppCompatActivity {
     private int mTransitionCount;
     private int mmiss_phonetics_symbols;
     private int mmiss_phonetics_symbols2;
+    private int id_number;
     public static final String EXTRA_MESSAGE
             = "com.example.phoneticstest.ResultActivity.MESSAGE";//認識結果の単語
     private String category;
@@ -45,6 +46,8 @@ public class ResultActivity extends AppCompatActivity {
         mmiss_phonetics_symbols = intent5.getIntExtra("miss_phonetics_symbols",0);
         Intent intent6 = getIntent();
         mmiss_phonetics_symbols2 = intent6.getIntExtra("miss_phonetics_symbols2",0);
+        Intent intent8 = getIntent();
+        id_number = intent8.getIntExtra("id_bango",0);
         //nextbutton.setOnClickListener(new View.OnClickListener() {
 
           //  public void onClick(View v) {
@@ -255,10 +258,10 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
-        if( mTransitionCount <= 10 && !(mondai.equals(message))) {
+        if( id_number <= 10 && !(mondai.equals(message))) {
              mmiss_phonetics_symbols++;
         }
-        if( mTransitionCount > 10 && !(mondai.equals(message))){
+        if( id_number > 10 && !(mondai.equals(message))){
             mmiss_phonetics_symbols2++;
         }
         nextbutton.setOnClickListener(new View.OnClickListener() {

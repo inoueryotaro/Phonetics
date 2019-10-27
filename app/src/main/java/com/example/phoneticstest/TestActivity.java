@@ -46,11 +46,11 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             ="com.example.phoneticstest.TestActivity.MESSAGE3";//出題単語の発音記号
     public static final String EXTRA_MESSAGE4
             ="com.example.phoneticstest.TestActivity.MESSAGE4";//カテゴリー
-    private int mTransitionCount;
+    private int mTransitionCount;//出題回数カウント
     private int mmiss_phonetics_symbols;//前半ブロック
     private int mmiss_phonetics_symbols2;//後半ブロック
-    private String categoryname;
-
+    private String categoryname;//カテゴリー名
+    private int id_number; //idの番号
     // リストの並びをシャッフルします。
 
     // シャッフルされたリストの先頭を取得します。
@@ -82,7 +82,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         String text= readFile(categoryname,number);
 
 
-            Toast toast = Toast.makeText(this, String.format("遷移した回数：%d", mTransitionCount), Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, String.format("第%d問", mTransitionCount), Toast.LENGTH_LONG);
             toast.setGravity(Gravity.TOP, 0, 150);
             toast.show();
             tts = new TextToSpeech(this, this);
@@ -110,14 +110,14 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         String text = "";
         int countnumber;
         countnumber = Integer.parseInt(count);
-        int i;
+
         if( countnumber % 2  != 0) {
-            i =  (int)(Math.random()*10) + 1;
+            id_number =  (int)(Math.random()*10) + 1;
         }
         else{
-            i = (int)(Math.random()*10) + 11;
+            id_number = (int)(Math.random()*10) + 11;
         }
-        resulttext.setText(String.valueOf(i));
+        resulttext.setText(String.valueOf(id_number));
         try(FileInputStream fileInputStream = openFileInput(file);
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(fileInputStream, StandardCharsets.UTF_8)))
@@ -125,7 +125,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             String lineBuffer;
             while((lineBuffer = reader.readLine()) != null){
                 String[] search = lineBuffer.split(",",0);
-                if (search[0].equals(String.valueOf(i))){
+                if (search[0].equals(String.valueOf(id_number))){
                     text = lineBuffer;
                     break;
                 }
@@ -373,6 +373,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                 intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
                 intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
                 intent5.putExtra(EXTRA_MESSAGE4,str4);
+                intent5.putExtra("id_bango",id_number);
             }
             startActivity(intent5);
             resulttext.setText("");
