@@ -244,7 +244,7 @@ public class ResultActivity extends AppCompatActivity {
         textview2.setText(right);
         textview4.setText(left);
 
-
+        textview7.setText(String.valueOf(distance.length()));
         int spanColor = Color.RED;
         if( distance.length() != 0) {
             SpannableStringBuilder ssb = new SpannableStringBuilder(left);
@@ -257,10 +257,10 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
-        if( mTransitionCount <= 10 && distance.length() > 4) {
+        if( mTransitionCount <= 10 && distance.length() > 0) {
              mmiss_phonetics_symbols++;
         }
-        if( mTransitionCount > 10 && distance.length() > 4){
+        if( mTransitionCount > 10 && distance.length() > 0){
             mmiss_phonetics_symbols2++;
         }
         nextbutton.setOnClickListener(new View.OnClickListener() {
