@@ -134,7 +134,16 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     }
     public String readFile(String file, String count){
         String text = "";
-        //String text2 = null;
+        int countnumber;
+        countnumber = Integer.parseInt(count);
+        int i;
+        if( countnumber % 2  != 0) {
+            i =  (int)(Math.random()*10) + 1;
+        }
+        else{
+            i = (int)(Math.random()*10) + 11;
+        }
+        resulttext.setText(String.valueOf(i));
         try(FileInputStream fileInputStream = openFileInput(file);
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(fileInputStream, StandardCharsets.UTF_8)))
@@ -142,7 +151,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             String lineBuffer;
             while((lineBuffer = reader.readLine()) != null){
                 String[] search = lineBuffer.split(",",0);
-                if (search[0].equals(count)){
+                if (search[0].equals(String.valueOf(i))){
                     text = lineBuffer;
                     break;
                 }
