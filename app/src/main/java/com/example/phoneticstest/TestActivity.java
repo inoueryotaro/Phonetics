@@ -42,6 +42,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     private int mTransitionCount;
     private int mmiss_phonetics_symbols;//前半ブロック
     private int mmiss_phonetics_symbols2;//後半ブロック
+    private int categoryname;
 
     // リストの並びをシャッフルします。
 
@@ -55,10 +56,14 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         Intent intent1 = getIntent(); //遷移回数データ
         mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
         mTransitionCount++;
-        Intent intent2 = getIntent();//ミスの回数
+        Intent intent2 = getIntent();//前半ミスの回数
         mmiss_phonetics_symbols = intent2.getIntExtra("miss_phonetics_symbols",0);
-        Intent intent3 = getIntent();
+        Intent intent3 = getIntent();//後半ミスの回数
         mmiss_phonetics_symbols2 = intent3.getIntExtra("miss_phonetics_symbols2",0);
+        if( mTransitionCount == 1) {
+            Intent intent4 = getIntent();//カテゴリーの番号
+            categoryname = intent4.getIntExtra("category_number", 0);
+        }
        // List<Integer> list = new ArrayList<Integer>();
        // List<Integer> list2 = new ArrayList<Integer>();
        // if( mTransitionCount == 1) {

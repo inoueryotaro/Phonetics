@@ -44,6 +44,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",1);
                 startActivity(intent1);
             }
         });
@@ -55,6 +56,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",2);
                 startActivity(intent1);
             }
         });
@@ -66,6 +68,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",3);
                 startActivity(intent1);
             }
         }); Category_4Button.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +79,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",4);
                 startActivity(intent1);
             }
         }); Category_5Button.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +90,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",5);
                 startActivity(intent1);
             }
         }); Category_6Button.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +101,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",6);
                 startActivity(intent1);
             }
         }); Category_7Button.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +112,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",7);
                 startActivity(intent1);
             }
         }); Category_8Button.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +123,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",8);
                 startActivity(intent1);
             }
         }); Category_9Button.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +134,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",9);
                 startActivity(intent1);
             }
         }); Category_10Button.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +145,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",10);
                 startActivity(intent1);
             }
         }); Category_11Button.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +156,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",11);
                 startActivity(intent1);
             }
         }); Category_12Button.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +167,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",12);
                 startActivity(intent1);
             }
         }); Category_13Button.setOnClickListener(new View.OnClickListener() {
@@ -166,6 +178,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",13);
                 startActivity(intent1);
             }
         }); Category_14Button.setOnClickListener(new View.OnClickListener() {
@@ -176,6 +189,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",14);
                 startActivity(intent1);
             }
         }); Category_15Button.setOnClickListener(new View.OnClickListener() {
@@ -186,6 +200,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",15);
                 startActivity(intent1);
             }
         }); Category_16Button.setOnClickListener(new View.OnClickListener() {
@@ -196,6 +211,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",16);
                 startActivity(intent1);
             }
         }); Category_17Button.setOnClickListener(new View.OnClickListener() {
@@ -206,6 +222,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",17);
                 startActivity(intent1);
             }
         }); Category_18Button.setOnClickListener(new View.OnClickListener() {
@@ -216,6 +233,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",18);
                 startActivity(intent1);
             }
         }); Category_19Button.setOnClickListener(new View.OnClickListener() {
@@ -226,6 +244,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",19);
                 startActivity(intent1);
             }
         }); Category_20Button.setOnClickListener(new View.OnClickListener() {
@@ -236,6 +255,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",20);
                 startActivity(intent1);
             }
         }); Category_21Button.setOnClickListener(new View.OnClickListener() {
@@ -246,6 +266,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",21);
                 startActivity(intent1);
             }
         }); Category_22Button.setOnClickListener(new View.OnClickListener() {
@@ -256,6 +277,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",22);
                 startActivity(intent1);
             }
         }); Category_23Button.setOnClickListener(new View.OnClickListener() {
@@ -266,6 +288,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                intent1.putExtra("category_number",23);
                 startActivity(intent1);
             }
         });
