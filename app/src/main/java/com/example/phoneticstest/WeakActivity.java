@@ -20,6 +20,12 @@ public class WeakActivity extends AppCompatActivity {
         resultingtext = findViewById(R.id.textView14);
         Button ShosaiButton = findViewById(R.id.button8);
         Button BackCategory = findViewById(R.id.button9);
+        Intent intent = getIntent();
+        zenhan_count = intent.getIntExtra("miss_zenhan", 0);
+        Intent intent2 = getIntent();
+        kohan_count = intent2.getIntExtra("miss_kohan",0);
+        Intent intent3 = getIntent();
+        final String category_name = intent3.getStringExtra(FinishscreenActivity.EXTRA_MESSAGE);//ex "category1.csv"
         ShosaiButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -39,21 +45,200 @@ public class WeakActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent4 = new Intent(getApplication(), CategoryActivity.class);
+                if( category_name.equals("category1.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword",2);
+                    }
+                }
+                if( category_name.equals("category2.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword2",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword2",2);
+                    }
+                }
+                if( category_name.equals("category3.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword3",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword3",2);
+                    }
+                }
+                if( category_name.equals("category4.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword4",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword4",2);
+                    }
+                }
+                if( category_name.equals("category5.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword5",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword5",2);
+                    }
+                }
+                if( category_name.equals("category6.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword6",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword6",2);
+                    }
+                }
+                if( category_name.equals("category7.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword7",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword7",2);
+                    }
+                }
+                if( category_name.equals("category8.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword8",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword8",2);
+                    }
+                }
+                if( category_name.equals("category9.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword9",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword9",2);
+                    }
+                }if( category_name.equals("category10.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword10",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword10",2);
+                    }
+                }
+                if( category_name.equals("category11.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword11",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword11",2);
+                    }
+                }
+                if( category_name.equals("category12.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword12",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword12",2);
+                    }
+                }
+                if( category_name.equals("category13.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword13",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword13",2);
+                    }
+                }
+                if( category_name.equals("category14.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword14",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword14",2);
+                    }
+                }
+                if( category_name.equals("category15.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword15",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword15",2);
+                    }
+                }
+                if( category_name.equals("category16.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword16",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword16",2);
+                    }
+                }
+                if( category_name.equals("category17.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword17",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword17",2);
+                    }
+                }
+                if( category_name.equals("category18.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword18",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword18",2);
+                    }
+                }if( category_name.equals("category19.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword19",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword19",2);
+                    }
+                }
+                if( category_name.equals("category20.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword20",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword20",2);
+                    }
+                }
+                if( category_name.equals("category21.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword21",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword21",2);
+                    }
+                }
+                if( category_name.equals("category22.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword22",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword22",2);
+                    }
+                }
+                if( category_name.equals("category23.csv")){
+                    if(zenhan_count < 4 && kohan_count < 4 ){
+                        intent4.putExtra("keyword23",1);
+                    }
+                    else{
+                        intent4.putExtra("keyword23",2);
+                    }
+                }
+
+
+
                 startActivity(intent4);
             }
         });
-        Intent intent = getIntent();
-        zenhan_count = intent.getIntExtra("miss_zenhan", 0);
-        Intent intent2 = getIntent();
-        kohan_count = intent2.getIntExtra("miss_kohan",0);
-        Intent intent3 = getIntent();
-        String category_name = intent3.getStringExtra(FinishscreenActivity.EXTRA_MESSAGE);//ex "category1.csv"
 
         if( zenhan_count < 4 && kohan_count < 4){
             resultingtext.setText(R.string.weak_message);
         }
         if( zenhan_count >= 4 || kohan_count >= 4){
-            if( zenhan_count >= 4){
+            if( zenhan_count >= 4 && kohan_count < 4){
                 if( category_name.equals("category1.csv")) {
                     resultingtext.setText(R.string.weak_message2);
                 }
@@ -68,7 +253,7 @@ public class WeakActivity extends AppCompatActivity {
                     resultingtext.setText("[e]です.");
                 }
             }
-            else if( kohan_count >=  4 ){
+            else if( kohan_count >= 4 && zenhan_count < 4 ){
                 if( category_name.equals("category1.csv")) {
                     resultingtext.setText(R.string.weak_message3);
                 }

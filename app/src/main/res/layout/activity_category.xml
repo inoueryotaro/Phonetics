@@ -37,7 +37,16 @@
                     app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                     app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                     app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
-
+                    <ImageView
+                        android:id="@+id/category_1_checkView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/check_picture"/>
+                    <ImageView
+                        android:id="@+id/category_1_checkView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/check_picture2"/>
             </LinearLayout>
          <LinearLayout
              android:layout_width="match_parent"
@@ -52,6 +61,16 @@
                  app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                  app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                  app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+             <ImageView
+                 android:id="@+id/category_2_checkView"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 app:srcCompat="@drawable/check_picture"/>
+             <ImageView
+                 android:id="@+id/category_2_checkView2"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 app:srcCompat="@drawable/check_picture2"/>
          </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -66,6 +85,16 @@
                     app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                     app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                     app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+                <ImageView
+                    android:id="@+id/category_3_checkView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/check_picture"/>
+                <ImageView
+                    android:id="@+id/category_3_checkView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/check_picture2"/>
             </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -79,6 +108,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_4_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_4_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -92,6 +131,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_5_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_5_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -105,6 +154,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_6_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_6_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -118,6 +177,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_7_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_7_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -131,6 +200,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_8_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_8_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -144,6 +223,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_9_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_9_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -157,6 +246,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_10_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_10_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -170,6 +269,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_11_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_11_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -183,6 +292,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_12_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_12_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -196,6 +315,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_13_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_13_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -209,6 +338,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_14_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_14_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -222,6 +361,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_15_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_15_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -235,6 +384,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_16_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_16_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -248,6 +407,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_17_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_17_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -261,6 +430,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_18_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_18_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -274,6 +453,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_19_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_19_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -287,6 +476,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_20_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_20_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -300,6 +499,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_21_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_21_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -313,6 +522,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_22_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_22_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout> <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -326,6 +545,16 @@
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
                 app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_23_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_23_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
         </LinearLayout>
 
 
