@@ -16,6 +16,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -42,7 +47,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     private int mTransitionCount;
     private int mmiss_phonetics_symbols;//前半ブロック
     private int mmiss_phonetics_symbols2;//後半ブロック
-    private int categoryname;
+    private String categoryname;
 
     // リストの並びをシャッフルします。
 
@@ -62,8 +67,9 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         mmiss_phonetics_symbols2 = intent3.getIntExtra("miss_phonetics_symbols2",0);
         if( mTransitionCount == 1) {
             Intent intent4 = getIntent();//カテゴリーの番号
-            categoryname = intent4.getIntExtra("category_number", 0);
+            categoryname = intent4.getStringExtra(CategoryActivity.EXTRA_MESSAGE);
         }
+        String text= readFile(categoryname);
        // List<Integer> list = new ArrayList<Integer>();
        // List<Integer> list2 = new ArrayList<Integer>();
        // if( mTransitionCount == 1) {
@@ -99,7 +105,6 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             resulttext = findViewById(R.id.textView3);
             textView = findViewById(R.id.textView);
             textView2 = findViewById(R.id.textView8);
-
             int questionnumber_variable = mTransitionCount;
             if (mTransitionCount <= 10) {
                 questionnumber_variable = mTransitionCount;
@@ -110,87 +115,87 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
             //   Random rand = new Random();
             //    questionnumber_variable = rand.nextInt(20) + 1;
-            if (questionnumber_variable == 1) {
-                textView.setText(R.string.question_number1);
-                textView2.setText(R.string.phonetics_symbols1);
-            }
-            if (questionnumber_variable == 2) {
-                textView.setText(R.string.question_number2);
-                textView2.setText(R.string.phonetics_symbols2);
-            }
-            if (questionnumber_variable == 3) {
-                textView.setText(R.string.question_number3);
-                textView2.setText(R.string.phonetics_symbols3);
-            }
-            if (questionnumber_variable == 4) {
-                textView.setText(R.string.question_number4);
-                textView2.setText(R.string.phonetics_symbols4);
-            }
-            if (questionnumber_variable == 5) {
-                textView.setText(R.string.question_number5);
-                textView2.setText(R.string.phonetics_symbols5);
-            }
-            if (questionnumber_variable == 6
-            ) {
-                textView.setText(R.string.question_number6);
-                textView2.setText(R.string.phonetics_symbols6);
-            }
-            if (questionnumber_variable == 7) {
-                textView.setText(R.string.question_number7);
-                textView2.setText(R.string.phonetics_symbols7);
-            }
-            if (questionnumber_variable == 8) {
-                textView.setText(R.string.question_number8);
-                textView2.setText(R.string.phonetics_symbols8);
-            }
-            if (questionnumber_variable == 9) {
-                textView.setText(R.string.question_number9);
-                textView2.setText(R.string.phonetics_symbols9);
-            }
-            if (questionnumber_variable == 10) {
-                textView.setText(R.string.question_number10);
-                textView2.setText(R.string.phonetics_symbols10);
-            }
-            if (questionnumber_variable == 11) {
-                textView.setText(R.string.question_number11);
-                textView2.setText(R.string.phonetics_symbols11);
-            }
-            if (questionnumber_variable == 12) {
-                textView.setText(R.string.question_number12);
-                textView2.setText(R.string.phonetics_symbols12);
-            }
-            if (questionnumber_variable == 13) {
-                textView.setText(R.string.question_number13);
-                textView2.setText(R.string.phonetics_symbols13);
-            }
-            if (questionnumber_variable == 14) {
-                textView.setText(R.string.question_number14);
-                textView2.setText(R.string.phonetics_symbols14);
-            }
-            if (questionnumber_variable == 15) {
-                textView.setText(R.string.question_number15);
-                textView2.setText(R.string.phonetics_symbols15);
-            }
-            if (questionnumber_variable == 16) {
-                textView.setText(R.string.question_number16);
-                textView2.setText(R.string.phonetics_symbols16);
-            }
-            if (questionnumber_variable == 17) {
-                textView.setText(R.string.question_number17);
-                textView2.setText(R.string.phonetics_symbols17);
-            }
-            if (questionnumber_variable == 18) {
-                textView.setText(R.string.question_number18);
-                textView2.setText(R.string.phonetics_symbols18);
-            }
-            if (questionnumber_variable == 19) {
-                textView.setText(R.string.question_number19);
-                textView2.setText(R.string.phonetics_symbols19);
-            }
-            if (questionnumber_variable == 20) {
-                textView.setText(R.string.question_number20);
-                textView2.setText(R.string.phonetics_symbols20);
-            }
+         //   if (questionnumber_variable == 1) {
+         //       textView.setText(R.string.question_number1);
+         //       textView2.setText(R.string.phonetics_symbols1);
+         //   }
+         //   if (questionnumber_variable == 2) {
+         //       textView.setText(R.string.question_number2);
+        //        textView2.setText(R.string.phonetics_symbols2);
+        //    }
+          //  if (questionnumber_variable == 3) {
+          //      textView.setText(R.string.question_number3);
+           //     textView2.setText(R.string.phonetics_symbols3);
+         //   }
+          //  if (questionnumber_variable == 4) {
+               // textView.setText(R.string.question_number4);
+             //   textView2.setText(R.string.phonetics_symbols4);
+           // }
+           // if (questionnumber_variable == 5) {
+           //     textView.setText(R.string.question_number5);
+         //       textView2.setText(R.string.phonetics_symbols5);
+       //     }
+       //     if (questionnumber_variable == 6
+       //     ) {
+        //        textView.setText(R.string.question_number6);
+        //        textView2.setText(R.string.phonetics_symbols6);
+       //     }
+       //     if (questionnumber_variable == 7) {
+       //         textView.setText(R.string.question_number7);
+       //         textView2.setText(R.string.phonetics_symbols7);
+       //     }
+       //     if (questionnumber_variable == 8) {
+       //         textView.setText(R.string.question_number8);
+       //         textView2.setText(R.string.phonetics_symbols8);
+       //     }
+       //     if (questionnumber_variable == 9) {
+       //         textView.setText(R.string.question_number9);
+       //         textView2.setText(R.string.phonetics_symbols9);
+       //     }
+       //     if (questionnumber_variable == 10) {
+       //         textView.setText(R.string.question_number10);
+        //        textView2.setText(R.string.phonetics_symbols10);
+       //     }
+        //    if (questionnumber_variable == 11) {
+        //        textView.setText(R.string.question_number11);
+       //         textView2.setText(R.string.phonetics_symbols11);
+       //     }
+       //     if (questionnumber_variable == 12) {
+       //         textView.setText(R.string.question_number12);
+       //         textView2.setText(R.string.phonetics_symbols12);
+       //     }
+       //     if (questionnumber_variable == 13) {
+       //         textView.setText(R.string.question_number13);
+       //         textView2.setText(R.string.phonetics_symbols13);
+       //     }
+       //     if (questionnumber_variable == 14) {
+       //         textView.setText(R.string.question_number14);
+       //         textView2.setText(R.string.phonetics_symbols14);
+       //     }
+        //    if (questionnumber_variable == 15) {
+        //        textView.setText(R.string.question_number15);
+       //         textView2.setText(R.string.phonetics_symbols15);
+       //     }
+        //    if (questionnumber_variable == 16) {
+       //         textView.setText(R.string.question_number16);
+       //         textView2.setText(R.string.phonetics_symbols16);
+       //     }
+       //     if (questionnumber_variable == 17) {
+       //         textView.setText(R.string.question_number17);
+       //         textView2.setText(R.string.phonetics_symbols17);
+        //    }
+        //    if (questionnumber_variable == 18) {
+        //        textView.setText(R.string.question_number18);
+        //        textView2.setText(R.string.phonetics_symbols18);
+        //    }
+         //   if (questionnumber_variable == 19) {
+         //       textView.setText(R.string.question_number19);
+         //       textView2.setText(R.string.phonetics_symbols19);
+        //    }
+        //    if (questionnumber_variable == 20) {
+      //          textView.setText(R.string.question_number20);
+    //            textView2.setText(R.string.phonetics_symbols20);
+  //          }
 
         Button speakingbutton = (Button) findViewById(R.id.speakingbutton);
         speakingbutton.setOnClickListener(new View.OnClickListener() {
@@ -203,6 +208,31 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         Button ttsButton = findViewById(R.id.readbutton);
         ttsButton.setOnClickListener(this);
 
+    }
+    public String readFile(String file){
+        String text = "";
+        //String text2 = null;
+        try(FileInputStream fileInputStream = openFileInput(file);
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(fileInputStream, StandardCharsets.UTF_8)))
+        {
+            String lineBuffer;
+            while((lineBuffer = reader.readLine()) != null){
+                text += lineBuffer;
+                text += "\n";
+                //String[] search = text.split(",", 0);
+                //if( search[0].equals(id) || search[1].equals(str) ){
+                //    text2 = lineBuffer;
+                //    break;
+                //}
+                //else{
+                //    text2 = "ありませんでした";
+                //}
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return text;
     }
     public void onInit(int status) {
         // TTS初期化

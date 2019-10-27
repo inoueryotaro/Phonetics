@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 public class CategoryActivity extends AppCompatActivity {
-
+    public static final String EXTRA_MESSAGE
+            = "com.example.phoneticstest.CategoryActivity.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +45,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",1);
+                String str = "category1.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         });
@@ -56,7 +58,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",2);
+                String str = "category2.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         });
@@ -68,7 +71,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",3);
+                String str = "category3.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_4Button.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +83,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",4);
+                String str = "category4.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_5Button.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +95,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",5);
+                String str = "category5.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_6Button.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +107,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",6);
+                String str = "category6.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_7Button.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +119,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",7);
+                String str = "category7.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_8Button.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +131,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",8);
+                String str = "category8.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_9Button.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +143,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",9);
+                String str = "category9.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_10Button.setOnClickListener(new View.OnClickListener() {
@@ -145,7 +155,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",10);
+                String str = "category10.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_11Button.setOnClickListener(new View.OnClickListener() {
@@ -156,7 +167,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",11);
+                String str = "category11.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_12Button.setOnClickListener(new View.OnClickListener() {
@@ -167,7 +179,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",12);
+                String str = "category12.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_13Button.setOnClickListener(new View.OnClickListener() {
@@ -178,7 +191,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",13);
+                String str = "category13.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_14Button.setOnClickListener(new View.OnClickListener() {
@@ -189,7 +203,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",14);
+                String str = "category14.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_15Button.setOnClickListener(new View.OnClickListener() {
@@ -200,7 +215,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",15);
+                String str = "category15.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_16Button.setOnClickListener(new View.OnClickListener() {
@@ -211,7 +227,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",16);
+                String str = "category16.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_17Button.setOnClickListener(new View.OnClickListener() {
@@ -222,7 +239,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",17);
+                String str = "category17.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_18Button.setOnClickListener(new View.OnClickListener() {
@@ -233,7 +251,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",18);
+                String str = "category18.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_19Button.setOnClickListener(new View.OnClickListener() {
@@ -244,7 +263,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",19);
+                String str = "category19.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_20Button.setOnClickListener(new View.OnClickListener() {
@@ -255,7 +275,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",20);
+                String str = "category20.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_21Button.setOnClickListener(new View.OnClickListener() {
@@ -266,7 +287,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",21);
+                String str = "category21.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_22Button.setOnClickListener(new View.OnClickListener() {
@@ -277,7 +299,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",22);
+                String str = "category22.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         }); Category_23Button.setOnClickListener(new View.OnClickListener() {
@@ -288,7 +311,8 @@ public class CategoryActivity extends AppCompatActivity {
 
             private void function() {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
-                intent1.putExtra("category_number",23);
+                String str = "category23.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
                 startActivity(intent1);
             }
         });
