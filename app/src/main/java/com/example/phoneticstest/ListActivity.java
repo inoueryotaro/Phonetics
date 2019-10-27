@@ -3,6 +3,8 @@ package com.example.phoneticstest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -19,7 +21,18 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         word_text = findViewById(R.id.textView15);
+        Button BackButton = findViewById(R.id.back);
+        BackButton.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View v) {
+                function();
+            }
+
+            private void function() {
+                Intent intent1 = new Intent(getApplication(), EditActivity.class);
+                startActivity(intent1);
+            }
+        });
         Intent intent= getIntent();
         String filename = intent.getStringExtra(EditActivity.EXTRA_MESSAGE);
         String text= readFile(filename);

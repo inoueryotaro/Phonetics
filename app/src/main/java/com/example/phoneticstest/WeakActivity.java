@@ -3,6 +3,8 @@ package com.example.phoneticstest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.FileInputStream;
@@ -16,6 +18,30 @@ public class WeakActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weak);
         resultingtext = findViewById(R.id.textView14);
+        Button ShosaiButton = findViewById(R.id.button8);
+        Button BackCategory = findViewById(R.id.button9);
+        ShosaiButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                function();
+            }
+
+            private void function() {
+             //   Intent intent3 = new Intent(getApplication(), CategoryActivity.class);
+             //   startActivity(intent3);
+            }
+        });
+        BackCategory.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                function();
+            }
+
+            private void function() {
+                Intent intent4 = new Intent(getApplication(), CategoryActivity.class);
+                startActivity(intent4);
+            }
+        });
         Intent intent = getIntent();
         zenhan_count = intent.getIntExtra("miss_zenhan", 0);
         Intent intent2 = getIntent();
