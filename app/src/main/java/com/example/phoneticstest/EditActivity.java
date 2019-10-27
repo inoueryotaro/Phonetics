@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -79,11 +80,8 @@ public class EditActivity extends AppCompatActivity {
                 String  id = editText.getText().toString();
                 String  mondai_tango = editText2.getText().toString();
                 saveFile(textFile, id,mondai_tango);
-            //    if ( mondai_tango.length() > 0 && textFile.length() > 0 && id.length() > 0) {
-            //        textView2.setText("成功");
-            //    } else  {
-            //        textView2.setText("失敗");
-           //     }
+                Toast.makeText(getApplicationContext(), "ファイルの新規作成&追記しました",
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -96,11 +94,6 @@ public class EditActivity extends AppCompatActivity {
                 String  mondai_tango = editText2.getText().toString();
                 String text = "";
                  createFile(textFile, id, mondai_tango);
-           //     if ( mondai_tango.length() > 0 && textFile.length() > 0 && id.length() > 0) {
-           //         textView2.setText("成功");
-           //     } else  {
-           //         textView2.setText("失敗");
-           //     }
 
             }
 
@@ -127,6 +120,8 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String textFile = textView.getText().toString();
                 deleteFile(textFile);
+                Toast.makeText(getApplicationContext(), "ファイルを削除しました",
+                        Toast.LENGTH_SHORT).show();
             }
 
 

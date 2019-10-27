@@ -227,9 +227,6 @@ public class WeakActivity extends AppCompatActivity {
                         intent4.putExtra("keyword23",2);
                     }
                 }
-
-
-
                 startActivity(intent4);
             }
         });
@@ -252,6 +249,61 @@ public class WeakActivity extends AppCompatActivity {
                 } if( category_name.equals("category5.csv")) {
                     resultingtext.setText("[e]です.");
                 }
+                if( category_name.equals("category6.csv")) {
+                    resultingtext.setText("[ɔ]です.");
+                }
+                if( category_name.equals("category7.csv")) {
+                    resultingtext.setText("[s]です.");
+                }
+                if( category_name.equals("category8.csv")) {
+                    resultingtext.setText("[ʃ]です.");
+                }
+                if( category_name.equals("category9.csv")) {
+                    resultingtext.setText("[θ]です.");
+                }
+                if( category_name.equals("category10.csv")) {
+                    resultingtext.setText("[f]です.");
+                }
+                if( category_name.equals("category11.csv")) {
+                    resultingtext.setText("[l]です.");
+                }
+                if( category_name.equals("category12.csv")) {
+                    resultingtext.setText("[t]です.");
+                }
+                if( category_name.equals("category13.csv")) {
+                    resultingtext.setText("[p]です.");
+                }
+                if( category_name.equals("category14.csv")) {
+                    resultingtext.setText("[k]です.");
+                }
+                if( category_name.equals("category15.csv")) {
+                    resultingtext.setText("[tʃ]です.");
+                }
+                if( category_name.equals("category16.csv")) {
+                    resultingtext.setText("[m]です.");
+                }
+                if( category_name.equals("category17.csv")) {
+                    resultingtext.setText("[f]です.");
+                }
+                if( category_name.equals("category18.csv")) {
+                    resultingtext.setText("[w]です.");
+                }
+                if( category_name.equals("category19.csv")) {
+                    resultingtext.setText("[ŋ]です.");
+                }
+                if( category_name.equals("category20.csv")) {
+                    resultingtext.setText("[ɪ]です.");
+                }
+                if( category_name.equals("category21.csv")) {
+                    resultingtext.setText("[aɪ]です.");
+                }
+                if( category_name.equals("category22.csv")) {
+                    resultingtext.setText("[aʊ]です.");
+                }
+                if( category_name.equals("category23.csv")) {
+                    resultingtext.setText("[ɜr]です.");
+                }
+
             }
             else if( kohan_count >= 4 && zenhan_count < 4 ){
                 if( category_name.equals("category1.csv")) {
@@ -268,6 +320,59 @@ public class WeakActivity extends AppCompatActivity {
                 }
                 if( category_name.equals("category5.csv")) {
                     resultingtext.setText("[ɪ]です.");
+                }
+                if( category_name.equals("category6.csv")) {
+                    resultingtext.setText("[oʊ]です.");
+                }
+                if( category_name.equals("category7.csv")) {
+                    resultingtext.setText("[z]です.");
+                }
+                if( category_name.equals("category8.csv")) {
+                    resultingtext.setText("[ʒ]です.");
+                }
+                if( category_name.equals("category9.csv")) {
+                    resultingtext.setText("[ð]です.");
+                }
+                if( category_name.equals("category10.csv")) {
+                    resultingtext.setText("[v]です.");
+                }
+                if( category_name.equals("category11.csv")) {
+                    resultingtext.setText("[r]です.");
+                }
+                if( category_name.equals("category12.csv")) {
+                    resultingtext.setText("[d]です.");
+                }
+                if( category_name.equals("category13.csv")) {
+                    resultingtext.setText("[b]です.");
+                }
+                if( category_name.equals("category14.csv")) {
+                    resultingtext.setText("[g]です.");
+                }
+                if( category_name.equals("category15.csv")) {
+                    resultingtext.setText("[dʒ]です.");
+                }
+                if( category_name.equals("category16.csv")) {
+                    resultingtext.setText("[n]です.");
+                }
+                if( category_name.equals("category17.csv")) {
+                    resultingtext.setText("[h]です.");
+                }
+                if( category_name.equals("category18.csv")) {
+                    resultingtext.setText("[v]です.");
+                }
+                if( category_name.equals("category19.csv")) {
+                    resultingtext.setText("[n]です.");
+                }
+                if( category_name.equals("category20.csv")) {
+                    resultingtext.setText("[j]です.");
+                }
+                if( category_name.equals("category21.csv")) {
+                    resultingtext.setText("[eɪ]です.");
+                }
+                if( category_name.equals("category22.csv")) {
+                    resultingtext.setText("[oʊ]です.");
+                } if( category_name.equals("category23.csv")) {
+                    resultingtext.setText("[r]です.");
                 }
 
             }
@@ -287,6 +392,61 @@ public class WeakActivity extends AppCompatActivity {
                 if( category_name.equals("category5.csv")) {
                     resultingtext.setText("[e][ɪ]の両方です.");
                 }
+                if( category_name.equals("category6.csv")) {
+                    resultingtext.setText("[ɔ][oʊ]の両方です.");
+                }
+                if( category_name.equals("category7.csv")) {
+                    resultingtext.setText("[s][z]の両方です.");
+                }
+                if( category_name.equals("category8.csv")) {
+                    resultingtext.setText("[ʃ][ʒ]の両方です.");
+                }
+                if( category_name.equals("category9.csv")) {
+                    resultingtext.setText("[θ][ð]の両方です.");
+                }
+                if( category_name.equals("category10.csv")) {
+                    resultingtext.setText("[f][v]の両方です.");
+                }
+                if( category_name.equals("category11.csv")) {
+                    resultingtext.setText("[l][r]の両方です.");
+                }
+                if( category_name.equals("category12.csv")) {
+                    resultingtext.setText("[t][d]の両方です.");
+                }
+                if( category_name.equals("category13.csv")) {
+                    resultingtext.setText("[p][b]の両方です.");
+                }
+                if( category_name.equals("category14.csv")) {
+                    resultingtext.setText("[k][g]の両方です.");
+                }
+                if( category_name.equals("category15.csv")) {
+                    resultingtext.setText("[tʃ][dʒ]の両方です.");
+                }
+                if( category_name.equals("category16.csv")) {
+                    resultingtext.setText("[m][n]の両方です.");
+                } if( category_name.equals("category17.csv")) {
+                    resultingtext.setText("[f][h]の両方です.");
+                }
+                if( category_name.equals("category18.csv")) {
+                    resultingtext.setText("[w][v]の両方です.");
+                }
+                if( category_name.equals("category19.csv")) {
+                    resultingtext.setText("[ŋ][n]の両方です.");
+                }
+                if( category_name.equals("category20.csv")) {
+                    resultingtext.setText("[ɪ][j]の両方です.");
+                }
+                if( category_name.equals("category21.csv")) {
+                    resultingtext.setText("[aɪ][eɪ]の両方です.");
+                }
+                if( category_name.equals("category22.csv")) {
+                    resultingtext.setText("[aʊ][oʊ]の両方です.");
+                }
+                if( category_name.equals("category23.csv")) {
+                    resultingtext.setText("[ɜr][r]の両方です.");
+                }
+
+
             }
 
         }

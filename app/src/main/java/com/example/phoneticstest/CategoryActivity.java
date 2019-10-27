@@ -8,60 +8,61 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class CategoryActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE
-            = "com.example.phoneticstest.CategoryActivity.MESSAGE";
+            = "com.example.phoneticstest.CategoryActivity.MESSAGE";//カテゴリー名を渡すex)"category1.csv"
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-      //  ImageView category_iv = (ImageView)this.findViewById(R.id.category_1_checkView);
-      //  ImageView category_iv2 = (ImageView)this.findViewById(R.id.category_1_checkView2);
-      //  ImageView category2_iv = (ImageView)this.findViewById(R.id.category_2_checkView);
-      //  ImageView category2_iv2 = (ImageView)this.findViewById(R.id.category_2_checkView2);
-      //  ImageView category3_iv = (ImageView)this.findViewById(R.id.category_3_checkView);
-      //  ImageView category3_iv2 = (ImageView)this.findViewById(R.id.category_3_checkView2);
-      //  ImageView category4_iv = (ImageView)this.findViewById(R.id.category_4_checkView);
-      //  ImageView category4_iv2 = (ImageView)this.findViewById(R.id.category_4_checkView2);
-      //  ImageView category5_iv = (ImageView)this.findViewById(R.id.category_5_checkView);
-      //  ImageView category5_iv2 = (ImageView)this.findViewById(R.id.category_5_checkView2);
-      //  ImageView category6_iv = (ImageView)this.findViewById(R.id.category_6_checkView);
-      //  ImageView category6_iv2 = (ImageView)this.findViewById(R.id.category_6_checkView2);
-      //  ImageView category7_iv = (ImageView)this.findViewById(R.id.category_7_checkView);
-      //  ImageView category7_iv2 = (ImageView)this.findViewById(R.id.category_7_checkView2);
-      //  ImageView category8_iv = (ImageView)this.findViewById(R.id.category_8_checkView);
-      //  ImageView category8_iv2 = (ImageView)this.findViewById(R.id.category_8_checkView2);
-      //  ImageView category9_iv = (ImageView)this.findViewById(R.id.category_9_checkView);
-      //  ImageView category9_iv2 = (ImageView)this.findViewById(R.id.category_9_checkView2);
-      //  ImageView category10_iv = (ImageView)this.findViewById(R.id.category_10_checkView);
-      //  ImageView category10_iv2 = (ImageView)this.findViewById(R.id.category_10_checkView2);
-      //  ImageView category11_iv = (ImageView)this.findViewById(R.id.category_11_checkView);
-       // ImageView category11_iv2 = (ImageView)this.findViewById(R.id.category_11_checkView2);
-       // ImageView category12_iv = (ImageView)this.findViewById(R.id.category_12_checkView);
-      //  ImageView category12_iv2 = (ImageView)this.findViewById(R.id.category_12_checkView2);
-      //  ImageView category13_iv = (ImageView)this.findViewById(R.id.category_13_checkView);
-      //  ImageView category13_iv2 = (ImageView)this.findViewById(R.id.category_13_checkView2);
-       // ImageView category14_iv = (ImageView)this.findViewById(R.id.category_14_checkView);
-       // ImageView category14_iv2 = (ImageView)this.findViewById(R.id.category_14_checkView2);
-       // ImageView category15_iv = (ImageView)this.findViewById(R.id.category_15_checkView);
-       // ImageView category15_iv2 = (ImageView)this.findViewById(R.id.category_15_checkView2);
-       // ImageView category16_iv = (ImageView)this.findViewById(R.id.category_16_checkView);
-       // ImageView category16_iv2 = (ImageView)this.findViewById(R.id.category_16_checkView2);
-        //ImageView category17_iv = (ImageView)this.findViewById(R.id.category_17_checkView);
-       // ImageView category17_iv2 = (ImageView)this.findViewById(R.id.category_17_checkView2);
-       // ImageView category18_iv = (ImageView)this.findViewById(R.id.category_18_checkView);
-       // ImageView category18_iv2 = (ImageView)this.findViewById(R.id.category_18_checkView2);
-        //ImageView category19_iv = (ImageView)this.findViewById(R.id.category_19_checkView);
-       // ImageView category19_iv2 = (ImageView)this.findViewById(R.id.category_19_checkView2);
-       // ImageView category20_iv = (ImageView)this.findViewById(R.id.category_20_checkView);
-       // ImageView category20_iv2 = (ImageView)this.findViewById(R.id.category_20_checkView2);
-       // ImageView category21_iv = (ImageView)this.findViewById(R.id.category_21_checkView);
-       // ImageView category21_iv2 = (ImageView)this.findViewById(R.id.category_21_checkView2);
-       // ImageView category22_iv = (ImageView)this.findViewById(R.id.category_22_checkView);
-       // ImageView category22_iv2 = (ImageView)this.findViewById(R.id.category_22_checkView2);
-       // ImageView category23_iv = (ImageView)this.findViewById(R.id.category_23_checkView);
-       // ImageView category23_iv2 = (ImageView)this.findViewById(R.id.category_23_checkView2);
+        ImageView category_iv = (ImageView)this.findViewById(R.id.category_1_checkView);
+        ImageView category_iv2 = (ImageView)this.findViewById(R.id.category_1_checkView2);
+        ImageView category2_iv = (ImageView)this.findViewById(R.id.category_2_checkView);
+        ImageView category2_iv2 = (ImageView)this.findViewById(R.id.category_2_checkView2);
+        ImageView category3_iv = (ImageView)this.findViewById(R.id.category_3_checkView);
+        ImageView category3_iv2 = (ImageView)this.findViewById(R.id.category_3_checkView2);
+        ImageView category4_iv = (ImageView)this.findViewById(R.id.category_4_checkView);
+        ImageView category4_iv2 = (ImageView)this.findViewById(R.id.category_4_checkView2);
+        ImageView category5_iv = (ImageView)this.findViewById(R.id.category_5_checkView);
+        ImageView category5_iv2 = (ImageView)this.findViewById(R.id.category_5_checkView2);
+        ImageView category6_iv = (ImageView)this.findViewById(R.id.category_6_checkView);
+        ImageView category6_iv2 = (ImageView)this.findViewById(R.id.category_6_checkView2);
+        ImageView category7_iv = (ImageView)this.findViewById(R.id.category_7_checkView);
+        ImageView category7_iv2 = (ImageView)this.findViewById(R.id.category_7_checkView2);
+        ImageView category8_iv = (ImageView)this.findViewById(R.id.category_8_checkView);
+        ImageView category8_iv2 = (ImageView)this.findViewById(R.id.category_8_checkView2);
+        ImageView category9_iv = (ImageView)this.findViewById(R.id.category_9_checkView);
+        ImageView category9_iv2 = (ImageView)this.findViewById(R.id.category_9_checkView2);
+        ImageView category10_iv = (ImageView)this.findViewById(R.id.category_10_checkView);
+        ImageView category10_iv2 = (ImageView)this.findViewById(R.id.category_10_checkView2);
+        ImageView category11_iv = (ImageView)this.findViewById(R.id.category_11_checkView);
+        ImageView category11_iv2 = (ImageView)this.findViewById(R.id.category_11_checkView2);
+        ImageView category12_iv = (ImageView)this.findViewById(R.id.category_12_checkView);
+        ImageView category12_iv2 = (ImageView)this.findViewById(R.id.category_12_checkView2);
+        ImageView category13_iv = (ImageView)this.findViewById(R.id.category_13_checkView);
+        ImageView category13_iv2 = (ImageView)this.findViewById(R.id.category_13_checkView2);
+        ImageView category14_iv = (ImageView)this.findViewById(R.id.category_14_checkView);
+        ImageView category14_iv2 = (ImageView)this.findViewById(R.id.category_14_checkView2);
+        ImageView category15_iv = (ImageView)this.findViewById(R.id.category_15_checkView);
+        ImageView category15_iv2 = (ImageView)this.findViewById(R.id.category_15_checkView2);
+        ImageView category16_iv = (ImageView)this.findViewById(R.id.category_16_checkView);
+        ImageView category16_iv2 = (ImageView)this.findViewById(R.id.category_16_checkView2);
+        ImageView category17_iv = (ImageView)this.findViewById(R.id.category_17_checkView);
+        ImageView category17_iv2 = (ImageView)this.findViewById(R.id.category_17_checkView2);
+        ImageView category18_iv = (ImageView)this.findViewById(R.id.category_18_checkView);
+        ImageView category18_iv2 = (ImageView)this.findViewById(R.id.category_18_checkView2);
+        ImageView category19_iv = (ImageView)this.findViewById(R.id.category_19_checkView);
+        ImageView category19_iv2 = (ImageView)this.findViewById(R.id.category_19_checkView2);
+        ImageView category20_iv = (ImageView)this.findViewById(R.id.category_20_checkView);
+        ImageView category20_iv2 = (ImageView)this.findViewById(R.id.category_20_checkView2);
+        ImageView category21_iv = (ImageView)this.findViewById(R.id.category_21_checkView);
+        ImageView category21_iv2 = (ImageView)this.findViewById(R.id.category_21_checkView2);
+        ImageView category22_iv = (ImageView)this.findViewById(R.id.category_22_checkView);
+        ImageView category22_iv2 = (ImageView)this.findViewById(R.id.category_22_checkView2);
+        ImageView category23_iv = (ImageView)this.findViewById(R.id.category_23_checkView);
+        ImageView category23_iv2 = (ImageView)this.findViewById(R.id.category_23_checkView2);
 
 
 
@@ -88,6 +89,89 @@ public class CategoryActivity extends AppCompatActivity {
         Button Category_21Button = findViewById(R.id.category_21);
         Button Category_22Button = findViewById(R.id.category_22);
         Button Category_23Button = findViewById(R.id.category_23);
+
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs2 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs3 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs4 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs5 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs6 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs7 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs8 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs9 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs10 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs11 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs12 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs13 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs14 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs15 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs16 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs17 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs18 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs19 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs20 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs21 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs22 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs23 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        Button initializationButton = findViewById(R.id.button11);
+        initializationButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                speech();
+            }
+
+            private void speech() {
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.clear().apply();
+                SharedPreferences.Editor editor2 = prefs2.edit();
+                editor2.clear().apply();
+                SharedPreferences.Editor editor3 = prefs3.edit();
+                editor3.clear().apply();
+                SharedPreferences.Editor editor4 = prefs4.edit();
+                editor4.clear().apply();
+                SharedPreferences.Editor editor5 = prefs5.edit();
+                editor5.clear().apply();
+                SharedPreferences.Editor editor6 = prefs6.edit();
+                editor6.clear().apply();
+                SharedPreferences.Editor editor7 = prefs7.edit();
+                editor7.clear().apply();
+                SharedPreferences.Editor editor8 = prefs8.edit();
+                editor8.clear().apply();
+                SharedPreferences.Editor editor9 = prefs9.edit();
+                editor9.clear().apply();
+                SharedPreferences.Editor editor10 = prefs10.edit();
+                editor10.clear().apply();
+                SharedPreferences.Editor editor11 = prefs11.edit();
+                editor11.clear().apply();
+                SharedPreferences.Editor editor12 = prefs12.edit();
+                editor12.clear().apply();
+                SharedPreferences.Editor editor13 = prefs13.edit();
+                editor13.clear().apply();
+                SharedPreferences.Editor editor14 = prefs14.edit();
+                editor14.clear().apply();
+                SharedPreferences.Editor editor15 = prefs15.edit();
+                editor15.clear().apply();
+                SharedPreferences.Editor editor16 = prefs16.edit();
+                editor16.clear().apply();
+                SharedPreferences.Editor editor17 = prefs17.edit();
+                editor17.clear().apply();
+                SharedPreferences.Editor editor18 = prefs18.edit();
+                editor18.clear().apply();
+                SharedPreferences.Editor editor19 = prefs19.edit();
+                editor19.clear().apply();
+                SharedPreferences.Editor editor20 = prefs20.edit();
+                editor20.clear().apply();
+                SharedPreferences.Editor editor21 = prefs21.edit();
+                editor21.clear().apply();
+                SharedPreferences.Editor editor22 = prefs22.edit();
+                editor22.clear().apply();
+                SharedPreferences.Editor editor23 = prefs23.edit();
+                editor23.clear().apply();
+                Toast.makeText(getApplicationContext(), "データ初期化しました",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
         Button backButton = findViewById(R.id.button10);
         backButton.setOnClickListener(new View.OnClickListener() {
 
@@ -379,31 +463,9 @@ public class CategoryActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs2 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs3 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs4 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs5 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs6 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs7 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs8 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs9 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs10 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs11 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs12 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs13 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs14 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs15 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs16 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs17 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs18 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs19 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs20 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs21 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs22 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences prefs23 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        Intent intent1 = getIntent();
+
+        Intent intent1 = getIntent();//WeakActivityからのメッセージex)苦手なしなら1もらう,苦手があれば2もらう
         int data = intent1.getIntExtra("keyword",0);
         if(data == 1){
             SharedPreferences.Editor editor = prefs.edit();
@@ -496,7 +558,7 @@ public class CategoryActivity extends AppCompatActivity {
         }
         if(data8 == 2){
             SharedPreferences.Editor editor = prefs8.edit();
-            editor.putInt("int", 2);
+            editor.putInt("int8", 2);
             editor.apply();
         }
         Intent intent9 = getIntent();
@@ -616,7 +678,7 @@ public class CategoryActivity extends AppCompatActivity {
         }
         if(data18 == 2){
             SharedPreferences.Editor editor18 = prefs18.edit();
-            editor18.putInt("int", 2);
+            editor18.putInt("int18", 2);
             editor18.apply();
         }
         Intent intent19 = getIntent();
@@ -640,7 +702,7 @@ public class CategoryActivity extends AppCompatActivity {
         }
         if(data20 == 2){
             SharedPreferences.Editor editor20 = prefs20.edit();
-            editor20.putInt("int", 2);
+            editor20.putInt("int20", 2);
             editor20.apply();
         }
         Intent intent21 = getIntent();
@@ -681,220 +743,349 @@ public class CategoryActivity extends AppCompatActivity {
         }
 
 
-
-
-
-
-
         int intNum = prefs.getInt("int",0);
         if( intNum == 1){
-  //          category_iv.setImageResource(R.drawable.check_picture);
+            category_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category_iv.setVisibility(View.GONE);
         }
         if( intNum == 2){
-  //          category_iv2.setImageResource(R.drawable.check_picture2);
+            category_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category_iv2.setVisibility(View.GONE);
         }
         int intNum2 = prefs2.getInt("int2",0);
         if( intNum2 == 1){
-  //          category2_iv.setImageResource(R.drawable.check_picture);
+            category2_iv.setImageResource(R.drawable.check_picture);
         }
-
+        else {
+            category2_iv.setVisibility(View.GONE);
+        }
         if( intNum2 == 2){
-  //          category2_iv2.setImageResource(R.drawable.check_picture2);
+            category2_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else{
+            category2_iv2.setVisibility(View.GONE);
         }
 
 
         int intNum3 = prefs3.getInt("int3",0);
         if( intNum3 == 1){
-    //        category3_iv.setImageResource(R.drawable.check_picture);
+            category3_iv.setImageResource(R.drawable.check_picture);
         }
-
+        else{
+            category3_iv.setVisibility(View.GONE);
+        }
         if( intNum3 == 2){
-     //       category3_iv2.setImageResource(R.drawable.check_picture2);
+           category3_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else{
+            category3_iv2.setVisibility(View.GONE);
         }
 
         int intNum4 = prefs4.getInt("int4",0);
         if( intNum4 == 1){
-      //      category4_iv.setImageResource(R.drawable.check_picture);
+            category4_iv.setImageResource(R.drawable.check_picture);
+        }
+        else{
+            category4_iv.setVisibility(View.GONE);
         }
 
         if( intNum4 == 2){
-        //    category4_iv2.setImageResource(R.drawable.check_picture2);
+            category4_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else{
+            category4_iv2.setVisibility(View.GONE);
         }
 
 
         int intNum5 = prefs5.getInt("int5",0);
         if( intNum5 == 1){
-          //  category5_iv.setImageResource(R.drawable.check_picture);
+            category5_iv.setImageResource(R.drawable.check_picture);
+        }
+        else{
+            category5_iv.setVisibility(View.GONE);
         }
 
         if( intNum5 == 2){
-            //category5_iv2.setImageResource(R.drawable.check_picture2);
+            category5_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else{
+            category5_iv2.setVisibility(View.GONE);
         }
 
         int intNum6 = prefs6.getInt("int6",0);
         if( intNum6 == 1){
-           // category6_iv.setImageResource(R.drawable.check_picture);
+            category6_iv.setImageResource(R.drawable.check_picture);
+        }
+        else{
+            category6_iv.setVisibility(View.GONE);
         }
 
         if( intNum6 == 2){
-           // category6_iv2.setImageResource(R.drawable.check_picture2);
+            category6_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else{
+            category6_iv2.setVisibility(View.GONE);
         }
 
         int intNum7 = prefs7.getInt("int7",0);
         if( intNum7 == 1){
-            //category7_iv.setImageResource(R.drawable.check_picture);
+            category7_iv.setImageResource(R.drawable.check_picture);
+        }
+        else{
+            category7_iv.setVisibility(View.GONE);
         }
 
         if( intNum7 == 2){
-            //category7_iv2.setImageResource(R.drawable.check_picture2);
+            category7_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category7_iv2.setVisibility(View.GONE);
         }
 
 
         int intNum8 = prefs8.getInt("int8",0);
         if( intNum8 == 1){
-            //category8_iv.setImageResource(R.drawable.check_picture);
+            category8_iv.setImageResource(R.drawable.check_picture);
+        }
+        else{
+            category8_iv.setVisibility(View.GONE);
         }
 
         if( intNum8 == 2){
-            //category8_iv2.setImageResource(R.drawable.check_picture2);
+            category8_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category8_iv2.setVisibility(View.GONE);
         }
 
         int intNum9 = prefs9.getInt("int9",0);
         if( intNum9 == 1){
-            //category9_iv.setImageResource(R.drawable.check_picture);
+            category9_iv.setImageResource(R.drawable.check_picture);
+        }
+        else{
+            category9_iv.setVisibility(View.GONE);
         }
 
         if( intNum9 == 2){
-            //category9_iv2.setImageResource(R.drawable.check_picture2);
+            category9_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category9_iv2.setVisibility(View.GONE);
         }
 
         int intNum10 = prefs10.getInt("int10",0);
         if( intNum10 == 1){
-            //category10_iv.setImageResource(R.drawable.check_picture);
+            category10_iv.setImageResource(R.drawable.check_picture);
+        }
+        else{
+            category10_iv.setVisibility(View.GONE);
         }
 
         if( intNum10 == 2){
-            //category10_iv2.setImageResource(R.drawable.check_picture2);
+            category10_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category10_iv2.setVisibility(View.GONE);
         }
 
         int intNum11 = prefs11.getInt("int11",0);
         if( intNum11 == 1){
-            //category11_iv.setImageResource(R.drawable.check_picture);
+            category11_iv.setImageResource(R.drawable.check_picture);
+        }
+        else{
+            category11_iv.setVisibility(View.GONE);
         }
 
         if( intNum11 == 2){
-            //category11_iv2.setImageResource(R.drawable.check_picture2);
+            category11_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category11_iv2.setVisibility(View.GONE);
         }
 
 
         int intNum12 = prefs12.getInt("int12",0);
         if( intNum12 == 1){
-            //category12_iv2.setImageResource(R.drawable.check_picture);
+            category12_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+         category12_iv.setVisibility(View.GONE);
         }
 
         if( intNum12 == 2){
-            //category12_iv.setImageResource(R.drawable.check_picture2);
+            category12_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category12_iv2.setVisibility(View.GONE);
         }
 
         int intNum13 = prefs13.getInt("int13",0);
         if( intNum13 == 1){
-            //category13_iv.setImageResource(R.drawable.check_picture);
+            category13_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category13_iv.setVisibility(View.GONE);
         }
 
         if( intNum13 == 2){
-            //category13_iv2.setImageResource(R.drawable.check_picture2);
+            category13_iv2.setImageResource(R.drawable.check_picture2);
         }
-
-
+        else {
+            category13_iv2.setVisibility(View.GONE);
+        }
         int intNum14 = prefs14.getInt("int14",0);
         if( intNum14 == 1){
-            //category14_iv.setImageResource(R.drawable.check_picture);
+            category14_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category14_iv.setVisibility(View.GONE);
         }
 
         if( intNum14 == 2){
-       //     category14_iv2.setImageResource(R.drawable.check_picture2);
+           category14_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category14_iv2.setVisibility(View.GONE);
         }
 
         int intNum15 = prefs15.getInt("int15",0);
         if( intNum15 == 1){
-         //   category15_iv.setImageResource(R.drawable.check_picture);
+            category15_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category15_iv.setVisibility(View.GONE);
         }
 
         if( intNum15 == 2){
-           // category15_iv2.setImageResource(R.drawable.check_picture2);
+           category15_iv2.setImageResource(R.drawable.check_picture2);
         }
-
+        else {
+            category15_iv2.setVisibility(View.GONE);
+        }
 
         int intNum16 = prefs16.getInt("int16",0);
         if( intNum16 == 1){
-            //category16_iv.setImageResource(R.drawable.check_picture);
+            category16_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category16_iv.setVisibility(View.GONE);
         }
 
         if( intNum16 == 2){
-            //category16_iv2.setImageResource(R.drawable.check_picture2);
+            category16_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category16_iv2.setVisibility(View.GONE);
         }
 
         int intNum17 = prefs17.getInt("int17",0);
         if( intNum17 == 1){
-            //category17_iv.setImageResource(R.drawable.check_picture);
+            category17_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category17_iv.setVisibility(View.GONE);
         }
 
-        if( intNum == 2){
-            //category17_iv2.setImageResource(R.drawable.check_picture2);
+        if( intNum17 == 2){
+            category17_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category17_iv2.setVisibility(View.GONE);
         }
 
         int intNum18 = prefs18.getInt("int18",0);
         if( intNum18 == 1){
-            //category18_iv.setImageResource(R.drawable.check_picture);
+            category18_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category18_iv.setVisibility(View.GONE);
         }
 
         if( intNum18 == 2){
-            //category18_iv2.setImageResource(R.drawable.check_picture2);
+            category18_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category18_iv2.setVisibility(View.GONE);
         }
 
         int intNum19 = prefs19.getInt("int19",0);
         if( intNum19 == 1){
-            //category19_iv.setImageResource(R.drawable.check_picture);
+            category19_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category19_iv.setVisibility(View.GONE);
         }
 
         if( intNum19 == 2){
-            //category19_iv2.setImageResource(R.drawable.check_picture2);
+            category19_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category19_iv2.setVisibility(View.GONE);
         }
 
         int intNum20 = prefs20.getInt("int20",0);
         if( intNum20 == 1){
-            //category20_iv.setImageResource(R.drawable.check_picture);
+            category20_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category20_iv.setVisibility(View.GONE);
         }
 
         if( intNum20 == 2){
-            //category20_iv2.setImageResource(R.drawable.check_picture2);
+            category20_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category20_iv2.setVisibility(View.GONE);
         }
 
         int intNum21 = prefs21.getInt("int21",0);
         if( intNum21 == 1){
-            //category21_iv.setImageResource(R.drawable.check_picture);
+            category21_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category21_iv.setVisibility(View.GONE);
         }
 
         if( intNum21 == 2){
-            //category21_iv2.setImageResource(R.drawable.check_picture2);
+            category21_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category21_iv2.setVisibility(View.GONE);
         }
 
         int intNum22 = prefs22.getInt("int22",0);
         if( intNum22 == 1){
-            //category22_iv.setImageResource(R.drawable.check_picture);
+            category22_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category22_iv.setVisibility(View.GONE);
         }
 
         if( intNum22 == 2){
-            //category22_iv2.setImageResource(R.drawable.check_picture2);
+            category22_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category22_iv2.setVisibility(View.GONE);
         }
 
         int intNum23 = prefs23.getInt("int23",0);
         if( intNum23 == 1){
-            //category23_iv.setImageResource(R.drawable.check_picture);
+            category23_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category23_iv.setVisibility(View.GONE);
         }
 
         if( intNum23 == 2){
-            //category23_iv2.setImageResource(R.drawable.check_picture2);
+            category23_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category23_iv2.setVisibility(View.GONE);
         }
     }
+
 }
