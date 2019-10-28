@@ -1070,6 +1070,7 @@ public class CategoryActivity extends AppCompatActivity {
         }
         else {
             category22_iv2.setVisibility(View.GONE);
+
         }
 
         int intNum23 = prefs23.getInt("int23",0);

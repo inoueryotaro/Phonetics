@@ -80,7 +80,7 @@ public class EditActivity extends AppCompatActivity {
                 String  id = editText.getText().toString();
                 String  mondai_tango = editText2.getText().toString();
                 saveFile(textFile, id,mondai_tango);
-                Toast.makeText(getApplicationContext(), "ファイルの新規作成&追記しました",
+                Toast.makeText(getApplicationContext(), "ファイルの新規作成or追記しました",
                         Toast.LENGTH_SHORT).show();
             }
         });
