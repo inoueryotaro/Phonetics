@@ -33,8 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:text="新規作成または編集"
-        android:textSize="20dp"
+        android:text="編集"
+        android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/save"
         app:layout_constraintEnd_toEndOf="@+id/save"
         app:layout_constraintStart_toStartOf="@+id/save" />

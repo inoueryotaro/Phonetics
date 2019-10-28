@@ -183,18 +183,25 @@ public class EditActivity extends AppCompatActivity {
         try	{
             raf	=	new	RandomAccessFile(filePath,	"rw");
             String lineBuffer;
-            int lineBuffer_length=0;
+            int lineBuffer_length = 0;
             while((lineBuffer = raf.readLine()) != null){
-                lineBuffer_length= lineBuffer_length + lineBuffer.length();
                 String[] text = lineBuffer.split(",",0);
                 if( text[0].equals(id)){
-
+                    textView2.setText(String.valueOf(lineBuffer_length));
+                    if( lineBuffer_length != 0) {
+                    //    raf.seek(lineBuffer_length + 1);
+                    //    raf.write(csv.getBytes());
+                    //    raf.close();
+                    }
+                    else{
+                    //    raf.seek(0);
+                    //    raf.write(csv.getBytes());
+                    //    raf.close();
+                    }
+                    break;
                 }
-
+                lineBuffer_length= lineBuffer_length + lineBuffer.length();
             }
-            raf.seek(0);
-            raf.write(csv.getBytes());
-            raf.close();
         }	catch	(FileNotFoundException	e)	{
             e.printStackTrace();
         } catch (IOException e) {
