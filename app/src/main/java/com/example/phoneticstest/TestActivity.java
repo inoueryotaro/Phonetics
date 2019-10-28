@@ -179,8 +179,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                 tts.stop();
                 return;
             }
-            setSpeechRate(0.7f);
-            setSpeechPitch(0.7f);
+            setSpeechRate(0.5f);
+            setSpeechPitch(1.0f);
 
             if (Build.VERSION.SDK_INT >= 21) {
                 // SDK 21 以上
