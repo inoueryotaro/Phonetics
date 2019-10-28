@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,10 +33,10 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
     private SpeechRecognizer sr;
     private static final int REQUEST_CODE = 1000;
-    private TextView resulttext;
-    private TextView textView2;
+    private TextView resulttext;//音声認識の受け取り皿
+    private TextView textView2;//出題単語の発音記号text
     private TextToSpeech tts;
-    private TextView textView;
+    private TextView textView;//出題単語のtext
     private static final String TAG = "TestTTS";
 
     public static final String EXTRA_MESSAGE
@@ -86,10 +87,14 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             toast.setGravity(Gravity.TOP, 0, 150);
             toast.show();
             tts = new TextToSpeech(this, this);
-
-            String[] question = text.split(",",0);
-            textView.setText(question[1]);
-            textView2.setText(question[2]);
+            if (!(text.equals("nofile"))) {
+                String[] question = text.split(",", 0);
+                textView.setText(question[1]);
+                textView2.setText(question[2]);
+            }
+            else {
+                textView.setText("問題が作成されていません.");
+            }
 
             //   Random rand = new Random();
             //    questionnumber_variable = rand.nextInt(20) + 1;
@@ -118,23 +123,29 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             id_number = (int)(Math.random()*10) + 11;
         }
         //resulttext.setText(String.valueOf(id_number));
-        try(FileInputStream fileInputStream = openFileInput(file);
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(fileInputStream, StandardCharsets.UTF_8)))
-        {
-            String lineBuffer;
-            while((lineBuffer = reader.readLine()) != null){
-                String[] search = lineBuffer.split(",",0);
-                if (search[0].equals(String.valueOf(id_number))){
-                    text = lineBuffer;
-                    break;
+        boolean isExists = false;
+        File filecheck = this.getFileStreamPath(file);
+        isExists = filecheck.exists();
+        if (isExists) {
+            try (FileInputStream fileInputStream = openFileInput(file);
+                 BufferedReader reader = new BufferedReader(
+                         new InputStreamReader(fileInputStream, StandardCharsets.UTF_8))) {
+                String lineBuffer;
+                while ((lineBuffer = reader.readLine()) != null) {
+                    String[] search = lineBuffer.split(",", 0);
+                    if (search[0].equals(String.valueOf(id_number))) {
+                        text = lineBuffer;
+                        break;
+                    } else {
+                        text = "ありません";
+                    }
                 }
-                else{
-                   text = "ありません";
-                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        }catch (IOException e){
-            e.printStackTrace();
+        }
+        else {
+            text = "nofile";
         }
         return text;
     }
