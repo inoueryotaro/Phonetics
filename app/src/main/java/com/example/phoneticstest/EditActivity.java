@@ -97,6 +97,7 @@ public class EditActivity extends AppCompatActivity {
                 String text = "";
                  createFile(textFile, id, mondai_tango);
 
+
             }
 
 
@@ -168,10 +169,12 @@ public class EditActivity extends AppCompatActivity {
         try {
             File mediafile = new File(filePath);
             if (mediafile.exists()) {
-                textView2.setText("存在");
+                Toast.makeText(getApplicationContext(), "指定箇所を編集しました",
+                        Toast.LENGTH_SHORT).show();
             }
             else{
-                textView2.setText("なし");
+                Toast.makeText(getApplicationContext(), "ファイルがなかったので，新規作成しました",
+                        Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -184,7 +187,7 @@ public class EditActivity extends AppCompatActivity {
                 //text += lineBuffer;
 
             }
-            raf.seek(0);
+            raf.seek(9);
             raf.write(csv.getBytes());
             raf.close();
         }	catch	(FileNotFoundException	e)	{
