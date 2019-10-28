@@ -2,6 +2,7 @@ package com.example.phoneticstest;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -161,18 +163,38 @@ public class EditActivity extends AppCompatActivity {
         id_number = id;
         mondai_tango = str;
         phonetics_symobols = calculateBmi(mondai_tango);
-        csv += id_number +"," + mondai_tango+"," + phonetics_symobols + "\n";
-        try{
-            RandomAccessFile randomfile = new RandomAccessFile(file,"rw");
-            randomfile.seek(2);
-            randomfile.write(csv.getBytes());
-        } catch (FileNotFoundException e) {
+        csv += id_number + "," + mondai_tango + "," + phonetics_symobols + "\n";
+        String filePath = "/data/data/com.example.phoneticstest/files/"+file;
+        try {
+            File mediafile = new File(filePath);
+            if (mediafile.exists()) {
+                textView2.setText("存在");
+            }
+            else{
+                textView2.setText("なし");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        RandomAccessFile raf;
+        try	{
+            raf	=	new	RandomAccessFile(filePath,	"rw");
+            String lineBuffer;
+            while((lineBuffer = raf.readLine()) != null){
+                //text += lineBuffer;
+
+            }
+            raf.seek(0);
+            raf.write(csv.getBytes());
+            raf.close();
+        }	catch	(FileNotFoundException	e)	{
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
+
+    }
     // ファイルを読み出し
     public String readFile(String file, String id,String str){
         String text = "";
