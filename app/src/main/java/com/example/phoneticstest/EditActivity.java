@@ -189,14 +189,14 @@ public class EditActivity extends AppCompatActivity {
                 if( text[0].equals(id)){
                     textView2.setText(String.valueOf(lineBuffer_length));
                     if( lineBuffer_length != 0) {
-                    //    raf.seek(lineBuffer_length + 1);
-                    //    raf.write(csv.getBytes());
-                    //    raf.close();
+                        raf.seek(lineBuffer_length + 1);
+                        raf.write(csv.getBytes());
+                        raf.close();
                     }
                     else{
-                    //    raf.seek(0);
-                    //    raf.write(csv.getBytes());
-                    //    raf.close();
+                        raf.seek(0);
+                        raf.write(csv.getBytes());
+                        raf.close();
                     }
                     break;
                 }
