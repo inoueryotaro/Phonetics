@@ -112,7 +112,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
     }
     public String readFile(String file, String count){
-        String text = "";
+        String text = null;
         int countnumber;
         countnumber = Integer.parseInt(count);
 
@@ -137,7 +137,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                         text = lineBuffer;
                         break;
                     } else {
-                        text = "ありません";
+                        text = "nofile";
                     }
                 }
             } catch (IOException e) {
