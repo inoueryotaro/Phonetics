@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class EditActivity extends AppCompatActivity {
 
@@ -45,7 +47,7 @@ public class EditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit);
         textView = findViewById(R.id.kakunin_view);
         textView2 = findViewById(R.id.kakunin_view2);
-        editText = findViewById(R.id.edit_text);//id
+        //editText = findViewById(R.id.edit_text);//id
         editText2 = findViewById(R.id.edit_text2);//単語
         Spinner spinner = findViewById(R.id.spinner);
         // ArrayAdapter
@@ -72,6 +74,32 @@ public class EditActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+        SeekBar seekBar = findViewById(R.id.seekBar);
+        seekBar.setProgress(10);
+        seekBar.setMax(21);
+        seekBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    //ツマミがドラッグされると呼ばれる
+                    @Override
+                    public void onProgressChanged(
+                            SeekBar seekBar, int progress, boolean fromUser) {
+                        // 68 % のようにフォーマト、
+                        // この場合、Locale.USが汎用的に推奨される
+                        String str = String.format(Locale.US, "%d",progress);
+                        textView2.setText(str);
+                    }
+
+                    //ツマミがタッチされた時に呼ばれる
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    //ツマミがリリースされた時に呼ばれる
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
+
+                });
 
         Button savebutton = findViewById(R.id.save);
         savebutton.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +107,7 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // エディットテキストのテキストを取得
                 String textFile = textView.getText().toString();
-                String  id = editText.getText().toString();
+                String  id = textView2.getText().toString();
                 String  mondai_tango = editText2.getText().toString();
                 saveFile(textFile, id,mondai_tango);
                 Toast.makeText(getApplicationContext(), "ファイルの新規作成or追記しました",
