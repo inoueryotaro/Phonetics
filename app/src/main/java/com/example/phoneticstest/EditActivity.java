@@ -77,6 +77,7 @@ public class EditActivity extends AppCompatActivity {
         SeekBar seekBar = findViewById(R.id.seekBar);
         seekBar.setProgress(10);
         seekBar.setMax(21);
+        textView2.setText("10");
         seekBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
                     //ツマミがドラッグされると呼ばれる
