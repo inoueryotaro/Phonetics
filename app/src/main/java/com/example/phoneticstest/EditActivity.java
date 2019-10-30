@@ -87,21 +87,21 @@ public class EditActivity extends AppCompatActivity {
             }
         });
 
-        Button buttoncreate = findViewById(R.id.create);
-        buttoncreate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String textFile = textView.getText().toString();
-                String  id = editText.getText().toString();
-                String  mondai_tango = editText2.getText().toString();
-                String text = "";
-                 createFile(textFile, id, mondai_tango);
+   //     Button buttoncreate = findViewById(R.id.create);
+   //     buttoncreate.setOnClickListener(new View.OnClickListener() {
+   //         @Override
+   //         public void onClick(View v) {
+   //             String textFile = textView.getText().toString();
+   //             String  id = editText.getText().toString();
+   //             String  mondai_tango = editText2.getText().toString();
+   //             String text = "";
+   //              createFile(textFile, id, mondai_tango);
 
 
-            }
+   //         }
 
 
-        });
+   //     });
         Button buttondisplay = findViewById(R.id.display);
         buttondisplay.setOnClickListener(new View.OnClickListener() {
 
