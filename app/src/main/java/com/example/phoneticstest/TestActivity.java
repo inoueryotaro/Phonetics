@@ -112,7 +112,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
     }
     public String readFile(String file, String count){
-        String text = null;
+        String text = "nofile";
         int countnumber;
         countnumber = Integer.parseInt(count);
 
@@ -135,10 +135,10 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     String[] search = lineBuffer.split(",", 0);
                     if (search[0].equals(String.valueOf(id_number))) {
                         text = lineBuffer;
-                        break;
-                    } else {
-                        text = "nofile";
-                    }
+                     //   break;
+                    } //else {
+                      //  text = "nofile";
+                   // }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
