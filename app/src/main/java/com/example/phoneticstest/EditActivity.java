@@ -80,6 +80,7 @@ public class EditActivity extends AppCompatActivity {
         textView2.setText("10");
         seekBar.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
+                    int oldValue;
                     //ツマミがドラッグされると呼ばれる
                     @Override
                     public void onProgressChanged(
@@ -88,6 +89,7 @@ public class EditActivity extends AppCompatActivity {
                         // この場合、Locale.USが汎用的に推奨される
                         String str = String.format(Locale.US, "%d",progress);
                         textView2.setText(str);
+                        oldValue = seekBar.getProgress();
                     }
 
                     //ツマミがタッチされた時に呼ばれる
@@ -98,6 +100,7 @@ public class EditActivity extends AppCompatActivity {
                     //ツマミがリリースされた時に呼ばれる
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
+                        seekBar.setSecondaryProgress(oldValue);
                     }
 
                 });
