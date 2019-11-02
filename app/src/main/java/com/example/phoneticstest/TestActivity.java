@@ -64,7 +64,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         resulttext = findViewById(R.id.textView3);
         textView = findViewById(R.id.textView);
         textView2 = findViewById(R.id.textView8);
-        Intent intent1 = getIntent(); //遷移回数データ
+        Intent intent1 = getIntent(); //遷移回数データを受け取る
         mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
         mTransitionCount++;
         Intent intent2 = getIntent();//前半ミスの回数
@@ -117,6 +117,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         countnumber = Integer.parseInt(count);
 
         if( countnumber % 2  != 0) {
+            
             id_number =  (int)(Math.random()*10) + 1;
         }
         else{

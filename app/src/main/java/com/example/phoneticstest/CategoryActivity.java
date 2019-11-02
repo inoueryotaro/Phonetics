@@ -118,7 +118,7 @@ public class CategoryActivity extends AppCompatActivity {
         final SharedPreferences prefs23 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences prefs24 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        Button initializationButton = findViewById(R.id.button11);
+        Button initializationButton = findViewById(R.id.button11);//データ初期化ボタンを押したときの処理
         initializationButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -175,10 +175,10 @@ public class CategoryActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor24 = prefs24.edit();
                 editor24.clear().apply();
                 Toast.makeText(getApplicationContext(), "データ初期化しました",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
             }
         });
-        Button backButton = findViewById(R.id.button10);
+        Button backButton = findViewById(R.id.button10);//戻るボタンが押されたときの処理
         backButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -190,6 +190,7 @@ public class CategoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //以下，カテゴリーボタンが押された時の処理
         Category_1Button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -484,7 +485,8 @@ public class CategoryActivity extends AppCompatActivity {
         });
 
 
-        Intent intent1 = getIntent();//WeakActivityからのメッセージex)苦手なしなら1もらう,苦手があれば2もらう
+        Intent intent1 = getIntent();//WeakActivityからのメッセージを受信する
+        // ex)苦手なしなら1もらう,苦手があれば2もらう
         int data = intent1.getIntExtra("keyword",0);
         if(data == 1){
             SharedPreferences.Editor editor = prefs.edit();

@@ -258,10 +258,10 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
-        if( id_number <= 10 && !(mondai.equals(message))) {
+        if( id_number <= 10 && !(left.equals(right))) {
              mmiss_phonetics_symbols++;
         }
-        if( id_number > 10 && !(mondai.equals(message))){
+        if( id_number > 10 && !(left.equals(right))){
             mmiss_phonetics_symbols2++;
         }
         nextbutton.setOnClickListener(new View.OnClickListener() {
