@@ -21,7 +21,7 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         word_text = findViewById(R.id.textView15);
-        Button BackButton = findViewById(R.id.back);
+        Button BackButton = findViewById(R.id.back);//戻るボタンを押したときの処理
         BackButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {

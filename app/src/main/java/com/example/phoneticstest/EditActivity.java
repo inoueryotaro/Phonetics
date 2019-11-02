@@ -40,16 +40,16 @@ public class EditActivity extends AppCompatActivity {
     private EditText editText;
     private EditText editText2;
     public static final String EXTRA_MESSAGE
-            = "com.example.phoneticstest.EditActivity.MESSAGE";//認識結果の単語
+            = "com.example.phoneticstest.EditActivity.MESSAGE";//表示ボタンの処理の際に使用する．"category1.csv"というファイル名を送信する
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
-        textView = findViewById(R.id.kakunin_view);
-        textView2 = findViewById(R.id.kakunin_view2);
+        textView = findViewById(R.id.kakunin_view);//基本的にはファイルの表示
+        textView2 = findViewById(R.id.kakunin_view2);//基本的にはidの表示
         //editText = findViewById(R.id.edit_text);//id
-        editText2 = findViewById(R.id.edit_text2);//単語
-        Spinner spinner = findViewById(R.id.spinner);
+        editText2 = findViewById(R.id.edit_text2);//単語入力用のedittext
+        Spinner spinner = findViewById(R.id.spinner);//ファイルを選択用のスピナー
         // ArrayAdapter
         ArrayAdapter<String> adapter
                 = new ArrayAdapter<>(this,
@@ -67,14 +67,14 @@ public class EditActivity extends AppCompatActivity {
                 Spinner spinner = (Spinner)parent;
                 String item = (String)spinner.getSelectedItem();
 
-                textView.setText(item);
+                textView.setText(item);//textViewに選択したカテゴリーファイル名を表示させる
             }
 
             //　アイテムが選択されなかった
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-        SeekBar seekBar = findViewById(R.id.seekBar);
+        SeekBar seekBar = findViewById(R.id.seekBar);//idを選択用のシークバー
         seekBar.setProgress(1);
         seekBar.setMax(21);
         seekBar.setOnSeekBarChangeListener(
@@ -87,7 +87,7 @@ public class EditActivity extends AppCompatActivity {
                         // 68 % のようにフォーマト、
                         // この場合、Locale.USが汎用的に推奨される
                         String str = String.format(Locale.US, "%d",progress);
-                        textView2.setText(str);
+                        textView2.setText(str);//設定したidを表示させる
                         oldValue = seekBar.getProgress();
                     }
 
@@ -104,7 +104,7 @@ public class EditActivity extends AppCompatActivity {
 
                 });
 
-        Button savebutton = findViewById(R.id.save);
+        Button savebutton = findViewById(R.id.save);//新規・追記ボタンの処理
         savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +114,7 @@ public class EditActivity extends AppCompatActivity {
                 String  mondai_tango = editText2.getText().toString();
                 saveFile(textFile, id,mondai_tango);
                 Toast.makeText(getApplicationContext(), "ファイルの新規作成or追記しました",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
             }
         });
 
@@ -133,7 +133,7 @@ public class EditActivity extends AppCompatActivity {
 
 
    //     });
-        Button buttondisplay = findViewById(R.id.display);
+        Button buttondisplay = findViewById(R.id.display);//表示ボタンの処理
         buttondisplay.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -143,19 +143,19 @@ public class EditActivity extends AppCompatActivity {
             private void function() {
                 Intent intent1 = new Intent(getApplication(), ListActivity.class);
                 String textFile = textView.getText().toString();
-                intent1.putExtra(  EXTRA_MESSAGE,textFile);
+                intent1.putExtra(  EXTRA_MESSAGE,textFile);//ex)"category1.csvというstring型のデータを送信
                 startActivity(intent1);
             }
         });
 
-        Button buttondelete = findViewById(R.id.delete);
+        Button buttondelete = findViewById(R.id.delete);//削除ボタンを押したときの処理
         buttondelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String textFile = textView.getText().toString();
                 deleteFile(textFile);
                 Toast.makeText(getApplicationContext(), "ファイルを削除しました",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
             }
 
 
