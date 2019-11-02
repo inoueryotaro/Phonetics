@@ -63,6 +63,8 @@ public class CategoryActivity extends AppCompatActivity {
         ImageView category22_iv2 = (ImageView)this.findViewById(R.id.category_22_checkView2);
         ImageView category23_iv = (ImageView)this.findViewById(R.id.category_23_checkView);
         ImageView category23_iv2 = (ImageView)this.findViewById(R.id.category_23_checkView2);
+        ImageView category24_iv = (ImageView)this.findViewById(R.id.category_24_checkView);
+        ImageView category24_iv2 = (ImageView)this.findViewById(R.id.category_24_checkView2);
 
 
 
@@ -89,6 +91,7 @@ public class CategoryActivity extends AppCompatActivity {
         Button Category_21Button = findViewById(R.id.category_21);
         Button Category_22Button = findViewById(R.id.category_22);
         Button Category_23Button = findViewById(R.id.category_23);
+        Button Category_24Button = findViewById(R.id.category_24);
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences prefs2 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -113,6 +116,7 @@ public class CategoryActivity extends AppCompatActivity {
         final SharedPreferences prefs21 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences prefs22 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences prefs23 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences prefs24 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         Button initializationButton = findViewById(R.id.button11);
         initializationButton.setOnClickListener(new View.OnClickListener() {
@@ -168,6 +172,8 @@ public class CategoryActivity extends AppCompatActivity {
                 editor22.clear().apply();
                 SharedPreferences.Editor editor23 = prefs23.edit();
                 editor23.clear().apply();
+                SharedPreferences.Editor editor24 = prefs24.edit();
+                editor24.clear().apply();
                 Toast.makeText(getApplicationContext(), "データ初期化しました",
                         Toast.LENGTH_SHORT).show();
             }
@@ -463,6 +469,19 @@ public class CategoryActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+        Category_24Button.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                function();
+            }
+
+            private void function() {
+                Intent intent1 = new Intent(getApplication(), TestActivity.class);
+                String str = "category24.csv";
+                intent1.putExtra(EXTRA_MESSAGE,str);
+                startActivity(intent1);
+            }
+        });
 
 
         Intent intent1 = getIntent();//WeakActivityからのメッセージex)苦手なしなら1もらう,苦手があれば2もらう
@@ -740,6 +759,18 @@ public class CategoryActivity extends AppCompatActivity {
             SharedPreferences.Editor editor23 = prefs23.edit();
             editor23.putInt("int23", 2);
             editor23.apply();
+        }
+        Intent intent24 = getIntent();
+        int data24 = intent24.getIntExtra("keyword24",0);
+        if(data24 == 1){
+            SharedPreferences.Editor editor24 = prefs24.edit();
+            editor24.putInt("int24", 1);
+            editor24.apply();
+        }
+        if(data24 == 2){
+            SharedPreferences.Editor editor24 = prefs24.edit();
+            editor24.putInt("int24", 2);
+            editor24.apply();
         }
 
 
@@ -1086,6 +1117,20 @@ public class CategoryActivity extends AppCompatActivity {
         }
         else {
             category23_iv2.setVisibility(View.GONE);
+        }
+        int intNum24 = prefs24.getInt("int24",0);
+        if( intNum24 == 1){
+            category24_iv.setImageResource(R.drawable.check_picture);
+        }
+        else {
+            category24_iv.setVisibility(View.GONE);
+        }
+
+        if( intNum24 == 2){
+            category24_iv2.setImageResource(R.drawable.check_picture2);
+        }
+        else {
+            category24_iv2.setVisibility(View.GONE);
         }
     }
 

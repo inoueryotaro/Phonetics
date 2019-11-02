@@ -494,7 +494,7 @@
                 android:id="@+id/category_21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー21[ai][ei][ɔi]計30問"
+                android:text="カテゴリー21[ai][ei]計20問"
                 android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
@@ -517,7 +517,7 @@
                 android:id="@+id/category_22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー22[aʊ][oʊ]計20問"
+                android:text="カテゴリー22[ai][ɔi]計20問"
                 android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
@@ -540,7 +540,7 @@
                 android:id="@+id/category_23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="カテゴリー23[ər][r]計20問"
+                android:text="カテゴリー23[aʊ][oʊ]計20問"
                 android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
                 app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
@@ -552,6 +552,29 @@
                 app:srcCompat="@drawable/check_picture"/>
             <ImageView
                 android:id="@+id/category_23_checkView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture2"/>
+        </LinearLayout><LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/category_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="カテゴリー24[ɜr][r]計20問"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toEndOf="@+id/TEXTVIEW"
+                app:layout_constraintStart_toStartOf="@+id/TEXTVIEW"
+                app:layout_constraintTop_toBottomOf="@+id/TEXTVIEW" />
+            <ImageView
+                android:id="@+id/category_24_checkView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/check_picture"/>
+            <ImageView
+                android:id="@+id/category_24_checkView2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/check_picture2"/>
