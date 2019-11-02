@@ -255,6 +255,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             intent4.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
             intent4.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH.toString());
             intent4.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS,1);
+            intent4.putExtra(RecognizerIntent.EXTRA_PROMPT,"音声認識中です");
             sr.startListening(intent4);
             //インテント発行
             // startActivityForResult(intent, REQUEST_CODE);
@@ -276,14 +277,14 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
     private class listener implements RecognitionListener {
         public void onBeginningOfSpeech() {
-            /*Toast.makeText(getApplicationContext(), "onBeginningofSpeech",
-                    Toast.LENGTH_SHORT).show();*/
+            Toast.makeText(getApplicationContext(), "音声認識を開始しました",
+                    Toast.LENGTH_LONG).show();
         }
         public void onBufferReceived(byte[] buffer) {
         }
         public void onEndOfSpeech() {
-            /*Toast.makeText(getApplicationContext(), "onEndofSpeech",
-                    Toast.LENGTH_SHORT).show();*/
+            Toast.makeText(getApplicationContext(), "音声認識を終了しました",
+                    Toast.LENGTH_LONG).show();
         }
         public void onError(int error) {
             String reason = "";
@@ -345,8 +346,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         public void onPartialResults(Bundle partialResults) {
         }
         public void onReadyForSpeech(Bundle params) {
-            Toast.makeText(getApplicationContext(), "話してください",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Let's talk!",
+                    Toast.LENGTH_LONG).show();
         }
         public void onResults(Bundle results) {
             // 結果をArrayListとして取得
