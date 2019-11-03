@@ -509,7 +509,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     intent5.putExtra("id_shuffle_message2", id_shuffle_array2);
                 }
             }
-            
+
             startActivity(intent5);
             resulttext.setText("");
             //    restartListeningService();
