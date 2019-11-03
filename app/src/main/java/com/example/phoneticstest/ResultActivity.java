@@ -90,12 +90,6 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent7 = getIntent();
         category = intent7.getStringExtra(TestActivity.EXTRA_MESSAGE4);
         textview6.setText(message);
-        if( mondai.equals(message)){
-            textview7.setText("正解です!!");
-        }
-        else{
-            textview7.setText("不正解です");
-        }
         String result_phonetics = "";
         String result_phonetics1 = "";
         String result_phonetics2 = "";
@@ -265,6 +259,12 @@ public class ResultActivity extends AppCompatActivity {
                 textview4.setText(ssb);
             }
 
+        }
+        if( left.equals(right)){
+            textview7.setText("正解です!!");
+        }
+        else{
+            textview7.setText("不正解です");
         }
         if( id_number <= 10 && !(left.equals(right))) {
              mmiss_phonetics_symbols++;
