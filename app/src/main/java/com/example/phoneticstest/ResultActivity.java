@@ -28,6 +28,8 @@ public class ResultActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE
             = "com.example.phoneticstest.ResultActivity.MESSAGE";//カテゴリー名
     private String category;
+    private  int[] id_shuffle_array = new int[10];
+    private  int[] id_shuffle_array2 = new int[10];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,12 @@ public class ResultActivity extends AppCompatActivity {
         mmiss_phonetics_symbols2 = intent6.getIntExtra("miss_phonetics_symbols2",0);
         Intent intent8 = getIntent();
         id_number = intent8.getIntExtra("id_bango",0);
+        Intent intent9 = getIntent();
+        id_shuffle_array = intent9.getIntArrayExtra("id_shuffle_message");
+        if( mTransitionCount != 1) {
+            Intent intent10 = getIntent();
+            id_shuffle_array2 = intent10.getIntArrayExtra("id_shuffle_message2");
+        }
         //nextbutton.setOnClickListener(new View.OnClickListener() {
 
           //  public void onClick(View v) {
@@ -285,6 +293,10 @@ public class ResultActivity extends AppCompatActivity {
             intent5.putExtra("TransitionCount", mTransitionCount);
             intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
             intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+            intent5.putExtra("id_shuffle_message",id_shuffle_array);
+            if( mTransitionCount != 1) {
+                intent5.putExtra("id_shuffle_message2", id_shuffle_array2);
+            }
             String str = category;
             intent5.putExtra(EXTRA_MESSAGE,str);
             startActivity(intent5);

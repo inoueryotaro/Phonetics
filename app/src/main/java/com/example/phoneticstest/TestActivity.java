@@ -52,6 +52,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     private int mmiss_phonetics_symbols2;//後半ブロック
     private String categoryname;//カテゴリー名
     private int id_number; //idの番号
+    private int[] id_shuffle_array = new int[10];
+    private int[] id_shuffle_array2= new int[10];
     // リストの並びをシャッフルします。
 
     // シャッフルされたリストの先頭を取得します。
@@ -79,9 +81,22 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
            Intent intent5 = getIntent();
            categoryname =  intent5.getStringExtra(ResultActivity.EXTRA_MESSAGE);
        }
+       if( mTransitionCount != 1) {
+           Intent intent6 = getIntent();
+           id_shuffle_array = intent6.getIntArrayExtra("id_shuffle_message");
+       }
+       if( mTransitionCount != 1 && mTransitionCount != 2) {
+           Intent intent7 = getIntent();
+           id_shuffle_array2 = intent7.getIntArrayExtra("id_shuffle_message2");
+       }
         String number = String.valueOf(mTransitionCount);
-        String text= readFile(categoryname,number);
-
+       String text="nofile";
+       if( mTransitionCount % 2 != 0) {
+            text = readFile(categoryname, number, id_shuffle_array);
+       }
+       if( mTransitionCount % 2 == 0){
+            text = readFile(categoryname,number,id_shuffle_array2);
+       }
 
             Toast toast = Toast.makeText(this, String.format("第%d問", mTransitionCount), Toast.LENGTH_LONG);
             toast.setGravity(Gravity.TOP, 0, 150);
@@ -111,19 +126,80 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         ttsButton.setOnClickListener(this);
 
     }
-    public String readFile(String file, String count){
+    public String readFile(String file, String count,int[] array){
         String text = "nofile";
         int countnumber;
         countnumber = Integer.parseInt(count);
+         if( countnumber == 1) {
+            id_shuffle_array = init(countnumber);
+         }
+         else if( countnumber == 2){
+             id_shuffle_array2 = init(countnumber);
+         }
+         else{
+             if( countnumber == 3){
+                 id_number =  array[1];
+             }
+             if( countnumber == 5){
+                 id_number =  array[2];
+             }
+             if( countnumber == 7){
+                 id_number =  array[3];
+             }
+             if( countnumber == 9){
+                 id_number =  array[4];
+             }
+             if( countnumber == 11){
+                 id_number =  array[5];
+             }
+             if( countnumber == 13){
+                 id_number =  array[6];
+             }
+             if( countnumber == 15){
+                 id_number =  array[7];
+             }
+             if( countnumber == 17){
+                 id_number =  array[8];
+             }
+             if( countnumber == 19){
+                 id_number =  array[9];
+             }
+             if( countnumber == 4){
+                 id_number =  array[1];
+             }
+             if( countnumber == 6){
+                 id_number =  array[2];
+             }
+             if( countnumber == 8){
+                 id_number =  array[3];
+             }
+             if( countnumber == 10){
+                 id_number =  array[4];
+             }
+             if( countnumber == 12){
+                 id_number =  array[5];
+             }
+             if( countnumber == 14){
+                 id_number =  array[6];
+             }
+             if( countnumber == 16){
+                 id_number =  array[7];
+             }
+             if( countnumber == 18){
+                 id_number =  array[8];
+             }
+             if( countnumber == 20){
+                 id_number =  array[9];
+             }
+         }
+            if( countnumber == 1) {
+                id_number = id_shuffle_array[0];
+            }
+            if( countnumber == 2) {
+                id_number = id_shuffle_array2[0];
+                //textView2.setText(String.valueOf(id_number));
+            }
 
-        if( countnumber % 2  != 0) {
-            
-            id_number =  (int)(Math.random()*10) + 1;
-        }
-        else{
-            id_number = (int)(Math.random()*10) + 11;
-        }
-        //resulttext.setText(String.valueOf(id_number));
         boolean isExists = false;
         File filecheck = this.getFileStreamPath(file);
         isExists = filecheck.exists();
@@ -149,6 +225,47 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             text = "nofile";
         }
         return text;
+    }
+    private static int[] init(int countnumber){
+        int[] ary = new int[ 10 ];
+        if( countnumber == 1){
+            // 配列に1からの連番を格納
+            for ( int i = 0; i < ary.length; i++ )
+            {
+                ary[ i ] = i + 1;
+            }
+
+            // シャフル
+            for ( int i = 0; i < ary.length; ++i ) {
+                // 0～(配列aryの個数-1)の乱数を発生
+                int rnd = (int)(Math.random() * 10);
+                // ary[ i ]とary[ rnd ]を入れ替える
+                int w = ary[ i ];
+                ary[ i ] = ary[ rnd ];
+                ary[ rnd ] = w;
+            }
+        }
+        else if (countnumber == 2)
+        {
+            for ( int i = 0; i < ary.length; i++ )
+            {
+                ary[ i ] = i + 11;
+            }
+            // シャフル
+            for ( int i = 0; i < ary.length; ++i ) {
+                // 0～(配列aryの個数-1)の乱数を発生
+                int rnd = (int)(Math.random() * 10);
+                // ary[ i ]とary[ rnd ]を入れ替える
+                int w = ary[ i ];
+                ary[ i ] = ary[ rnd ];
+                ary[ rnd ] = w;
+            }
+
+        }
+        else{
+
+        }
+        return ary;
     }
     public void onInit(int status) {
         // TTS初期化
@@ -387,7 +504,12 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                 intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
                 intent5.putExtra(EXTRA_MESSAGE4,str4);
                 intent5.putExtra("id_bango",id_number);
+                intent5.putExtra("id_shuffle_message",id_shuffle_array);
+                if( mTransitionCount != 1) {
+                    intent5.putExtra("id_shuffle_message2", id_shuffle_array2);
+                }
             }
+            
             startActivity(intent5);
             resulttext.setText("");
             //    restartListeningService();
