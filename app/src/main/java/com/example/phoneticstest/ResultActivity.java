@@ -260,15 +260,16 @@ public class ResultActivity extends AppCompatActivity {
 
         }
         if( mondai_phonetics.equals(right) && error == 0){
-            textview7.setText("正解です!!");
+           textview7.setText("正解です!!");
         }
         else{
             textview7.setText("不正解です");
         }
-        if( id_number <= 10 && !(mondai_phonetics.equals(right)) && error == 1) {
+        //textview7.setText(distance);
+        if( id_number <= 10 && !(mondai_phonetics.equals(right)) ) {
              mmiss_phonetics_symbols++;
         }
-        if( id_number > 10 && !(mondai_phonetics.equals(right)) && error == 1){
+        if( id_number > 10 && !(mondai_phonetics.equals(right))){
             mmiss_phonetics_symbols2++;
         }
         nextbutton.setOnClickListener(new View.OnClickListener() {
