@@ -79,9 +79,9 @@ public class ResultActivity extends AppCompatActivity {
         String mondai = intent2.getStringExtra(TestActivity.EXTRA_MESSAGE2); //問題の受け取り
         textview5.setText(mondai);
         Intent intent3 = getIntent();
-        String mondai_phonetics_before = intent3.getStringExtra(TestActivity.EXTRA_MESSAGE3); //問題発音の受け取り
-        String mondai_phonetics_before2 = mondai_phonetics_before.replace("[", " ");
-        String mondai_phonetics = mondai_phonetics_before2.replace("]"," ");
+        String mondai_phonetics = intent3.getStringExtra(TestActivity.EXTRA_MESSAGE3); //問題発音の受け取り
+      //  String mondai_phonetics_before2 = mondai_phonetics_before.replace("[", " ");
+      //  String mondai_phonetics = mondai_phonetics_before2.replace("]"," ");
          //textview4.setText("tʃɔ́klət");
         //String mondai_phonetics = "kɑ́mən";
 
@@ -95,11 +95,13 @@ public class ResultActivity extends AppCompatActivity {
         String result_phonetics2 = "";
         String result_phonetics3 = "";
 
+        int error = 0;
         String[] message_number = message.split(" ",0);
         if( message_number.length > 1) {
              result_phonetics1  =  calculateBmi(message_number[0]);
              result_phonetics2 =    calculateBmi(message_number[1]);
              result_phonetics3 = result_phonetics1 + " " + result_phonetics2;
+             error = 1;
         }
         if( message_number.length == 1){
              result_phonetics = calculateBmi(message);
@@ -247,7 +249,8 @@ public class ResultActivity extends AppCompatActivity {
         Levenstein_distance LD = new Levenstein_distance();
         String distance = LD.LevensteinDistance(left, right);
         textview2.setText(right);
-        textview4.setText(left);
+        //textview4.setText(left);
+        textview4.setText(mondai_phonetics);
         int spanColor = Color.RED;
         if( distance.length() != 0) {
             SpannableStringBuilder ssb = new SpannableStringBuilder(left);
@@ -260,16 +263,16 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
-        if( left.equals(right)){
+        if( left.equals(right) && error == 0){
             textview7.setText("正解です!!");
         }
         else{
             textview7.setText("不正解です");
         }
-        if( id_number <= 10 && !(left.equals(right))) {
+        if( id_number <= 10 && !(left.equals(right)) && error == 1) {
              mmiss_phonetics_symbols++;
         }
-        if( id_number > 10 && !(left.equals(right))){
+        if( id_number > 10 && !(left.equals(right)) && error == 1){
             mmiss_phonetics_symbols2++;
         }
         nextbutton.setOnClickListener(new View.OnClickListener() {

@@ -480,7 +480,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             // 取得した文字列を結合
             String resultsString = "";
             for (int i = 0; i < results.size(); i++) {
-                resultsString += results_array.get(i) + ";";
+                resultsString += results_array.get(0) + ";";
             }
             // トーストを使って結果表示
             if (results_array.size() > 0){
