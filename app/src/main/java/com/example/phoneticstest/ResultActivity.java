@@ -245,12 +245,13 @@ public class ResultActivity extends AppCompatActivity {
         }
         Levenstein_distance LD = new Levenstein_distance();
         String distance = LD.LevensteinDistance(mondai_phonetics, right);
+        String[] distance_index;
         textview2.setText(right);
         textview4.setText(mondai_phonetics);
         int spanColor = Color.RED;
         if( distance.length() != 0) {
             SpannableStringBuilder ssb = new SpannableStringBuilder(mondai_phonetics);
-            String[] distance_index = distance.split(" ",0);
+            distance_index = distance.split(" ",0);
             int place = 10000;
             for (int i = 0; i < distance_index.length; i++) {
                 place = Integer.parseInt(distance_index[i]);
@@ -259,6 +260,7 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
+
         if( mondai_phonetics.equals(right) && error == 0){
            textview7.setText("正解です!!");
         }
