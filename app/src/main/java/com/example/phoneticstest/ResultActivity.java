@@ -237,23 +237,19 @@ public class ResultActivity extends AppCompatActivity {
         }
         //b = b.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
         String right = "";
-        String left = "";
         if( message_number.length == 1) {
              right = result_phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");//ゴジラ";
-             left = mondai_phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");//"キングゴジラ";
         }
         if( message_number.length > 1){
             right = result_phonetics3.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
-            left = mondai_phonetics.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
         }
         Levenstein_distance LD = new Levenstein_distance();
-        String distance = LD.LevensteinDistance(left, right);
+        String distance = LD.LevensteinDistance(mondai_phonetics, right);
         textview2.setText(right);
-        //textview4.setText(left);
         textview4.setText(mondai_phonetics);
         int spanColor = Color.RED;
         if( distance.length() != 0) {
-            SpannableStringBuilder ssb = new SpannableStringBuilder(left);
+            SpannableStringBuilder ssb = new SpannableStringBuilder(mondai_phonetics);
             String[] distance_index = distance.split(" ",0);
             int place = 10000;
             for (int i = 0; i < distance_index.length; i++) {
@@ -263,16 +259,16 @@ public class ResultActivity extends AppCompatActivity {
             }
 
         }
-        if( left.equals(right) && error == 0){
+        if( mondai_phonetics.equals(right) && error == 0){
             textview7.setText("正解です!!");
         }
         else{
             textview7.setText("不正解です");
         }
-        if( id_number <= 10 && !(left.equals(right)) && error == 1) {
+        if( id_number <= 10 && !(mondai_phonetics.equals(right)) && error == 1) {
              mmiss_phonetics_symbols++;
         }
-        if( id_number > 10 && !(left.equals(right)) && error == 1){
+        if( id_number > 10 && !(mondai_phonetics.equals(right)) && error == 1){
             mmiss_phonetics_symbols2++;
         }
         nextbutton.setOnClickListener(new View.OnClickListener() {
