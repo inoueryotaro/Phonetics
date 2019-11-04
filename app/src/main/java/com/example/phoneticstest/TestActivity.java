@@ -63,8 +63,11 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        //音声認識の結果の受け取り皿
         resulttext = findViewById(R.id.textView3);
+        //出題単語のtext
         textView = findViewById(R.id.textView);
+        //出題単語の発音記号text
         textView2 = findViewById(R.id.textView8);
         Intent intent1 = getIntent(); //遷移回数データを受け取る
         mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
@@ -102,6 +105,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             toast.setGravity(Gravity.TOP, 0, 150);
             toast.show();
             tts = new TextToSpeech(this, this);
+            //ファイルがあれば，問題を出題する
             if (!(text.equals("nofile"))) {
                 String[] question = text.split(",", 0);
                 textView.setText(question[1]);

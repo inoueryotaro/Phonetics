@@ -35,11 +35,15 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-
+        //認識単語の発音記号text
         TextView textview2 = findViewById(R.id.textView2);
+        //出題単語の発音記号text
         TextView textview4 = findViewById(R.id.textView4);
+        //出題単語text
         TextView textview5 = findViewById(R.id.textView5);
+        //認識単語text
         TextView textview6 = findViewById(R.id.textView6);
+        //合否判定のtext
         TextView textview7 = findViewById(R.id.textView7);
         Button   nextbutton = findViewById(R.id.button5);
         Intent intent4 = getIntent();
@@ -56,39 +60,18 @@ public class ResultActivity extends AppCompatActivity {
             Intent intent10 = getIntent();
             id_shuffle_array2 = intent10.getIntArrayExtra("id_shuffle_message2");
         }
-        //nextbutton.setOnClickListener(new View.OnClickListener() {
 
-          //  public void onClick(View v) {
-          //      function();
-          //  }
-            //private void function() {
-              //  if( mTransitionCount  >= 20){
-              //      Intent intent6 = new Intent(getApplication(),FinishscreenActivity.class);
-              //      startActivity(intent6);
-              //  }
-              //  else {
-               //     Intent intent5 = new Intent(getApplication(), TestActivity.class);
-               //     intent5.putExtra("TransitionCount", mTransitionCount);
-              //      startActivity(intent5);
-            //    }
-          //  }
-
-        //});
         //データを受け取る
         Intent intent2= getIntent();
         String mondai = intent2.getStringExtra(TestActivity.EXTRA_MESSAGE2); //問題の受け取り
         textview5.setText(mondai);
         Intent intent3 = getIntent();
         String mondai_phonetics = intent3.getStringExtra(TestActivity.EXTRA_MESSAGE3); //問題発音の受け取り
-      //  String mondai_phonetics_before2 = mondai_phonetics_before.replace("[", " ");
-      //  String mondai_phonetics = mondai_phonetics_before2.replace("]"," ");
-         //textview4.setText("tʃɔ́klət");
-        //String mondai_phonetics = "kɑ́mən";
 
         Intent intent1 = getIntent();
         String message = intent1.getStringExtra(TestActivity.EXTRA_MESSAGE);//認識の受け取り
         Intent intent7 = getIntent();
-        category = intent7.getStringExtra(TestActivity.EXTRA_MESSAGE4);
+        category = intent7.getStringExtra(TestActivity.EXTRA_MESSAGE4);//カテゴリー名の受け取り
         textview6.setText(message);
         String result_phonetics = "";
         String result_phonetics1 = "";
@@ -106,29 +89,6 @@ public class ResultActivity extends AppCompatActivity {
         if( message_number.length == 1){
              result_phonetics = calculateBmi(message);
         }
-     //   if( message_number.length == 1) {
-     //       textview7.setText(result_phonetics);
-    //    }
-    //    if( message_number.length == 2) {
-    //        textview7.setText(result_phonetics3);
-    //    }
-   //     if( message_number.length == 1) {
-   //         if (mondai_phonetics.equals(result_phonetics)) {
-   //             textview7.setText("正解です");
-   //         } else {
-   //             textview7.setText("不正解です");
-   //         }
-   //     }
-   //     if( message_number.length > 1) {
-   //         if (mondai_phonetics.equals(result_phonetics3)) {
-    //            textview7.setText("正解です");
-    //        } else {
-    //            textview7.setText("不正解です");
-    //        }
-     //   }
-
-        //textview2.setText(result_phonetics);
-        //b = b.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
         class Levenstein_distance {
             String LevensteinDistance(String array_left, String array_right) {
 

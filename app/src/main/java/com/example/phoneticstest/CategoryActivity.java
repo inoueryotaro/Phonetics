@@ -486,7 +486,8 @@ public class CategoryActivity extends AppCompatActivity {
 
 
         Intent intent1 = getIntent();//WeakActivityからのメッセージを受信する
-        // ex)苦手なしなら1もらう,苦手があれば2もらう
+        // ex)苦手なしなら1もらう,苦手があれば2をint型変数 dataに代入
+        //その上に，ex)共有リファレンスにkey="int"でvalue=1や2を代入
         int data = intent1.getIntExtra("keyword",0);
         if(data == 1){
             SharedPreferences.Editor editor = prefs.edit();
@@ -775,7 +776,8 @@ public class CategoryActivity extends AppCompatActivity {
             editor24.apply();
         }
 
-
+        //ex)共有リファレンスのkey="int"にアクセスし値をint型変数 intNumに代入
+        //それが1なら"はなまる"のImage画像を2ならば×のImage画像をsetする
         int intNum = prefs.getInt("int",0);
         if( intNum == 1){
             category_iv.setImageResource(R.drawable.check_picture);
