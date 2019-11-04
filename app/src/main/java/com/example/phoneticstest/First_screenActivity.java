@@ -15,7 +15,7 @@ public class First_screenActivity extends AppCompatActivity {
         Button TestButton = findViewById(R.id.button);
         Button PractideButton = findViewById(R.id.button2);
         Button EditButton = findViewById(R.id.button7);
-
+//[テストを始める]ボタンをタップしたときの処理
         TestButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -23,18 +23,31 @@ public class First_screenActivity extends AppCompatActivity {
             }
 
             private void function() {
+                //CategoryActivityへ画面推移
                 Intent intent1 = new Intent(getApplication(), CategoryActivity.class);
                 startActivity(intent1);
             }
         });
+       //[編集する]ボタンをタップしたときの処理
         EditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 function2();
             }
             private void function2() {
+                //EditActivityへ画面推移
                 Intent intent2 = new Intent(getApplication(), EditActivity.class);
                 startActivity(intent2);
+            }
+        });
+        //[苦手発音の学習]ボタンをタップしたときの処理(11/22までに実装完了予定)
+        PractideButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){function3();}
+            private  void function3(){
+                //(仮)PracticeActivityへ画面推移
+                Intent intent3 = new Intent(getApplication(),EditActivity.class );
+                startActivity(intent3);
             }
         });
     }

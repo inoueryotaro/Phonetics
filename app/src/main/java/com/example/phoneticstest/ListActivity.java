@@ -21,7 +21,8 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         word_text = findViewById(R.id.textView15);
-        Button BackButton = findViewById(R.id.back);//戻るボタンを押したときの処理
+        Button BackButton = findViewById(R.id.back);
+        //[戻る]ボタンを押したときの処理
         BackButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -29,19 +30,22 @@ public class ListActivity extends AppCompatActivity {
             }
 
             private void function() {
+                //EditActivityの画面推移
                 Intent intent1 = new Intent(getApplication(), EditActivity.class);
                 startActivity(intent1);
             }
         });
+        //EditActivityからのex)"category1.csv"というファイル名のデータを受信する
         Intent intent= getIntent();
         String filename = intent.getStringExtra(EditActivity.EXTRA_MESSAGE);
+        //関数readFileの処理(→ファイルの内容の読み込み，表示)
         String text= readFile(filename);
         word_text.setText(text);
 
     }
+    //ファイルの読み込みと表示
     public String readFile(String file){
         String text = "";
-        //String text2 = null;
         try(FileInputStream fileInputStream = openFileInput(file);
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(fileInputStream, StandardCharsets.UTF_8)))

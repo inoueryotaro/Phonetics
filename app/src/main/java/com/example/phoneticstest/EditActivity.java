@@ -37,17 +37,15 @@ public class EditActivity extends AppCompatActivity {
             "category11.csv","category12.csv","category13.csv","category14.csv","category15.csv","category16.csv","category17.csv","category18.csv","category19.csv",
             "category20.csv","category21.csv","category22.csv","category23.csv","category24.csv","category25.csv"
     ,"category26.csv","category27.csv","category28.csv","category29.csv","category30.csv"};
-    //private EditText editText;
-    private EditText editText2;
+    private EditText editText2;//ここに出題単語が入力される
     public static final String EXTRA_MESSAGE
-            = "com.example.phoneticstest.EditActivity.MESSAGE";//表示ボタンの処理の際に使用する．"category1.csv"というファイル名を送信する
+            = "com.example.phoneticstest.EditActivity.MESSAGE";//"category1.csv"というファイル名を送信する
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
         textView = findViewById(R.id.kakunin_view);//基本的にはファイルの表示
         textView2 = findViewById(R.id.kakunin_view2);//基本的にはidの表示
-        //editText = findViewById(R.id.edit_text);//id
         editText2 = findViewById(R.id.edit_text2);//単語入力用のedittext
         Spinner spinner = findViewById(R.id.spinner);//ファイルを選択用のスピナー
         // ArrayAdapter
@@ -103,8 +101,8 @@ public class EditActivity extends AppCompatActivity {
                     }
 
                 });
-
-        Button savebutton = findViewById(R.id.save);//新規・追記ボタンの処理
+        //[新規作成または追記]ボタンの処理
+        Button savebutton = findViewById(R.id.save);
         savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,28 +110,14 @@ public class EditActivity extends AppCompatActivity {
                 String textFile = textView.getText().toString();
                 String  id = textView2.getText().toString();
                 String  mondai_tango = editText2.getText().toString();
+                //関数saveFileの処理(→ファイルを保存する)
                 saveFile(textFile, id,mondai_tango);
                 Toast.makeText(getApplicationContext(), "ファイルの新規作成or追記しました",
                         Toast.LENGTH_LONG).show();
             }
         });
-
-   //     Button buttoncreate = findViewById(R.id.create);
-   //     buttoncreate.setOnClickListener(new View.OnClickListener() {
-   //         @Override
-   //         public void onClick(View v) {
-   //             String textFile = textView.getText().toString();
-   //             String  id = editText.getText().toString();
-   //             String  mondai_tango = editText2.getText().toString();
-   //             String text = "";
-   //              createFile(textFile, id, mondai_tango);
-
-
-   //         }
-
-
-   //     });
-        Button buttondisplay = findViewById(R.id.display);//表示ボタンの処理
+        //[表示]ボタンの処理
+        Button buttondisplay = findViewById(R.id.display);
         buttondisplay.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -141,18 +125,21 @@ public class EditActivity extends AppCompatActivity {
             }
 
             private void function() {
+                //ListActivityへ画面推移
+                //その際に，"category1.csv"という情報を送信する
                 Intent intent1 = new Intent(getApplication(), ListActivity.class);
                 String textFile = textView.getText().toString();
                 intent1.putExtra(  EXTRA_MESSAGE,textFile);//ex)"category1.csvというstring型のデータを送信
                 startActivity(intent1);
             }
         });
-
-        Button buttondelete = findViewById(R.id.delete);//削除ボタンを押したときの処理
+        //[削除]ボタンを押したときの処理
+        Button buttondelete = findViewById(R.id.delete);
         buttondelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String textFile = textView.getText().toString();
+                //関数deleteFileの処理(ファイルを削除)
                 deleteFile(textFile);
                 Toast.makeText(getApplicationContext(), "ファイルを削除しました",
                         Toast.LENGTH_LONG).show();
@@ -163,7 +150,7 @@ public class EditActivity extends AppCompatActivity {
     }
 
 
-    // ファイルを保存
+    // ファイルを保存・編集
     public void saveFile(String file, String id, String  str) {
 
         // try-with-resources
@@ -173,6 +160,7 @@ public class EditActivity extends AppCompatActivity {
             String phonetics_symobols;
             id_number = id;
             mondai_tango = str;
+            //関数calculateBmiの処理(→英単語を発音記号に変換)
             phonetics_symobols = calculateBmi(mondai_tango);
             csv += id_number +"," + mondai_tango+"," + phonetics_symobols + "\n";
 
@@ -241,31 +229,7 @@ public class EditActivity extends AppCompatActivity {
 
 
     }*/
-    // ファイルを読み出し
-/*    public String readFile(String file, String id,String str){
-        String text = "";
-        //String text2 = null;
-        try(FileInputStream fileInputStream = openFileInput(file);
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(fileInputStream,StandardCharsets.UTF_8)))
-        {
-        String lineBuffer;
-        while((lineBuffer = reader.readLine()) != null){
-            text += lineBuffer;
-            //String[] search = text.split(",", 0);
-            //if( search[0].equals(id) || search[1].equals(str) ){
-            //    text2 = lineBuffer;
-            //    break;
-            //}
-            //else{
-            //    text2 = "ありませんでした";
-            //}
-        }
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-            return text;
-    }*/
+        //英単語を発音記号に変換する
     private String  calculateBmi(String word) {
 
         String word_omoji = word.toUpperCase();
