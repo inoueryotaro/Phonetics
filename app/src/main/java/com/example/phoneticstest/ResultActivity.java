@@ -246,12 +246,12 @@ public class ResultActivity extends AppCompatActivity {
         Levenstein_distance LD = new Levenstein_distance();
         String distance = LD.LevensteinDistance(mondai_phonetics, right);
         String[] distance_index;
+        distance_index = distance.split(" ",0);
         textview2.setText(right);
         textview4.setText(mondai_phonetics);
         int spanColor = Color.RED;
         if( distance.length() != 0) {
             SpannableStringBuilder ssb = new SpannableStringBuilder(mondai_phonetics);
-            distance_index = distance.split(" ",0);
             int place = 10000;
             for (int i = 0; i < distance_index.length; i++) {
                 place = Integer.parseInt(distance_index[i]);
@@ -268,11 +268,122 @@ public class ResultActivity extends AppCompatActivity {
             textview7.setText("不正解です");
         }
         //textview7.setText(distance);
-        if( id_number <= 10 && !(mondai_phonetics.equals(right)) ) {
-             mmiss_phonetics_symbols++;
-        }
-        if( id_number > 10 && !(mondai_phonetics.equals(right))){
-            mmiss_phonetics_symbols2++;
+        if( distance.length() != 0) {
+            if (id_number <= 10) {
+                for (int i = 0; i < distance_index.length; i++) {
+                    int position = Integer.parseInt(distance_index[i]);
+                    String phonetic = mondai_phonetics.substring(position - 1, position);
+                    if (category.equals("category1.csv") && phonetic.equals("ʌ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category2.csv") && phonetic.equals("ɑ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category3.csv") && phonetic.equals("i")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category4.csv") && phonetic.equals("ʊ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category5.csv") && phonetic.equals("e")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category6.csv") && phonetic.equals("ɔ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category7.csv") && phonetic.equals("s")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category8.csv") && phonetic.equals("ʃ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category9.csv") && phonetic.equals("θ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category10.csv") && phonetic.equals("f")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category11.csv") && phonetic.equals("l")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category12.csv") && phonetic.equals("t")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category13.csv") && phonetic.equals("p")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category14.csv") && phonetic.equals("k")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category15.csv") && phonetic.equals("tʃ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category16.csv") && phonetic.equals("m")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category17.csv") && phonetic.equals("f")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category18.csv") && phonetic.equals("w")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category19.csv") && phonetic.equals("ŋ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category20.csv") && phonetic.equals("ɪ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category21.csv") && phonetic.equals("aɪ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category22.csv") && phonetic.equals("aɪ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category23.csv") && phonetic.equals("aʊ")) {
+                        mmiss_phonetics_symbols++;
+                    } else if (category.equals("category24.csv") && phonetic.equals("ɜr")) {
+                        mmiss_phonetics_symbols++;
+                    } else {
+
+                    }
+                }
+
+            }
+            if (id_number > 10) {
+                for (int i = 0; i < distance_index.length; i++) {
+                    int position = Integer.parseInt(distance_index[i]);
+                    String phonetic = mondai_phonetics.substring(position - 1, position);
+                    if (category.equals("category1.csv") && phonetic.equals("ə")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category2.csv") && phonetic.equals("æ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category3.csv") && phonetic.equals("ɪ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category4.csv") && phonetic.equals("u")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category5.csv") && phonetic.equals("ɪ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category6.csv") && phonetic.equals("oʊ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category7.csv") && phonetic.equals("z")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category8.csv") && phonetic.equals("ʒ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category9.csv") && phonetic.equals("ð")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category10.csv") && phonetic.equals("v")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category11.csv") && phonetic.equals("r")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category12.csv") && phonetic.equals("d")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category13.csv") && phonetic.equals("b")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category14.csv") && phonetic.equals("g")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category15.csv") && phonetic.equals("dʒ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category16.csv") && phonetic.equals("n")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category17.csv") && phonetic.equals("h")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category18.csv") && phonetic.equals("v")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category19.csv") && phonetic.equals("n")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category20.csv") && phonetic.equals("j")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category21.csv") && phonetic.equals("eɪ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category22.csv") && phonetic.equals("ɔɪ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category23.csv") && phonetic.equals("oʊ")) {
+                        mmiss_phonetics_symbols2++;
+                    } else if (category.equals("category24.csv") && phonetic.equals("r")) {
+                        mmiss_phonetics_symbols2++;
+                    } else {
+
+                    }
+                }
+            }
         }
         nextbutton.setOnClickListener(new View.OnClickListener() {
 

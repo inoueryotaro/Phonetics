@@ -122,10 +122,10 @@ public class CategoryActivity extends AppCompatActivity {
         initializationButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                speech();
+                initialize();
             }
 
-            private void speech() {
+            private void initialize() {
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.clear().apply();
                 SharedPreferences.Editor editor2 = prefs2.edit();

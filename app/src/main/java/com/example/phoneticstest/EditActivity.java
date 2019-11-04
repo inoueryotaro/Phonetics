@@ -37,7 +37,7 @@ public class EditActivity extends AppCompatActivity {
             "category11.csv","category12.csv","category13.csv","category14.csv","category15.csv","category16.csv","category17.csv","category18.csv","category19.csv",
             "category20.csv","category21.csv","category22.csv","category23.csv","category24.csv","category25.csv"
     ,"category26.csv","category27.csv","category28.csv","category29.csv","category30.csv"};
-    private EditText editText;
+    //private EditText editText;
     private EditText editText2;
     public static final String EXTRA_MESSAGE
             = "com.example.phoneticstest.EditActivity.MESSAGE";//表示ボタンの処理の際に使用する．"category1.csv"というファイル名を送信する
@@ -185,7 +185,7 @@ public class EditActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-    public void createFile(String file, String id, String  str) {
+   /* public void createFile(String file, String id, String  str) {
 
         // try-with-resources
         String csv = "";
@@ -240,9 +240,9 @@ public class EditActivity extends AppCompatActivity {
         }
 
 
-    }
+    }*/
     // ファイルを読み出し
-    public String readFile(String file, String id,String str){
+/*    public String readFile(String file, String id,String str){
         String text = "";
         //String text2 = null;
         try(FileInputStream fileInputStream = openFileInput(file);
@@ -265,7 +265,7 @@ public class EditActivity extends AppCompatActivity {
             e.printStackTrace();
         }
             return text;
-    }
+    }*/
     private String  calculateBmi(String word) {
 
         String word_omoji = word.toUpperCase();
