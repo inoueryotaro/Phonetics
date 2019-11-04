@@ -33,8 +33,8 @@ public class WeakActivity extends AppCompatActivity {
             }
 
             private void function() {
-             //   Intent intent3 = new Intent(getApplication(), CategoryActivity.class);
-             //   startActivity(intent3);
+               Intent intent3 = new Intent(getApplication(), PracticeActivity.class);
+               startActivity(intent3);
             }
         });
         BackCategory.setOnClickListener(new View.OnClickListener() {
