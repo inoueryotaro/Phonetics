@@ -13,10 +13,12 @@ public class WeakActivity extends AppCompatActivity {
     private int zenhan_count;
     private int kohan_count;
     private TextView resultingtext;
+    private int exist_nigate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weak);
+        exist_nigate = 1;
         resultingtext = findViewById(R.id.textView14);
         Button ShosaiButton = findViewById(R.id.button8);
         Button BackCategory = findViewById(R.id.button9);
@@ -26,17 +28,6 @@ public class WeakActivity extends AppCompatActivity {
         kohan_count = intent2.getIntExtra("miss_kohan",0);
         Intent intent3 = getIntent();
         final String category_name = intent3.getStringExtra(FinishscreenActivity.EXTRA_MESSAGE);//ex "category1.csv"
-        ShosaiButton.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                function();
-            }
-
-            private void function() {
-               Intent intent3 = new Intent(getApplication(), PracticeActivity.class);
-               startActivity(intent3);
-            }
-        });
         BackCategory.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -241,6 +232,7 @@ public class WeakActivity extends AppCompatActivity {
 
         if( zenhan_count < 4 && kohan_count < 4){
             resultingtext.setText(R.string.weak_message);
+            exist_nigate = 0;
         }
         if( zenhan_count >= 4 || kohan_count >= 4){
             if( zenhan_count >= 4 && kohan_count < 4){
@@ -467,6 +459,19 @@ public class WeakActivity extends AppCompatActivity {
             }
 
         }
+        if( exist_nigate == 1) {
+            ShosaiButton.setVisibility(View.VISIBLE);
+            ShosaiButton.setOnClickListener(new View.OnClickListener() {
 
+                public void onClick(View v) {
+                    function();
+                }
+
+                private void function() {
+                    Intent intent3 = new Intent(getApplication(), PracticeActivity.class);
+                    startActivity(intent3);
+                }
+            });
+        }
     }
 }
