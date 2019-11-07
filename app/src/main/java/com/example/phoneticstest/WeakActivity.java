@@ -10,15 +10,18 @@ import android.widget.TextView;
 import java.io.FileInputStream;
 
 public class WeakActivity extends AppCompatActivity {
+    public static final String CATEGORY_MESSAGE =  "com.example.phoneticstest.WeakActivity.MESSAGE";//カテゴリー名を渡す;
     private int zenhan_count;
     private int kohan_count;
     private TextView resultingtext;
     private int exist_nigate;
+    private int type_of_mistake;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weak);
         exist_nigate = 1;
+        type_of_mistake = 0;
         resultingtext = findViewById(R.id.textView14);
         Button ShosaiButton = findViewById(R.id.button8);
         Button BackCategory = findViewById(R.id.button9);
@@ -28,6 +31,7 @@ public class WeakActivity extends AppCompatActivity {
         kohan_count = intent2.getIntExtra("miss_kohan",0);
         Intent intent3 = getIntent();
         final String category_name = intent3.getStringExtra(FinishscreenActivity.EXTRA_MESSAGE);//ex "category1.csv"
+
         BackCategory.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -236,6 +240,7 @@ public class WeakActivity extends AppCompatActivity {
         }
         if( zenhan_count >= 4 || kohan_count >= 4){
             if( zenhan_count >= 4 && kohan_count < 4){
+                type_of_mistake = 1;
                 if( category_name.equals("category1.csv")) {
                     resultingtext.setText(R.string.weak_message2);
                 }
@@ -309,6 +314,7 @@ public class WeakActivity extends AppCompatActivity {
 
             }
             else if( kohan_count >= 4 && zenhan_count < 4 ){
+                type_of_mistake = 2;
                 if( category_name.equals("category1.csv")) {
                     resultingtext.setText(R.string.weak_message3);
                 }
@@ -383,6 +389,7 @@ public class WeakActivity extends AppCompatActivity {
 
             }
             else{
+                type_of_mistake = 3;
                 if( category_name.equals("category1.csv")) {
                     resultingtext.setText(R.string.weak_message4);
                 }
@@ -469,9 +476,19 @@ public class WeakActivity extends AppCompatActivity {
 
                 private void function() {
                     Intent intent3 = new Intent(getApplication(), PracticeActivity.class);
+                    intent3.putExtra("miss_zenhan",zenhan_count);
+                    intent3.putExtra("miss_kohan",kohan_count);
+                    intent3.putExtra("type_mistake",type_of_mistake);
+                    intent3.putExtra(CATEGORY_MESSAGE,category_name);
                     startActivity(intent3);
                 }
             });
+        }
+        else if( exist_nigate == 0){
+            ShosaiButton.setVisibility(View.GONE);
+        }
+        else{
+
         }
     }
 }
