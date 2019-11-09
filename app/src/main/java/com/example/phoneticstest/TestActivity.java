@@ -37,6 +37,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     private TextView textView2;//出題単語の発音記号text
     private TextToSpeech tts;
     private TextView textView;//出題単語のtext
+    private TextView mondaikaisutext;//現在が何問目なのかのtext
     private static final String TAG = "TestTTS";
 
     public static final String EXTRA_MESSAGE
@@ -54,6 +55,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     private int id_number; //idの番号
     private int[] id_shuffle_array = new int[10];
     private int[] id_shuffle_array2= new int[10];
+    private  int skip = 0;
     // リストの並びをシャッフルします。
 
     // シャッフルされたリストの先頭を取得します。
@@ -69,6 +71,9 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         textView = findViewById(R.id.textView);
         //出題単語の発音記号text
         textView2 = findViewById(R.id.textView8);
+        mondaikaisutext = findViewById(R.id.textView11);
+        Intent intent0 = getIntent();
+        skip = intent0.getIntExtra("skip_id",0);
         Intent intent1 = getIntent(); //遷移回数データを受け取る
         mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
         mTransitionCount++;
@@ -81,8 +86,14 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
            categoryname = intent4.getStringExtra(CategoryActivity.EXTRA_MESSAGE);
        }
        else{
-           Intent intent5 = getIntent();
-           categoryname =  intent5.getStringExtra(ResultActivity.EXTRA_MESSAGE);
+           if( skip == 0) {
+               Intent intent5 = getIntent();
+               categoryname = intent5.getStringExtra(ResultActivity.EXTRA_MESSAGE);
+           }
+           else if( skip == 1){
+               Intent intent5 = getIntent();
+               categoryname = intent5.getStringExtra(TestActivity.EXTRA_MESSAGE4);
+           }
        }
        if( mTransitionCount != 1) {
            Intent intent6 = getIntent();
@@ -101,9 +112,10 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             text = readFile(categoryname,number,id_shuffle_array2);
        }
 
-            Toast toast = Toast.makeText(this, String.format("第%d問", mTransitionCount), Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP, 0, 150);
-            toast.show();
+            mondaikaisutext.setText("第"+ String.valueOf(mTransitionCount)+ "問");
+            //Toast toast = Toast.makeText(this, String.format("第%d問", mTransitionCount), Toast.LENGTH_LONG);
+            //toast.setGravity(Gravity.TOP, 0, 150);
+            //toast.show();
             tts = new TextToSpeech(this, this);
             //ファイルがあれば，問題を出題する
             if (!(text.equals("nofile"))) {
@@ -129,6 +141,13 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         Button ttsButton = findViewById(R.id.readbutton);
         ttsButton.setOnClickListener(this);
 
+        Button skipbutton = findViewById(R.id.skipbutton);
+        skipbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                skip();
+            }
+        });
     }
     public String readFile(String file, String count,int[] array){
         String text = "nofile";
@@ -362,6 +381,47 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         super.onDestroy();
         shutDown();
     }
+
+    private void skip(){
+        if( mTransitionCount < 20) {
+            Intent skipintent = new Intent(getApplication(), TestActivity.class);
+            String str4 = categoryname;
+            skip = 1;
+            skipintent.putExtra("TransitionCount", mTransitionCount);
+            if (mTransitionCount % 2 != 0) {
+                mmiss_phonetics_symbols++;
+            }
+            if (mTransitionCount % 2 == 0) {
+                mmiss_phonetics_symbols2++;
+            }
+            skipintent.putExtra("miss_phonetics_symbols", mmiss_phonetics_symbols);
+            skipintent.putExtra("miss_phonetics_symbols2", mmiss_phonetics_symbols2);
+            skipintent.putExtra("skip_id", skip);
+            skipintent.putExtra(EXTRA_MESSAGE4, str4);
+            skipintent.putExtra("id_shuffle_message", id_shuffle_array);
+            if (mTransitionCount != 1) {
+                skipintent.putExtra("id_shuffle_message2", id_shuffle_array2);
+            }
+            startActivity(skipintent);
+            resulttext.setText("");
+        }
+        else{
+            Intent skipintent2 = new Intent(getApplication(),FinishscreenActivity.class);
+            String str4 = categoryname;
+            skip = 1;
+            if (mTransitionCount % 2 != 0) {
+                mmiss_phonetics_symbols++;
+            }
+            if (mTransitionCount % 2 == 0) {
+                mmiss_phonetics_symbols2++;
+            }
+            skipintent2.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
+            skipintent2.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+            skipintent2.putExtra(EXTRA_MESSAGE4,str4);
+            skipintent2.putExtra("skip_id", skip);
+            startActivity(skipintent2);
+        }
+    }
     private void speech() {
         try{
             if (sr == null){
@@ -399,14 +459,16 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
     private class listener implements RecognitionListener {
         public void onBeginningOfSpeech() {
-            Toast.makeText(getApplicationContext(), "音声認識を開始しました",
-                    Toast.LENGTH_LONG).show();
+            resulttext.setText("音声認識中です!");
+            //Toast.makeText(getApplicationContext(), "音声認識を開始しました",
+            //        Toast.LENGTH_LONG).show();
         }
         public void onBufferReceived(byte[] buffer) {
         }
         public void onEndOfSpeech() {
-            Toast.makeText(getApplicationContext(), "音声認識を終了しました",
-                    Toast.LENGTH_LONG).show();
+            resulttext.setText("音声認識が終了しました!");
+            //Toast.makeText(getApplicationContext(), "音声認識を終了しました",
+            //        Toast.LENGTH_LONG).show();
         }
         public void onError(int error) {
             String reason = "";
@@ -468,8 +530,9 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         public void onPartialResults(Bundle partialResults) {
         }
         public void onReadyForSpeech(Bundle params) {
-            Toast.makeText(getApplicationContext(), "Let's talk!",
-                    Toast.LENGTH_LONG).show();
+            resulttext.setText("準備ができています.発声を開始してください!");
+            //Toast.makeText(getApplicationContext(), "Let's talk!",
+            //        Toast.LENGTH_LONG).show();
         }
         public void onResults(Bundle results) {
             // 結果をArrayListとして取得
