@@ -1,8 +1,13 @@
 package com.example.phoneticstest;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class PracticeActivity extends AppCompatActivity {
@@ -19,10 +24,66 @@ public class PracticeActivity extends AppCompatActivity {
     private TextView concrete_tango_text2;
     private TextView gutairei_text;
     private TextView gutairei_text2;
+    private SoundPool soundPool;
+    private int soundOne, soundTwo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice);
+
+        AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                // USAGE_MEDIA
+                // USAGE_GAME
+                .setUsage(AudioAttributes.USAGE_GAME)
+                // CONTENT_TYPE_MUSIC
+                // CONTENT_TYPE_SPEECH, etc.
+                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                .build();
+        soundPool = new SoundPool.Builder()
+                .setAudioAttributes(audioAttributes)
+                // ストリーム数に応じて
+                .setMaxStreams(2)
+                .build();
+        // one.wav をロードしておく
+        soundOne = soundPool.load(this, R.raw.come, 1);
+
+        // two.wav をロードしておく
+        soundTwo = soundPool.load(this, R.raw.come, 1);
+
+        // load が終わったか確認する場合
+        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
+            @Override
+            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
+                Log.d("debug","sampleId="+sampleId);
+                Log.d("debug","status="+status);
+            }
+        });
+        Button Regenerationbutton = (Button)findViewById(R.id.saisei_button);
+        Regenerationbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // one.wav の再生
+                // play(ロードしたID, 左音量, 右音量, 優先度, ループ,再生速度)
+                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1);
+
+            }
+        });
+
+        Button Regenerationbutton2 = (Button)findViewById(R.id.saisei_button2);
+        Regenerationbutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // two.wav の再生
+                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1);
+
+                // ボタンの回転アニメーション
+               // RotateAnimation buttonRotation = new RotateAnimation(0, 360, button2.getWidth()/2, button2.getHeight()/2);
+               // buttonRotation.setDuration(2000);
+            //    button2.startAnimation(buttonRotation);
+            }
+        });
+
         Intent intent = getIntent();
         zenhan_count =intent.getIntExtra("miss_zenhan",0);
         Intent intent2 = getIntent();
@@ -40,6 +101,8 @@ public class PracticeActivity extends AppCompatActivity {
         concrete_tango_text2 = findViewById(R.id.concrete_tango_text2);
         gutairei_text = findViewById(R.id.gutairei_text);
         gutairei_text2 = findViewById(R.id.gutairei_text2);
+        Regenerationbutton = findViewById(R.id.saisei_button);
+        Regenerationbutton2 = findViewById(R.id.saisei_button2);
 
 
         if( type_of_mistake == 1) {
