@@ -55,7 +55,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     private int id_number; //idの番号
     private int[] id_shuffle_array = new int[10];
     private int[] id_shuffle_array2= new int[10];
-    private  int skip = 0;
+    private  int skip = 0;//skipボタンを押したかの判定に使用する変数
+    private int speakingbutton_tap_count = 0;//[話す]ボタンのタップされた回数
     // リストの並びをシャッフルします。
 
     // シャッフルされたリストの先頭を取得します。
@@ -112,7 +113,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             text = readFile(categoryname,number,id_shuffle_array2);
        }
 
-            mondaikaisutext.setText("第"+ String.valueOf(mTransitionCount)+ "問");
+           mondaikaisutext.setText("第"+ String.valueOf(mTransitionCount)+ "問");
             //Toast toast = Toast.makeText(this, String.format("第%d問", mTransitionCount), Toast.LENGTH_LONG);
             //toast.setGravity(Gravity.TOP, 0, 150);
             //toast.show();
@@ -132,8 +133,10 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
 
         Button speakingbutton = (Button) findViewById(R.id.speakingbutton);
         speakingbutton.setOnClickListener(new View.OnClickListener() {
-
+            @Override
             public void onClick(View v) {
+                speakingbutton_tap_count++;
+                mondaikaisutext.setText("第"+ String.valueOf(mTransitionCount)+ "問"+"\n"+"([話す]ボタンタップ回数:"+String.valueOf(speakingbutton_tap_count)+")");
                 speech();
             }
         });
@@ -476,36 +479,36 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                 // Audio recording error
                 case SpeechRecognizer.ERROR_AUDIO:
                     //reason = "ERROR_AUDIO";
-                    reason = "音声データの保存に失敗しました";
+                    reason = "音声データの保存に失敗しました.";
                     break;
                 // Other client side errors
                 case SpeechRecognizer.ERROR_CLIENT:
                     //reason = "ERROR_CLIENT";
-                    reason = "Android端末内のエラーです";
+                    reason = "Android端末内のエラーです.確認してください!";
                     break;
                 // Insufficient permissions
                 case SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS:
-                    reason = "権限があたえられていません．設定してください";
+                    reason = "権限があたえられていません．設定してください!";
                     break;
                 // 	Other network related errors
                 case SpeechRecognizer.ERROR_NETWORK:
-                    reason = "ネットワークのエラーです．ネットワークを確認してください";
+                    reason = "ネットワークのエラーです.ネットワークを確認してください!";
                     /* ネットワーク接続をチェックする処理をここに入れる */
                     break;
                 // Network operation timed out
                 case SpeechRecognizer.ERROR_NETWORK_TIMEOUT:
                     //reason = "ERROR_NETWORK_TIMEOUT";
-                    reason = "時間切れです．もう一度お願いします";
+                    reason = "時間切れです.再度,[話す]ボタンをタップしてください!";
                     break;
                 // No recognition result matched
                 case SpeechRecognizer.ERROR_NO_MATCH:
                     //reason = "ERROR_NO_MATCH";
-                    reason = "該当する音声認識結果がありません．もう一度，お願いします";
+                    reason = "該当する音声認識結果がありません.再度,[話す]ボタンをタップしてください!";
                     break;
                 // RecognitionService busy
                 case SpeechRecognizer.ERROR_RECOGNIZER_BUSY:
                     //reason = "ERROR_RECOGNIZER_BUSY";
-                    reason = "少し，時間をおき，もう一度，お願いします";
+                    reason = "少し時間をおいて再度,[話す]ボタンをタップしてください!";
                     break;
                 // Server sends error status
                 case SpeechRecognizer.ERROR_SERVER:
@@ -515,8 +518,48 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     break;
                 // No speech input
                 case SpeechRecognizer.ERROR_SPEECH_TIMEOUT:
-                    reason = "音声入力がありません．しゃべってください";
+                    reason = "音声入力がありません.再度,[話す]ボタンをタップしてください!";
                     break;
+            }
+            if( speakingbutton_tap_count >= 3){
+                if( mTransitionCount < 20) {
+                    Intent skipintent = new Intent(getApplication(), TestActivity.class);
+                    String str4 = categoryname;
+                    skip = 1;
+                    skipintent.putExtra("TransitionCount", mTransitionCount);
+                    if (mTransitionCount % 2 != 0) {
+                        mmiss_phonetics_symbols++;
+                    }
+                    if (mTransitionCount % 2 == 0) {
+                        mmiss_phonetics_symbols2++;
+                    }
+                    skipintent.putExtra("miss_phonetics_symbols", mmiss_phonetics_symbols);
+                    skipintent.putExtra("miss_phonetics_symbols2", mmiss_phonetics_symbols2);
+                    skipintent.putExtra("skip_id", skip);
+                    skipintent.putExtra(EXTRA_MESSAGE4, str4);
+                    skipintent.putExtra("id_shuffle_message", id_shuffle_array);
+                    if (mTransitionCount != 1) {
+                        skipintent.putExtra("id_shuffle_message2", id_shuffle_array2);
+                    }
+                    startActivity(skipintent);
+                    resulttext.setText("");
+                }
+                else{
+                    Intent skipintent2 = new Intent(getApplication(),FinishscreenActivity.class);
+                    String str4 = categoryname;
+                    skip = 1;
+                    if (mTransitionCount % 2 != 0) {
+                        mmiss_phonetics_symbols++;
+                    }
+                    if (mTransitionCount % 2 == 0) {
+                        mmiss_phonetics_symbols2++;
+                    }
+                    skipintent2.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
+                    skipintent2.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+                    skipintent2.putExtra(EXTRA_MESSAGE4,str4);
+                    skipintent2.putExtra("skip_id", skip);
+                    startActivity(skipintent2);
+                }
             }
             //Toast.makeText(getApplicationContext(), reason, Toast.LENGTH_SHORT).show();
             resulttext.setText(reason);
