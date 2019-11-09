@@ -171,7 +171,7 @@ public class PracticeActivity extends AppCompatActivity {
                     gutairei_text.setText("ex)vision[vɪʒʌn]"+"\n"+"     measure[meʒɜr]");
                 } else if (category_name.equals("category9.csv")) {
                     nigate_phonetics_text.setText("[ð]");
-                    gutairei_text.setText("ex)the[ðʌ]"+"\n"+"     there[ðæt]");
+                    gutairei_text.setText("ex)the[ðʌ]"+"\n"+"     that[ðæt]");
                 } else if (category_name.equals("category10.csv")) {
                     nigate_phonetics_text.setText("[v]");
                     gutairei_text.setText("ex)very[veri]"+"\n"+"     have[hæv]");
@@ -374,7 +374,7 @@ public class PracticeActivity extends AppCompatActivity {
                     gutairei_text2.setText("ex)vision[vɪʒʌn]"+"\n"+"     measure[meʒɜr]");
                 } else if (category_name.equals("category9.csv")) {
                     nigate_phonetics_text2.setText("[ð]");
-                    gutairei_text2.setText("ex)the[ðʌ]"+"\n"+"     there[ðæt]");
+                    gutairei_text2.setText("ex)the[ðʌ]"+"\n"+"     that[ðæt]");
                 } else if (category_name.equals("category10.csv")) {
                     nigate_phonetics_text2.setText("[v]");
                     gutairei_text2.setText("ex)very[veri]"+"\n"+"     have[hæv]");
