@@ -1,5 +1,14 @@
 package com.example.phoneticstest;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.content.Intent;
 import android.os.Build;
 import android.speech.RecognitionListener;
@@ -31,6 +40,10 @@ import java.util.Random;
 
 public  class TestActivity extends AppCompatActivity implements View.OnClickListener, TextToSpeech.OnInitListener {
 
+   // private TextView textView;
+   // private EditText editTextKey, editTextValue;
+    private TestOpenHelper helper;
+    private SQLiteDatabase db;
     private SpeechRecognizer sr;
     private static final int REQUEST_CODE = 1000;
     private TextView resulttext;//音声認識の受け取り皿
@@ -148,9 +161,22 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         skipbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(helper == null){
+                    helper = new TestOpenHelper(getApplicationContext());
+                }
+                if(db == null){
+                    db = helper.getWritableDatabase();
+                }
+                String key = textView.getText().toString();
+                insertData(db, key);
                 skip();
             }
         });
+    }
+    private void insertData(SQLiteDatabase db, String com){
+        ContentValues values = new ContentValues();
+        values.put("company", com);
+        db.insert("testdb", null, values);
     }
     public String readFile(String file, String count,int[] array){
         String text = "nofile";
