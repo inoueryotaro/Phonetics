@@ -483,6 +483,7 @@ public class WeakActivity extends AppCompatActivity {
             }
 
         }
+        nigate_word_text.setVisibility(View.GONE);
         if( exist_nigate == 1) {
             ShosaiButton.setVisibility(View.VISIBLE);
             ShosaiButton.setOnClickListener(new View.OnClickListener() {
