@@ -117,14 +117,14 @@ public class EditActivity extends AppCompatActivity {
                 alertDialog = new AlertDialog.Builder(EditActivity.this);
                 alertDialog.setTitle("確認");
                 alertDialog.setMessage("本当に新規作成・追記しますか?");
-                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                alertDialog.setPositiveButton("はい", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         saveFile(textFile, id,mondai_tango);
                         Toast.makeText(getApplicationContext(), "ファイルを新規作成・追記しました",
                                 Toast.LENGTH_LONG).show();
                     }
-                }).show();
+                }).setNegativeButton("やめておく",null).show();
                // saveFile(textFile, id,mondai_tango);
             }
         });
@@ -155,7 +155,7 @@ public class EditActivity extends AppCompatActivity {
                 alertDialog = new AlertDialog.Builder(EditActivity.this);
                 alertDialog.setTitle("確認");
                 alertDialog.setMessage("本当に指定したファイルを削除しますか?");
-                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                alertDialog.setPositiveButton("はい", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String file = textFile;
@@ -163,7 +163,7 @@ public class EditActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "ファイルを削除しました",
                                 Toast.LENGTH_LONG).show();
                     }
-                }).show();
+                }).setNegativeButton("やめておく",null).show();
 
             }
 
