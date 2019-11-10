@@ -1,7 +1,10 @@
 package com.example.phoneticstest;
 
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +12,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.IOException;
 
 public class PracticeActivity extends AppCompatActivity {
 
@@ -24,65 +30,12 @@ public class PracticeActivity extends AppCompatActivity {
     private TextView concrete_tango_text2;
     private TextView gutairei_text;
     private TextView gutairei_text2;
-    private SoundPool soundPool;
-    private int soundOne, soundTwo;
+    private MediaPlayer mediaPlayer=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice);
-
-        AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                // USAGE_MEDIA
-                // USAGE_GAME
-                .setUsage(AudioAttributes.USAGE_GAME)
-                // CONTENT_TYPE_MUSIC
-                // CONTENT_TYPE_SPEECH, etc.
-                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-                .build();
-        soundPool = new SoundPool.Builder()
-                .setAudioAttributes(audioAttributes)
-                // ストリーム数に応じて
-                .setMaxStreams(2)
-                .build();
-        // one.wav をロードしておく
-        soundOne = soundPool.load(this, R.raw.come, 1);
-
-        // two.wav をロードしておく
-        soundTwo = soundPool.load(this, R.raw.come, 1);
-
-        // load が終わったか確認する場合
-        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-                Log.d("debug","sampleId="+sampleId);
-                Log.d("debug","status="+status);
-            }
-        });
-        Button Regenerationbutton = (Button)findViewById(R.id.saisei_button);
-        Regenerationbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // one.wav の再生
-                // play(ロードしたID, 左音量, 右音量, 優先度, ループ,再生速度)
-                soundPool.play(soundOne, 1.0f, 1.0f, 0, 0, 1);
-
-            }
-        });
-
-        Button Regenerationbutton2 = (Button)findViewById(R.id.saisei_button2);
-        Regenerationbutton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // two.wav の再生
-                soundPool.play(soundTwo, 1.0f, 1.0f, 1, 0, 1);
-
-                // ボタンの回転アニメーション
-               // RotateAnimation buttonRotation = new RotateAnimation(0, 360, button2.getWidth()/2, button2.getHeight()/2);
-               // buttonRotation.setDuration(2000);
-            //    button2.startAnimation(buttonRotation);
-            }
-        });
 
         Intent intent = getIntent();
         zenhan_count =intent.getIntExtra("miss_zenhan",0);
@@ -101,9 +54,46 @@ public class PracticeActivity extends AppCompatActivity {
         concrete_tango_text2 = findViewById(R.id.concrete_tango_text2);
         gutairei_text = findViewById(R.id.gutairei_text);
         gutairei_text2 = findViewById(R.id.gutairei_text2);
-        Regenerationbutton = findViewById(R.id.saisei_button);
-        Regenerationbutton2 = findViewById(R.id.saisei_button2);
+        Button RegenerationStart = findViewById(R.id.saisei_button);
+        Button RegenerationStart2 = findViewById(R.id.saisei_button2);
+        Button RegenerationStart3 = findViewById(R.id.saisei_button3);
+        Button RegenerationStart4 = findViewById(R.id.saisei_button4);
 
+        if( category_name.equals("category1.csv")) {
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("come.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("cup.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("about.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("away.mp3");
+                }
+            });
+        }
+        if(type_of_mistake !=  3) {
+            RegenerationStart3.setVisibility(View.GONE);
+        }
+        if( type_of_mistake != 3) {
+            RegenerationStart4.setVisibility(View.GONE);
+        }
 
         if( type_of_mistake == 1) {
             if (category_name.equals("category1.csv")) {
@@ -515,6 +505,75 @@ public class PracticeActivity extends AppCompatActivity {
             }
 
         }
+    private boolean audioSetup(String file){
+        boolean fileCheck = false;
 
+        // インタンスを生成
+        mediaPlayer = new MediaPlayer();
+
+        //音楽ファイル名, あるいはパス
+        String filePath = file;
+
+        // assetsから mp3 ファイルを読み込み
+        try(AssetFileDescriptor afdescripter = getAssets().openFd(filePath);)
+        {
+            // MediaPlayerに読み込んだ音楽ファイルを指定
+            mediaPlayer.setDataSource(afdescripter.getFileDescriptor(),
+                    afdescripter.getStartOffset(),
+                    afdescripter.getLength());
+            // 音量調整を端末のボタンに任せる
+            setVolumeControlStream(AudioManager.STREAM_MUSIC);
+            mediaPlayer.prepare();
+            fileCheck = true;
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+        return fileCheck;
     }
+    private void audioPlay(String file) {
+        if (mediaPlayer == null) {
+            // audio ファイルを読出し
+            if (audioSetup(file)){
+           //     Toast.makeText(getApplication(), "Rread audio file", Toast.LENGTH_SHORT).show();
+            }
+            else{
+           //     Toast.makeText(getApplication(), "Error: read audio file", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+        else{
+            // 繰り返し再生する場合
+            mediaPlayer.stop();
+            mediaPlayer.reset();
+            // リソースの解放
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+
+        // 再生する
+        mediaPlayer.start();
+
+        // 終了を検知するリスナー
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                Log.d("debug","end of audio");
+               audioStop();
+            }
+        });
+    }
+   private void audioStop() {
+        // 再生終了
+        mediaPlayer.stop();
+        // リセット
+        mediaPlayer.reset();
+        // リソースの解放
+        mediaPlayer.release();
+
+        mediaPlayer = null;
+    }
+
+
+}
 
