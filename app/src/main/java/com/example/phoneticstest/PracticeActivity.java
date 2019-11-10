@@ -5,7 +5,6 @@ import android.content.res.AssetFileDescriptor;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -87,6 +86,677 @@ public class PracticeActivity extends AppCompatActivity {
                     audioPlay("away.mp3");
                 }
             });
+        }
+        else if(category_name.equals("category2.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("hot.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("stop.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("bag.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("cat.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category3.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("eat.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("key.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("in.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("sit.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category4.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("look.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("good.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("do.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("soon.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category5.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("any.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("test.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("in.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("sit.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category6.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("dog.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("small.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("go.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("know.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category7.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("city.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("see.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("easy.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("size.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category8.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("she.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("sure.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("vision.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("measure.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category9.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("think.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("mouth.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("the.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("there.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category10.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("for.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("safe.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("very.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("have.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category11.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("like.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("listen.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("right.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("carry.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category12.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("tea.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("take.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("day.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("dinner.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category14.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("kind.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("like.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("big.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("gift.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category15.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("teach.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("chair.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("age.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("join.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category16.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("many.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("mind.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("new.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("name.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category17.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("for.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("safe.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("he.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("high.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category18.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("we.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("way.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("very.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("have.mp3");
+                }
+            });
+        }
+
+        else if(category_name.equals("category19.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("thing.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("sing.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("new.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("name.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category20.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("in.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("sit.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("you.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("yet.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category21.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("mine.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("by.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("say.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("wait.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category22.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("mine.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("by.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("boy.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("point.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category23.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("out.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("down.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("go.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("know.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category24.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("after.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("better.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("right.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("carry.mp3");
+                }
+            });
+        }
+        else if(category_name.equals("category13.csv")){
+            RegenerationStart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("put.mp3");
+                }
+            });
+            RegenerationStart2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    audioPlay("paper.mp3");
+                }
+            });
+            RegenerationStart3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("but.mp3");
+                }
+            });
+            RegenerationStart4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // 音楽再生
+                    audioPlay("baby.mp3");
+                }
+            });
+        }
+        else{
+
         }
         if(type_of_mistake !=  3) {
             RegenerationStart3.setVisibility(View.GONE);
@@ -224,7 +894,7 @@ public class PracticeActivity extends AppCompatActivity {
                     gutairei_text.setText("ex)vision[vɪʒʌn]"+"\n"+"     measure[meʒɜr]");
                 } else if (category_name.equals("category9.csv")) {
                     nigate_phonetics_text.setText("[ð]");
-                    gutairei_text.setText("ex)the[ðʌ]"+"\n"+"     that[ðæt]");
+                    gutairei_text.setText("ex)the[ðʌ]"+"\n"+"     there[ðer]");
                 } else if (category_name.equals("category10.csv")) {
                     nigate_phonetics_text.setText("[v]");
                     gutairei_text.setText("ex)very[veri]"+"\n"+"     have[hæv]");
@@ -427,7 +1097,7 @@ public class PracticeActivity extends AppCompatActivity {
                     gutairei_text2.setText("ex)vision[vɪʒʌn]"+"\n"+"     measure[meʒɜr]");
                 } else if (category_name.equals("category9.csv")) {
                     nigate_phonetics_text2.setText("[ð]");
-                    gutairei_text2.setText("ex)the[ðʌ]"+"\n"+"     that[ðæt]");
+                    gutairei_text2.setText("ex)the[ðʌ]"+"\n"+"     there[ðer]");
                 } else if (category_name.equals("category10.csv")) {
                     nigate_phonetics_text2.setText("[v]");
                     gutairei_text2.setText("ex)very[veri]"+"\n"+"     have[hæv]");
