@@ -201,6 +201,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category1.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         });
@@ -214,6 +215,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category2.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         });
@@ -227,6 +229,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category3.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_4Button.setOnClickListener(new View.OnClickListener() {
@@ -239,6 +242,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category4.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_5Button.setOnClickListener(new View.OnClickListener() {
@@ -251,6 +255,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category5.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_6Button.setOnClickListener(new View.OnClickListener() {
@@ -263,6 +268,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category6.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_7Button.setOnClickListener(new View.OnClickListener() {
@@ -275,6 +281,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category7.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_8Button.setOnClickListener(new View.OnClickListener() {
@@ -287,6 +294,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category8.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_9Button.setOnClickListener(new View.OnClickListener() {
@@ -299,6 +307,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category9.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_10Button.setOnClickListener(new View.OnClickListener() {
@@ -311,6 +320,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category10.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_11Button.setOnClickListener(new View.OnClickListener() {
@@ -323,6 +333,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category11.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_12Button.setOnClickListener(new View.OnClickListener() {
@@ -335,6 +346,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category12.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_13Button.setOnClickListener(new View.OnClickListener() {
@@ -347,6 +359,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category13.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_14Button.setOnClickListener(new View.OnClickListener() {
@@ -359,6 +372,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category14.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_15Button.setOnClickListener(new View.OnClickListener() {
@@ -371,6 +385,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category15.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_16Button.setOnClickListener(new View.OnClickListener() {
@@ -383,6 +398,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category16.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_17Button.setOnClickListener(new View.OnClickListener() {
@@ -395,6 +411,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category17.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_18Button.setOnClickListener(new View.OnClickListener() {
@@ -407,6 +424,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category18.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_19Button.setOnClickListener(new View.OnClickListener() {
@@ -419,6 +437,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category19.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_20Button.setOnClickListener(new View.OnClickListener() {
@@ -431,6 +450,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category20.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_21Button.setOnClickListener(new View.OnClickListener() {
@@ -443,6 +463,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category21.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_22Button.setOnClickListener(new View.OnClickListener() {
@@ -455,6 +476,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category22.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         }); Category_23Button.setOnClickListener(new View.OnClickListener() {
@@ -467,6 +489,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category23.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         });
@@ -480,6 +503,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category24.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
+                deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         });

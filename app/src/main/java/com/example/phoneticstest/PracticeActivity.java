@@ -21,6 +21,7 @@ public class PracticeActivity extends AppCompatActivity {
     private int kohan_count;
     private int type_of_mistake;
     private String category_name;
+    private String nigate_word;
     private TextView nigate_phonetics_text;
     private TextView seiko_count_text;
     private TextView concrete_tango_text;
@@ -44,7 +45,8 @@ public class PracticeActivity extends AppCompatActivity {
         type_of_mistake = intent3.getIntExtra("type_mistake",0);
         Intent intent4 = getIntent();
         category_name = intent4.getStringExtra(WeakActivity.CATEGORY_MESSAGE);
-
+        Intent intent5 = getIntent();
+        nigate_word = intent5.getStringExtra(WeakActivity.NIGATE_MESSAGE);
         nigate_phonetics_text = findViewById(R.id.nigate_phonetic_text);
         seiko_count_text = findViewById(R.id.seiko_count_text);
         concrete_tango_text = findViewById(R.id.concrete_tango_text);
@@ -867,6 +869,7 @@ public class PracticeActivity extends AppCompatActivity {
                 seiko_count_text.setText("10回中すべて発音失敗");
             }
         }
+        concrete_tango_text.setText(nigate_word);
             if( type_of_mistake == 2){
                 if (category_name.equals("category1.csv")) {
                     nigate_phonetics_text.setText("[ə]");
