@@ -1,8 +1,10 @@
 package com.example.phoneticstest;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -35,10 +37,12 @@ public class EditActivity extends AppCompatActivity {
     private TextView textView2;
     private String spinnerItems[] = {"category1.csv", "category2.csv", "category3.csv", "category4.csv","category5.csv","category6.csv","category7.csv","category8.csv","category9.csv","category10.csv",
             "category11.csv","category12.csv","category13.csv","category14.csv","category15.csv","category16.csv","category17.csv","category18.csv","category19.csv",
-            "category20.csv","category21.csv","category22.csv","category23.csv","category24.csv"};
+            "category20.csv","category21.csv","category22.csv","category23.csv","category24.csv","category25.csv"};
     private EditText editText2;//ここに出題単語が入力される
     public static final String EXTRA_MESSAGE
             = "com.example.phoneticstest.EditActivity.MESSAGE";//"category1.csv"というファイル名を送信する
+
+    AlertDialog.Builder alertDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,13 +110,22 @@ public class EditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // エディットテキストのテキストを取得
-                String textFile = textView.getText().toString();
-                String  id = textView2.getText().toString();
-                String  mondai_tango = editText2.getText().toString();
+                final String textFile = textView.getText().toString();
+                final String  id = textView2.getText().toString();
+                final String  mondai_tango = editText2.getText().toString();
                 //関数saveFileの処理(→ファイルを保存する)
-                saveFile(textFile, id,mondai_tango);
-                Toast.makeText(getApplicationContext(), "ファイルの新規作成or追記しました",
-                        Toast.LENGTH_LONG).show();
+                alertDialog = new AlertDialog.Builder(EditActivity.this);
+                alertDialog.setTitle("確認");
+                alertDialog.setMessage("本当に新規作成・追記しますか?");
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        saveFile(textFile, id,mondai_tango);
+                        Toast.makeText(getApplicationContext(), "ファイルを新規作成・追記しました",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }).show();
+               // saveFile(textFile, id,mondai_tango);
             }
         });
         //[表示]ボタンの処理
@@ -137,11 +150,21 @@ public class EditActivity extends AppCompatActivity {
         buttondelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String textFile = textView.getText().toString();
-                //関数deleteFileの処理(ファイルを削除)
-                deleteFile(textFile);
-                Toast.makeText(getApplicationContext(), "ファイルを削除しました",
-                        Toast.LENGTH_LONG).show();
+                final String textFile = textView.getText().toString();
+
+                alertDialog = new AlertDialog.Builder(EditActivity.this);
+                alertDialog.setTitle("確認");
+                alertDialog.setMessage("本当に指定したファイルを削除しますか?");
+                alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String file = textFile;
+                        deleteFile(file);
+                        Toast.makeText(getApplicationContext(), "ファイルを削除しました",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }).show();
+
             }
 
 
