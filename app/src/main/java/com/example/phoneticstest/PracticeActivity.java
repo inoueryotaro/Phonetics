@@ -1,7 +1,13 @@
 package com.example.phoneticstest;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.util.Log;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
+import android.database.Cursor;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -31,6 +37,9 @@ public class PracticeActivity extends AppCompatActivity {
     private TextView gutairei_text;
     private TextView gutairei_text2;
     private MediaPlayer mediaPlayer=null;
+    private TextView textView;
+    private TestOpenHelper helper;
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +54,8 @@ public class PracticeActivity extends AppCompatActivity {
         type_of_mistake = intent3.getIntExtra("type_mistake",0);
         Intent intent4 = getIntent();
         category_name = intent4.getStringExtra(WeakActivity.CATEGORY_MESSAGE);
-        Intent intent5 = getIntent();
-        nigate_word = intent5.getStringExtra(WeakActivity.NIGATE_MESSAGE);
+      //  Intent intent5 = getIntent();
+      //  nigate_word = intent5.getStringExtra(WeakActivity.NIGATE_MESSAGE);
         nigate_phonetics_text = findViewById(R.id.nigate_phonetic_text);
         seiko_count_text = findViewById(R.id.seiko_count_text);
         concrete_tango_text = findViewById(R.id.concrete_tango_text);
@@ -60,6 +69,7 @@ public class PracticeActivity extends AppCompatActivity {
         Button RegenerationStart3 = findViewById(R.id.saisei_button3);
         Button RegenerationStart4 = findViewById(R.id.saisei_button4);
 
+        readData(type_of_mistake);
         if( category_name.equals("category1.csv")) {
             RegenerationStart.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -869,7 +879,7 @@ public class PracticeActivity extends AppCompatActivity {
                 seiko_count_text.setText("10回中すべて発音失敗");
             }
         }
-        concrete_tango_text.setText(nigate_word);
+        //concrete_tango_text.setText(nigate_word);
             if( type_of_mistake == 2){
                 if (category_name.equals("category1.csv")) {
                     nigate_phonetics_text.setText("[ə]");
@@ -1247,6 +1257,93 @@ public class PracticeActivity extends AppCompatActivity {
         mediaPlayer = null;
     }
 
+    private void readData(int type_of_mistake){
+        if(helper == null){
+            helper = new TestOpenHelper(getApplicationContext());
+        }
+        if(db == null){
+            db = helper.getReadableDatabase();
+        }
+        Log.d("debug","**********Cursor");
+        Cursor cursor = db.query(
+                "testdb",
+                new String[] { "company", "stockprice" },
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        Cursor cursor2 = db.query(
+                "testdb",
+                new String[] { "company", "stockprice" },
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        cursor.moveToFirst();
+        StringBuilder sbuilder = new StringBuilder();
+        StringBuilder sbuilder2 = new StringBuilder();
+        int a = 10;
+        if( type_of_mistake == 1) {
+            for (int i = 0; i < cursor.getCount(); i++) {
+                if( a >= cursor.getInt(1)){
+                sbuilder.append(cursor.getString(0));
+                //sbuilder.append(",");
+                //sbuilder.append(cursor.getInt(1));
+                sbuilder.append("\n");
+                }
+                cursor.moveToNext();
+            }
+            // 忘れずに！
+            cursor.close();
+            concrete_tango_text.setText(sbuilder.toString());
+        }
+        else if( type_of_mistake == 2) {
+            for (int i = 0; i < cursor.getCount(); i++) {
+                if( a < cursor.getInt(1)) {
+                    sbuilder.append(cursor.getString(0));
+                  //  sbuilder.append(",");
+                  //  sbuilder.append(cursor.getInt(1));
+                    sbuilder.append("\n");
+                }
+                cursor.moveToNext();
+            }
+            // 忘れずに！
+            cursor.close();
+            concrete_tango_text.setText(sbuilder.toString());
+        }
+        else if( type_of_mistake == 3){
+            for (int i = 0; i < cursor.getCount(); i++) {
+                if( a >= cursor.getInt(1)) {
+                    sbuilder.append(cursor.getString(0));
+                    //sbuilder.append(",");
+                    //sbuilder.append(cursor.getInt(1));
+                    sbuilder.append("\n");
+                }
+                cursor.moveToNext();
+            }
+            cursor.close();
+            cursor2.moveToFirst();
+            for (int i = 0; i < cursor2.getCount(); i++) {
+                if ( a < cursor2.getInt(1)) {
+                    sbuilder2.append(cursor2.getString(0));
+                 //   sbuilder2.append(",");
+                 //   sbuilder2.append(cursor.getInt(1));
+                    sbuilder2.append("\n");
+                }
+                cursor2.moveToNext();
+            }
+            // 忘れずに！
+            cursor2.close();
+            concrete_tango_text.setText(sbuilder.toString());
+            concrete_tango_text2.setText(sbuilder2.toString());
+        }
+      //  Log.d("debug","**********"+sbuilder.toString());
+      //  nigate_word_text.setText(sbuilder.toString());
+    }
 
 }
 

@@ -530,7 +530,7 @@ public class WeakActivity extends AppCompatActivity {
         StringBuilder sbuilder = new StringBuilder();
         for (int i = 0; i < cursor.getCount(); i++) {
             sbuilder.append(cursor.getString(0));
-            sbuilder.append(": ");
+            sbuilder.append(",");
             sbuilder.append(cursor.getInt(1));
             sbuilder.append("\n");
             cursor.moveToNext();
