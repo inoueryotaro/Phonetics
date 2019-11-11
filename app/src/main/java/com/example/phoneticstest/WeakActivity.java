@@ -28,7 +28,6 @@ public class WeakActivity extends AppCompatActivity {
     private TextView resultingtext;
     private int exist_nigate;
     private int type_of_mistake;
-    private TextView nigate_word_text;
     private EditText editTextKey, editTextValue;
     private TestOpenHelper helper;
     private SQLiteDatabase db;
@@ -39,7 +38,6 @@ public class WeakActivity extends AppCompatActivity {
         exist_nigate = 1;
         type_of_mistake = 0;
         resultingtext = findViewById(R.id.textView14);
-        nigate_word_text = findViewById(R.id.textView12);
         Button ShosaiButton = findViewById(R.id.button8);
         Button BackCategory = findViewById(R.id.button9);
         Intent intent = getIntent();
@@ -483,20 +481,16 @@ public class WeakActivity extends AppCompatActivity {
             }
 
         }
-        nigate_word_text.setVisibility(View.GONE);
         if( exist_nigate == 1) {
             ShosaiButton.setVisibility(View.VISIBLE);
             ShosaiButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    readData();
-                    String text = nigate_word_text.getText().toString();
                     Intent intent3 = new Intent(getApplication(), PracticeActivity.class);
                     intent3.putExtra("miss_zenhan", zenhan_count);
                     intent3.putExtra("miss_kohan", kohan_count);
                     intent3.putExtra("type_mistake", type_of_mistake);
                     intent3.putExtra(CATEGORY_MESSAGE, category_name);
-                    intent3.putExtra(NIGATE_MESSAGE,text);
                     startActivity(intent3);
                 }
             });
@@ -509,36 +503,4 @@ public class WeakActivity extends AppCompatActivity {
 
         }
     }
-    private void readData(){
-        if(helper == null){
-            helper = new TestOpenHelper(getApplicationContext());
-        }
-        if(db == null){
-            db = helper.getReadableDatabase();
-        }
-        Log.d("debug","**********Cursor");
-        Cursor cursor = db.query(
-                "testdb",
-                new String[] { "company", "stockprice" },
-                null,
-                null,
-                null,
-                null,
-                null
-        );
-        cursor.moveToFirst();
-        StringBuilder sbuilder = new StringBuilder();
-        for (int i = 0; i < cursor.getCount(); i++) {
-            sbuilder.append(cursor.getString(0));
-            sbuilder.append(",");
-            sbuilder.append(cursor.getInt(1));
-            sbuilder.append("\n");
-            cursor.moveToNext();
-        }
-        // 忘れずに！
-        cursor.close();
-        Log.d("debug","**********"+sbuilder.toString());
-        nigate_word_text.setText(sbuilder.toString());
-    }
-
 }

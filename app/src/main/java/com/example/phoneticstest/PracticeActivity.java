@@ -1299,7 +1299,7 @@ public class PracticeActivity extends AppCompatActivity {
             }
             // 忘れずに！
             cursor.close();
-            concrete_tango_text.setText(sbuilder.toString());
+            concrete_tango_text.setText("あなたが発音ミスした単語"+"\n"+sbuilder.toString());
         }
         else if( type_of_mistake == 2) {
             for (int i = 0; i < cursor.getCount(); i++) {
@@ -1313,7 +1313,7 @@ public class PracticeActivity extends AppCompatActivity {
             }
             // 忘れずに！
             cursor.close();
-            concrete_tango_text.setText(sbuilder.toString());
+            concrete_tango_text.setText("あなたが発音ミスした単語"+"\n"+sbuilder.toString());
         }
         else if( type_of_mistake == 3){
             for (int i = 0; i < cursor.getCount(); i++) {
@@ -1338,8 +1338,8 @@ public class PracticeActivity extends AppCompatActivity {
             }
             // 忘れずに！
             cursor2.close();
-            concrete_tango_text.setText(sbuilder.toString());
-            concrete_tango_text2.setText(sbuilder2.toString());
+            concrete_tango_text.setText("あなたが発音ミスした単語"+"\n"+sbuilder.toString());
+            concrete_tango_text2.setText("あなたが発音ミスした単語"+"\n"+sbuilder2.toString());
         }
       //  Log.d("debug","**********"+sbuilder.toString());
       //  nigate_word_text.setText(sbuilder.toString());
