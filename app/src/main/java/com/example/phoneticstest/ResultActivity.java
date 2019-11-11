@@ -464,17 +464,21 @@ public class ResultActivity extends AppCompatActivity {
                     db = helper.getWritableDatabase();
                 }
                 String key = textview5.getText().toString();
+                String value = String.valueOf(id_number);
                 if(finalFailure == 1) {
-                    insertData(db, key);
+                    insertData(db, key,Integer.valueOf(value));
                 }
                 speech();
             }
         });
 
     }
-    private void insertData(SQLiteDatabase db, String com){
+    private void insertData(SQLiteDatabase db, String com, int price){
+
         ContentValues values = new ContentValues();
         values.put("company", com);
+        values.put("stockprice", price);
+
         db.insert("testdb", null, values);
     }
     private void speech(){

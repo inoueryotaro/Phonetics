@@ -148,6 +148,12 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         speakingbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(helper == null){
+                    helper = new TestOpenHelper(getApplicationContext());
+                }
+                if(db == null){
+                    db = helper.getWritableDatabase();
+                }
                 speakingbutton_tap_count++;
                 mondaikaisutext.setText("第"+ String.valueOf(mTransitionCount)+ "問"+"\n"+"([話す]ボタンタップ回数:"+String.valueOf(speakingbutton_tap_count)+")");
                 speech();
@@ -168,14 +174,18 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     db = helper.getWritableDatabase();
                 }
                 String key = textView.getText().toString();
-                insertData(db, key);
+                String value = String.valueOf(id_number);
+                insertData(db, key,Integer.valueOf(value));
                 skip();
             }
         });
     }
-    private void insertData(SQLiteDatabase db, String com){
+    private void insertData(SQLiteDatabase db, String com, int price){
+
         ContentValues values = new ContentValues();
         values.put("company", com);
+        values.put("stockprice", price);
+
         db.insert("testdb", null, values);
     }
     public String readFile(String file, String count,int[] array){
@@ -427,6 +437,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             skipintent.putExtra("miss_phonetics_symbols2", mmiss_phonetics_symbols2);
             skipintent.putExtra("skip_id", skip);
             skipintent.putExtra(EXTRA_MESSAGE4, str4);
+
             skipintent.putExtra("id_shuffle_message", id_shuffle_array);
             if (mTransitionCount != 1) {
                 skipintent.putExtra("id_shuffle_message2", id_shuffle_array2);
@@ -559,6 +570,8 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     if (mTransitionCount % 2 == 0) {
                         mmiss_phonetics_symbols2++;
                     }
+                    String key = textView.getText().toString();
+                    String value = String.valueOf(id_number);
                     skipintent.putExtra("miss_phonetics_symbols", mmiss_phonetics_symbols);
                     skipintent.putExtra("miss_phonetics_symbols2", mmiss_phonetics_symbols2);
                     skipintent.putExtra("skip_id", skip);
@@ -567,6 +580,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     if (mTransitionCount != 1) {
                         skipintent.putExtra("id_shuffle_message2", id_shuffle_array2);
                     }
+                    insertData(db, key,Integer.valueOf(value));
                     startActivity(skipintent);
                     resulttext.setText("");
                 }

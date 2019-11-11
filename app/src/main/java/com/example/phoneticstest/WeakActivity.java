@@ -519,7 +519,7 @@ public class WeakActivity extends AppCompatActivity {
         Log.d("debug","**********Cursor");
         Cursor cursor = db.query(
                 "testdb",
-                new String[] { "company" },
+                new String[] { "company", "stockprice" },
                 null,
                 null,
                 null,
@@ -530,6 +530,8 @@ public class WeakActivity extends AppCompatActivity {
         StringBuilder sbuilder = new StringBuilder();
         for (int i = 0; i < cursor.getCount(); i++) {
             sbuilder.append(cursor.getString(0));
+            sbuilder.append(": ");
+            sbuilder.append(cursor.getInt(1));
             sbuilder.append("\n");
             cursor.moveToNext();
         }
