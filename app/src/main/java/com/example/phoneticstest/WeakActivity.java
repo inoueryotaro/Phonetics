@@ -250,7 +250,7 @@ public class WeakActivity extends AppCompatActivity {
         });
 
         if( zenhan_count < 4 && kohan_count < 4){
-            resultingtext.setText(R.string.weak_message);
+            resultingtext.setText("今回のテストで特に苦手な発音と思われるものはありません!!");
             exist_nigate = 0;
         }
         if( zenhan_count >= 4 || kohan_count >= 4){
