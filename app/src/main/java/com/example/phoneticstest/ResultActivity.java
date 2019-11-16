@@ -279,7 +279,7 @@ public class ResultActivity extends AppCompatActivity {
 
         }
 
-        if( mondai_phonetics.equals(right) && error == 0){
+        if( mondai_phonetics.equals(right) ){
            textview7.setText("正解です!!");
         }
         else{
@@ -287,7 +287,19 @@ public class ResultActivity extends AppCompatActivity {
         }
         //textview7.setText(distance);
         int Failure = 0;
-        if( distance.length() != 0) {
+        if( id_number <= 10 && !(mondai_phonetics.equals(right))){
+            mmiss_phonetics_symbols++;
+            Failure = 1;
+        }
+        else if( id_number > 10 && !(mondai_phonetics.equals(right))){
+            mmiss_phonetics_symbols2++;
+            Failure = 1;
+        }
+        else{
+
+        }
+
+/*        if( distance.length() != 0) {
             if (id_number <= 10) {
                 for (int i = 0; i < distance_index.length; i++) {
                     int position = Integer.parseInt(distance_index[i]);
@@ -451,7 +463,7 @@ public class ResultActivity extends AppCompatActivity {
                     }
                 }
             }
-        }
+        }*/
 
         final int finalFailure = Failure;
         nextbutton.setOnClickListener(new View.OnClickListener() {
