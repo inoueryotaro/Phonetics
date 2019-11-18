@@ -1,8 +1,10 @@
 package com.example.phoneticstest;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class CategoryActivity extends AppCompatActivity {
+    AlertDialog.Builder alertDialog;
     public static final String EXTRA_MESSAGE
             = "com.example.phoneticstest.CategoryActivity.MESSAGE";//カテゴリー名を渡すex)"category1.csv"
     @Override
@@ -122,7 +125,20 @@ public class CategoryActivity extends AppCompatActivity {
         initializationButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                initialize();
+
+                alertDialog = new AlertDialog.Builder(CategoryActivity.this);
+                alertDialog.setTitle("確認");
+                alertDialog.setMessage("本当にデータを初期化しますか?");
+                alertDialog.setPositiveButton("はい", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        initialize();
+                        Toast.makeText(getApplicationContext(), "データを初期化しました",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }).setNegativeButton("やめておく",null).show();
+
+
             }
 
             private void initialize() {
