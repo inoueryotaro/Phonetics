@@ -3,6 +3,7 @@ package com.example.phoneticstest;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -361,7 +362,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             }
             setSpeechRate(0.5f);
             setSpeechPitch(1.0f);
-
+            setVolumeControlStream(AudioManager.STREAM_MUSIC);
             if (Build.VERSION.SDK_INT >= 21) {
                 // SDK 21 以上
                 tts.speak(string, TextToSpeech.QUEUE_FLUSH, null, "messageID");

@@ -68,7 +68,7 @@ public class PracticeActivity extends AppCompatActivity {
         Button RegenerationStart2 = findViewById(R.id.saisei_button2);
         Button RegenerationStart3 = findViewById(R.id.saisei_button3);
         Button RegenerationStart4 = findViewById(R.id.saisei_button4);
-       
+
         readData(type_of_mistake);
         if( type_of_mistake == 3) {
             if (category_name.equals("category1.csv")) {

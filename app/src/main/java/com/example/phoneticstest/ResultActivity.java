@@ -4,8 +4,11 @@ package com.example.phoneticstest;
 //import androidx.appcompat.app.AppCompatActivity;
 //import android.support.v7.app.AppCompatActivity;
 import android.content.ContentValues;
+import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,11 +31,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class ResultActivity extends AppCompatActivity {
+    private MediaPlayer mediaPlayer=null;
     private TextView textView;
     private EditText editTextKey, editTextValue;
     private TestOpenHelper helper;
@@ -293,6 +298,7 @@ public class ResultActivity extends AppCompatActivity {
            textview16.setText(String.valueOf(100 / right.length() * (right.length() - distance2.length() / 2)) + "点");
        }
        else{
+            audioPlay("fanfare3.mp3");
            textview16.setText("100点");
         }
 
@@ -960,4 +966,73 @@ public class ResultActivity extends AppCompatActivity {
 
         return phonetics;
     }
+    private boolean audioSetup(String file){
+        boolean fileCheck = false;
+
+        // インタンスを生成
+        mediaPlayer = new MediaPlayer();
+
+        //音楽ファイル名, あるいはパス
+        String filePath = file;
+
+        // assetsから mp3 ファイルを読み込み
+        try(AssetFileDescriptor afdescripter = getAssets().openFd(filePath);)
+        {
+            // MediaPlayerに読み込んだ音楽ファイルを指定
+            mediaPlayer.setDataSource(afdescripter.getFileDescriptor(),
+                    afdescripter.getStartOffset(),
+                    afdescripter.getLength());
+            // 音量調整を端末のボタンに任せる
+            setVolumeControlStream(AudioManager.STREAM_MUSIC);
+            mediaPlayer.prepare();
+            fileCheck = true;
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+        return fileCheck;
+    }
+    private void audioPlay(String file) {
+        if (mediaPlayer == null) {
+            // audio ファイルを読出し
+            if (audioSetup(file)){
+                //     Toast.makeText(getApplication(), "Rread audio file", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                //     Toast.makeText(getApplication(), "Error: read audio file", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+        else{
+            // 繰り返し再生する場合
+            mediaPlayer.stop();
+            mediaPlayer.reset();
+            // リソースの解放
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+
+        // 再生する
+        mediaPlayer.start();
+
+        // 終了を検知するリスナー
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                Log.d("debug","end of audio");
+                audioStop();
+            }
+        });
+    }
+    private void audioStop() {
+        // 再生終了
+        mediaPlayer.stop();
+        // リセット
+        mediaPlayer.reset();
+        // リソースの解放
+        mediaPlayer.release();
+
+        mediaPlayer = null;
+    }
+
 }
