@@ -103,6 +103,8 @@ public class ResultActivity extends AppCompatActivity {
         TextView textview6 = findViewById(R.id.textView6);
         //合否判定のtext
         TextView textview7 = findViewById(R.id.textView7);
+        //点数表示のtext
+        TextView textview16 = findViewById(R.id.textView16);
         Button   nextbutton = findViewById(R.id.button5);
         Intent intent4 = getIntent();
         mTransitionCount = intent4.getIntExtra("TransitionCount", 0);
@@ -263,6 +265,7 @@ public class ResultActivity extends AppCompatActivity {
         }
         Levenstein_distance LD = new Levenstein_distance();
         String distance = LD.LevensteinDistance(mondai_phonetics, right);
+        String distance2 = LD.LevensteinDistance(right,mondai_phonetics);
         String[] distance_index;
         distance_index = distance.split(" ",0);
         textview2.setText(right);
@@ -285,7 +288,14 @@ public class ResultActivity extends AppCompatActivity {
         else{
             textview7.setText("不正解です");
         }
-        //textview7.setText(distance);
+        textview16.setText(String.valueOf(distance2.length()));
+        if( distance2.length() != 0 ) {
+           textview16.setText(String.valueOf(100 / right.length() * (right.length() - distance2.length() / 2)) + "点");
+       }
+       else{
+           textview16.setText("100点");
+        }
+
         int Failure = 0;
         if( id_number <= 10 && !(mondai_phonetics.equals(right))){
             mmiss_phonetics_symbols++;
