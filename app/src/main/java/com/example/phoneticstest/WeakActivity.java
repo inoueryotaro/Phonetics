@@ -35,7 +35,6 @@ public class WeakActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weak);
-        exist_nigate = 1;
         type_of_mistake = 0;
         resultingtext = findViewById(R.id.textView14);
         Button ShosaiButton = findViewById(R.id.button8);
@@ -250,8 +249,8 @@ public class WeakActivity extends AppCompatActivity {
         });
 
         if( zenhan_count < 4 && kohan_count < 4){
+            type_of_mistake = 3;
             resultingtext.setText("今回のテストで特に苦手な発音と思われるものはありません!!");
-            exist_nigate = 0;
         }
         if( zenhan_count >= 4 || kohan_count >= 4){
             if( zenhan_count >= 4 && kohan_count < 4){
@@ -481,7 +480,6 @@ public class WeakActivity extends AppCompatActivity {
             }
 
         }
-        if( exist_nigate == 1) {
             ShosaiButton.setVisibility(View.VISIBLE);
             ShosaiButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -494,13 +492,6 @@ public class WeakActivity extends AppCompatActivity {
                     startActivity(intent3);
                 }
             });
-        }
 
-        else if( exist_nigate == 0){
-            ShosaiButton.setVisibility(View.GONE);
-        }
-        else{
-
-        }
     }
 }
