@@ -25,6 +25,10 @@
             android:textSize="60dp"
             android:layout_gravity="center"
             />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <TextView
             android:id="@+id/gutairei_text"
             android:layout_width="wrap_content"
@@ -32,22 +36,33 @@
             android:textSize="30dp"
             android:layout_gravity="center"
             />
-
-        <Button
-            android:id="@+id/saisei_button"
+            <Button
+                android:id="@+id/saisei_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="再生"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="再生"
-            android:textSize="30dp" />
-
-        <Button
-            android:id="@+id/saisei_button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="再生"
-            android:textSize="30dp" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/gutairei_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                />
+            <Button
+                android:id="@+id/saisei_button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="再生"
+                android:textSize="20dp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/seiko_count_text"
@@ -69,29 +84,44 @@
             android:layout_height="wrap_content"
             android:textSize="60dp"
             android:layout_gravity="center"/>
-        <TextView
-            android:id="@+id/gutairei_text2"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30dp"
-            android:layout_gravity="center"
-            />
-        <Button
-            android:id="@+id/saisei_button3"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/gutairei_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                />
+            <Button
+                android:id="@+id/saisei_button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="再生"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="再生"
-            android:textSize="30dp"
-            android:layout_gravity="center"
-            />
-        <Button
-            android:id="@+id/saisei_button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="再生"
-            android:textSize="30dp"
-            android:layout_gravity="center"
-            />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/gutairei_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                />
+            <Button
+                android:id="@+id/saisei_button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="再生"
+                android:textSize="20dp" />
+        </LinearLayout>
         <TextView
             android:id="@+id/seiko_count_text2"
             android:layout_width="wrap_content"

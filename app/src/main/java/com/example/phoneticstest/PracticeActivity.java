@@ -37,6 +37,8 @@ public class PracticeActivity extends AppCompatActivity {
     private TextView concrete_tango_text2;
     private TextView gutairei_text;
     private TextView gutairei_text2;
+    private TextView gutairei_text3;
+    private TextView gutairei_text4;
     private MediaPlayer mediaPlayer=null;
     private TextView textView;
     private TestOpenHelper helper;
@@ -65,6 +67,8 @@ public class PracticeActivity extends AppCompatActivity {
         concrete_tango_text2 = findViewById(R.id.concrete_tango_text2);
         gutairei_text = findViewById(R.id.gutairei_text);
         gutairei_text2 = findViewById(R.id.gutairei_text2);
+        gutairei_text3 = findViewById(R.id.gutairei_text3);
+        gutairei_text4 = findViewById(R.id.gutairei_text4);
         Button RegenerationStart = findViewById(R.id.saisei_button);
         Button RegenerationStart2 = findViewById(R.id.saisei_button2);
         Button RegenerationStart3 = findViewById(R.id.saisei_button3);
@@ -1905,76 +1909,100 @@ public class PracticeActivity extends AppCompatActivity {
                 if (category_name.equals("category1.csv")) {
 
                     nigate_phonetics_text.setText("[ʌ]");
-                    gutairei_text.setText("ex)come[kʌm]"+"\n"+"     cup[kʌp]");
+                    gutairei_text.setText("ex1)come[kʌm]"+"\n");
+                    gutairei_text2.setText("ex2)cup[kʌp]"+"\n");
                 } else if (category_name.equals("category2.csv")) {
                     nigate_phonetics_text.setText("[ɑ]");
-                    gutairei_text.setText("ex)hot[hɑt]"+"\n"+"     stop[stɑp]");
+                    gutairei_text.setText("ex)hot[hɑt]"+"\n");
+                    gutairei_text2.setText("ex2)stop[stɑp]"+"\n");
                 } else if (category_name.equals("category3.csv")) {
                     nigate_phonetics_text.setText("[i]");
-                    gutairei_text.setText("ex)eat[it]"+"\n"+"     key[ki]");
+                    gutairei_text.setText("ex)eat[it]"+"\n");
+                    gutairei_text2.setText("ex2)key[ki]"+"\n");
                 } else if (category_name.equals("category4.csv")) {
                     nigate_phonetics_text.setText("[ʊ]");
-                    gutairei_text.setText("ex)look[lʊk]"+"\n"+"     good[gʊd]");
+                    gutairei_text.setText("ex)look[lʊk]"+"\n");
+                    gutairei_text2.setText("ex2)good[gʊd]"+"\n");
                 } else if (category_name.equals("category5.csv")) {
                     nigate_phonetics_text.setText("[e]");
-                    gutairei_text.setText("ex)any[eni]"+"\n"+"     test[test]");
+                    gutairei_text.setText("ex)any[eni]"+"\n");
+                    gutairei_text2.setText("ex2)test[test]"+"\n");
                 } else if (category_name.equals("category6.csv")) {
                     nigate_phonetics_text.setText("[ɔ]");
-                    gutairei_text.setText("ex)dog[dɔg]"+"\n"+"     small[smɔl]");
+                    gutairei_text.setText("ex)dog[dɔg]"+"\n");
+                    gutairei_text2.setText("ex2)small[smɔl]"+"\n");
                 } else if (category_name.equals("category7.csv")) {
                     nigate_phonetics_text.setText("[s]");
-                    gutairei_text.setText("ex)city[sɪti]"+"\n"+"     see[si]");
+                    gutairei_text.setText("ex)city[sɪti]"+"\n");
+                    gutairei_text2.setText("ex2)see[si]"+"\n");
                 } else if (category_name.equals("category8.csv")) {
                     nigate_phonetics_text.setText("[ʃ]");
-                    gutairei_text.setText("ex)she[ʃi]"+"\n"+"     sure[ʃʊr]");
+                    gutairei_text.setText("ex)she[ʃi]"+"\n");
+                    gutairei_text2.setText("ex2)sure[ʃʊr]"+"\n");
                 } else if (category_name.equals("category9.csv")) {
                     nigate_phonetics_text.setText("[θ]");
-                    gutairei_text.setText("ex)think[θɪŋk]"+"\n"+"     mouth[maʊθ]");
+                    gutairei_text.setText("ex)think[θɪŋk]"+"\n");
+                    gutairei_text2.setText("ex2)mouth[maʊθ]"+"\n");
                 } else if (category_name.equals("category10.csv")) {
                     nigate_phonetics_text.setText("[f]");
-                    gutairei_text.setText("ex)for[fɔr]"+"\n"+"     safe[seɪf]");
+                    gutairei_text.setText("ex)for[fɔr]"+"\n");
+                    gutairei_text2.setText("ex2)safe[seɪf]"+"\n");
                 } else if (category_name.equals("category11.csv")) {
                     nigate_phonetics_text.setText("[l]");
-                    gutairei_text.setText("ex)like[laɪk]"+"\n"+"     listen[lɪsʌn]");
+                    gutairei_text.setText("ex)like[laɪk]"+"\n");
+                    gutairei_text2.setText("ex2)listen[lɪsʌn]"+"\n");
                 } else if (category_name.equals("category12.csv")) {
                     nigate_phonetics_text.setText("[t]");
-                    gutairei_text.setText("ex)tea[ti]"+"\n"+"     take[teɪk]");
+                    gutairei_text.setText("ex)tea[ti]"+"\n");
+                    gutairei_text2.setText("ex2)take[teɪk]"+"\n");
                 } else if (category_name.equals("category13.csv")) {
                     nigate_phonetics_text.setText("[p]");
-                    gutairei_text.setText("ex)put[pʊt]"+"\n"+"     paper[peɪpɜr]");
+                    gutairei_text.setText("ex)put[pʊt]"+"\n");
+                    gutairei_text2.setText("ex2)paper[peɪpɜr]"+"\n");
                 } else if (category_name.equals("category14.csv")) {
                     nigate_phonetics_text.setText("[k]");
-                    gutairei_text.setText("ex)kind[kaɪnd]"+"\n"+"     like[laɪk]");
+                    gutairei_text.setText("ex)kind[kaɪnd]"+"\n");
+                    gutairei_text2.setText("ex2)like[laɪk]"+"\n");
                 } else if (category_name.equals("category15.csv")) {
                     nigate_phonetics_text.setText("[tʃ]");
-                    gutairei_text.setText("ex)teach[titʃ]"+"\n"+"     chair[tʃer]");
+                    gutairei_text.setText("ex)teach[titʃ]"+"\n");
+                    gutairei_text2.setText("ex2)chair[tʃer]"+"\n");
                 } else if (category_name.equals("category16.csv")) {
                     nigate_phonetics_text.setText("[m]");
-                    gutairei_text.setText("ex)many[meni]"+"\n"+"     mind[maɪnd]");
+                    gutairei_text.setText("ex)many[meni]"+"\n");
+                    gutairei_text2.setText("ex2)mind[maɪnd]"+"\n");
                 } else if (category_name.equals("category17.csv")) {
                     nigate_phonetics_text.setText("[f]");
-                    gutairei_text.setText("ex)for[fɔr]"+"\n"+"     safe[seɪf]");
+                    gutairei_text.setText("ex)for[fɔr]"+"\n");
+                    gutairei_text2.setText("ex2)safe[seɪf]"+"\n");
                 } else if (category_name.equals("category18.csv")) {
                     nigate_phonetics_text.setText("[w]");
-                    gutairei_text.setText("ex)we[wi]"+"\n"+"     way[weɪ]");
+                    gutairei_text.setText("ex)we[wi]"+"\n");
+                    gutairei_text2.setText("ex2)way[weɪ]"+"\n");
                 } else if (category_name.equals("category19.csv")) {
                     nigate_phonetics_text.setText("[ŋ]");
-                    gutairei_text.setText("ex)thing[θɪŋ]"+"\n"+"     sing[sɪŋ]");
+                    gutairei_text.setText("ex)thing[θɪŋ]"+"\n");
+                    gutairei_text2.setText("ex2)sing[sɪŋ]"+"\n");
                 } else if (category_name.equals("category20.csv")) {
                     nigate_phonetics_text.setText("[ɪ]");
-                    gutairei_text.setText("ex)in[ɪn]"+"\n"+"     sit[sɪt]");
+                    gutairei_text.setText("ex)in[ɪn]"+"\n");
+                    gutairei_text2.setText("ex2)sit[sɪt]"+"\n");
                 } else if (category_name.equals("category21.csv")) {
                     nigate_phonetics_text.setText("[aɪ]");
-                    gutairei_text.setText("ex)mine[maɪn]"+"\n"+"     by[baɪ]");
+                    gutairei_text.setText("ex)mine[maɪn]"+"\n");
+                    gutairei_text2.setText("ex2)by[baɪ]"+"\n");
                 } else if (category_name.equals("category22.csv")) {
                     nigate_phonetics_text.setText("[aɪ]");
-                    gutairei_text.setText("ex)mine[maɪn]"+"\n"+"     by[baɪ]");
+                    gutairei_text.setText("ex)mine[maɪn]"+"\n");
+                    gutairei_text2.setText("ex2)by[baɪ]"+"\n");
                 } else if (category_name.equals("category23.csv")) {
                     nigate_phonetics_text.setText("[aʊ]");
-                    gutairei_text.setText("ex)out[aʊt]"+"\n"+"     down[daʊn]");
+                    gutairei_text.setText("ex)out[aʊt]"+"\n");
+                    gutairei_text2.setText("ex2)down[daʊn]"+"\n");
                 } else if (category_name.equals("category24.csv")) {
                     nigate_phonetics_text.setText("[ɜr]");
-                    gutairei_text.setText("ex)after[æftɜr]"+"\n"+"     better[betɜr]");
+                    gutairei_text.setText("ex)after[æftɜr]"+"\n");
+                    gutairei_text2.setText("ex2)better[betɜr]"+"\n");
                 } else {
 
                 }
@@ -2006,76 +2034,100 @@ public class PracticeActivity extends AppCompatActivity {
 
                 if (category_name.equals("category1.csv")) {
                     nigate_phonetics_text2.setText("[ə]");
-                    gutairei_text2.setText("ex)about[əbaʊt]"+"\n"+"     away[əweɪ]");
+                    gutairei_text3.setText("ex)about[əbaʊt]"+"\n");
+                    gutairei_text4.setText("ex2)away[əweɪ]"+"\n");
                 } else if (category_name.equals("category2.csv")) {
                     nigate_phonetics_text2.setText("[æ]");
-                    gutairei_text2.setText("ex)bag[bæg]"+"\n"+"     cat[kæt]");
+                    gutairei_text3.setText("ex)bag[bæg]"+"\n");
+                    gutairei_text4.setText("ex2)cat[kæt]"+"\n");
                 } else if (category_name.equals("category3.csv")) {
                     nigate_phonetics_text2.setText("[ɪ]");
-                    gutairei_text2.setText("ex)in[ɪn]"+"\n"+"     sit[sɪt]");
+                    gutairei_text3.setText("ex)in[ɪn]"+"\n");
+                    gutairei_text4.setText("ex2)sit[ɪn]"+"\n");
                 } else if (category_name.equals("category4.csv")) {
                     nigate_phonetics_text2.setText("[u]");
-                    gutairei_text2.setText("ex)do[du]"+"\n"+"     soon[sun]");
+                    gutairei_text3.setText("ex)do[du]"+"\n");
+                    gutairei_text4.setText("ex2)soon[sun]"+"\n");
                 } else if (category_name.equals("category5.csv")) {
                     nigate_phonetics_text2.setText("[ɪ]");
-                    gutairei_text2.setText("ex)in[ɪn]"+"\n"+"     sit[sɪt]");
+                    gutairei_text3.setText("ex)in[ɪn]"+"\n");
+                    gutairei_text4.setText("ex2)sit[sɪt]"+"\n");
                 } else if (category_name.equals("category6.csv")) {
                     nigate_phonetics_text2.setText("[oʊ]");
-                    gutairei_text2.setText("ex)go[goʊ]"+"\n"+"     know[noʊ]");
+                    gutairei_text3.setText("ex)go[goʊ]"+"\n");
+                    gutairei_text4.setText("ex2)know[noʊ]"+"\n");
                 } else if (category_name.equals("category7.csv")) {
                     nigate_phonetics_text2.setText("[z]");
-                    gutairei_text2.setText("ex)eazy[izi]"+"\n"+"     size[saɪz]");
+                    gutairei_text3.setText("ex)eazy[izi]"+"\n");
+                    gutairei_text4.setText("ex2)size[saɪz]"+"\n");
                 } else if (category_name.equals("category8.csv")) {
                     nigate_phonetics_text2.setText("[ʒ]");
-                    gutairei_text2.setText("ex)vision[vɪʒʌn]"+"\n"+"     measure[meʒɜr]");
+                    gutairei_text3.setText("ex)vision[vɪʒʌn]"+"\n");
+                    gutairei_text4.setText("ex2)measure[meʒɜr]"+"\n");
                 } else if (category_name.equals("category9.csv")) {
                     nigate_phonetics_text2.setText("[ð]");
-                    gutairei_text2.setText("ex)the[ðʌ]"+"\n"+"     there[ðer]");
+                    gutairei_text3.setText("ex)the[ðʌ]"+"\n");
+                    gutairei_text4.setText("ex2)there[ðer]"+"\n");
                 } else if (category_name.equals("category10.csv")) {
                     nigate_phonetics_text2.setText("[v]");
-                    gutairei_text2.setText("ex)very[veri]"+"\n"+"     have[hæv]");
+                    gutairei_text3.setText("ex)very[veri]"+"\n");
+                    gutairei_text4.setText("ex2)have[hæv]"+"\n");
                 } else if (category_name.equals("category11.csv")) {
                     nigate_phonetics_text2.setText("[r]");
-                    gutairei_text2.setText("ex)right[raɪt]"+"\n"+"     carry[kæri]");
+                    gutairei_text3.setText("ex)right[raɪt]"+"\n");
+                    gutairei_text4.setText("ex2)carry[kæri]"+"\n");
                 } else if (category_name.equals("category12.csv")) {
                     nigate_phonetics_text2.setText("[d]");
-                    gutairei_text2.setText("ex)day[deɪ]"+"\n"+"     dinner[dɪnɜr]");
+                    gutairei_text3.setText("ex)day[deɪ]"+"\n");
+                    gutairei_text4.setText("ex2)dinner[dɪnɜr]"+"\n");
                 } else if (category_name.equals("category13.csv")) {
                     nigate_phonetics_text2.setText("[b]");
-                    gutairei_text2.setText("ex)but[bʌt]"+"\n"+"     baby[beɪbi]");
+                    gutairei_text3.setText("ex)but[bʌt]"+"\n");
+                    gutairei_text4.setText("ex2)baby[beɪbi]"+"\n");
                 } else if (category_name.equals("category14.csv")) {
                     nigate_phonetics_text2.setText("[g]");
-                    gutairei_text2.setText("ex)big[bɪg]"+"\n"+"     gift[gɪft]");
+                    gutairei_text3.setText("ex)big[bɪg]"+"\n");
+                    gutairei_text4.setText("ex2)gift[gɪft]"+"\n");
                 } else if (category_name.equals("category15.csv")) {
                     nigate_phonetics_text2.setText("[dʒ]");
-                    gutairei_text2.setText("ex)age[eɪdʒ]"+"\n"+"     join[dʒɪn]");
+                    gutairei_text3.setText("ex)age[eɪdʒ]"+"\n");
+                    gutairei_text4.setText("ex2)join[dʒɪn]"+"\n");
                 } else if (category_name.equals("category16.csv")) {
                     nigate_phonetics_text2.setText("[n]");
-                    gutairei_text2.setText("ex)new[nu]"+"\n"+"     name[neɪm]");
+                    gutairei_text3.setText("ex)new[nu]"+"\n");
+                    gutairei_text4.setText("ex2)name[neɪm]"+"\n");
                 } else if (category_name.equals("category17.csv")) {
                     nigate_phonetics_text2.setText("[h]");
-                    gutairei_text2.setText("ex)he[hi]"+"\n"+"     high[haɪ]");
+                    gutairei_text3.setText("ex)he[hi]"+"\n");
+                    gutairei_text4.setText("ex2)high[haɪ]"+"\n");
                 } else if (category_name.equals("category18.csv")) {
                     nigate_phonetics_text2.setText("[v]");
-                    gutairei_text2.setText("ex)very[veri]"+"\n"+"     have[hæv]");
+                    gutairei_text3.setText("ex)very[veri]"+"\n");
+                    gutairei_text4.setText("ex2)have[hæv]"+"\n");
                 } else if (category_name.equals("category19.csv")) {
                     nigate_phonetics_text2.setText("[n]");
-                    gutairei_text2.setText("ex)new[nu]"+"\n"+"     name[neɪm]");
+                    gutairei_text3.setText("ex)new[nu]"+"\n");
+                    gutairei_text4.setText("ex2)name[neɪm]");
                 } else if (category_name.equals("category20.csv")) {
                     nigate_phonetics_text2.setText("[j]");
-                    gutairei_text2.setText("ex)you[ju]"+"\n"+"     yet[jet]");
+                    gutairei_text3.setText("ex)you[ju]"+"\n");
+                    gutairei_text4.setText("ex2)yet[jet]"+"\n");
                 } else if (category_name.equals("category21.csv")) {
                     nigate_phonetics_text2.setText("[eɪ]");
-                    gutairei_text2.setText("ex)say[seɪ]"+"\n"+"     wait[weɪt]");
+                    gutairei_text3.setText("ex)say[seɪ]"+"\n");
+                    gutairei_text4.setText("ex2)wait[weɪt]"+"\n");
                 } else if (category_name.equals("category22.csv")) {
                     nigate_phonetics_text2.setText("[ɔɪ]");
-                    gutairei_text2.setText("ex)boy[bɔɪ]"+"\n"+"     point[pɔɪnt]");
+                    gutairei_text3.setText("ex)boy[bɔɪ]"+"\n");
+                    gutairei_text4.setText("ex2)point[pɔɪnt]"+"\n");
                 } else if (category_name.equals("category23.csv")) {
                     nigate_phonetics_text2.setText("[oʊ]");
-                    gutairei_text2.setText("ex)go[goʊ]"+"\n"+"     know[noʊ]");
+                    gutairei_text3.setText("ex)go[goʊ]"+"\n");
+                    gutairei_text4.setText("ex2)know[noʊ]"+"\n");
                 } else if (category_name.equals("category24.csv")) {
                     nigate_phonetics_text2.setText("[r]");
-                    gutairei_text2.setText("ex)right[raɪt]"+"\n"+"     carry[kæri]");
+                    gutairei_text3.setText("ex)right[raɪt]"+"\n");
+                    gutairei_text4.setText("ex2)carry[kæri]"+"\n");
                 } else {
 
                 }
