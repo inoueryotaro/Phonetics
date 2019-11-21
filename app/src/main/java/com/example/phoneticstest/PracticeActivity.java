@@ -1891,6 +1891,10 @@ public class PracticeActivity extends AppCompatActivity {
                     seiko_count_text.setText("10回中すべて発音失敗");
                 }
             }*/
+            if( type_of_mistake == 0){
+                nigate_phonetics_text.setTextColor(Color.BLACK);
+                nigate_phonetics_text2.setTextColor(Color.BLACK);
+            }
             if( type_of_mistake == 3 || type_of_mistake == 1 || type_of_mistake == 2 ){
                 if( type_of_mistake == 1 || type_of_mistake == 3) {
                     nigate_phonetics_text.setTextColor(Color.RED);
