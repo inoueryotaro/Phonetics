@@ -46,7 +46,7 @@ public class First_screenActivity extends AppCompatActivity {
             public void onClick(View v){function3();}
             private  void function3(){
                 //(仮)PracticeActivityへ画面推移
-                Intent intent3 = new Intent(getApplication(),MainActivity.class );
+                Intent intent3 = new Intent(getApplication(),NigateActivity.class);
                 startActivity(intent3);
             }
         });
