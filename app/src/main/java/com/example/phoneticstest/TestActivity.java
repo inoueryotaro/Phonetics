@@ -614,6 +614,9 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     skipintent2.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
                     skipintent2.putExtra(EXTRA_MESSAGE4,str4);
                     skipintent2.putExtra("skip_id", skip);
+                    String key = textView.getText().toString();
+                    String value = String.valueOf(id_number);
+                    insertData(db, key,Integer.valueOf(value));
              //       skipintent2.putExtra("tensu",tensu);
              //       skipintent2.putExtra("sumtensu",msumnumber2);
                     startActivity(skipintent2);
