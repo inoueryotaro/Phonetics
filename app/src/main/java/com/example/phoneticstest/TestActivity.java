@@ -63,6 +63,9 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
     public static final String EXTRA_MESSAGE4
             ="com.example.phoneticstest.TestActivity.MESSAGE4";//カテゴリー
     private int mTransitionCount;//出題回数カウント
+    //private int msumnumber=0;//合計点数
+    //private int msumnumber2=0;
+    //private int tensu=0;//点数
     private int mmiss_phonetics_symbols;//前半ブロック
     private int mmiss_phonetics_symbols2;//後半ブロック
     private String categoryname;//カテゴリー名
@@ -89,6 +92,11 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
         mondaikaisutext = findViewById(R.id.textView11);
         Intent intent0 = getIntent();
         skip = intent0.getIntExtra("skip_id",0);
+        Intent intent_tensu = getIntent();//点数
+      //  tensu = intent_tensu.getIntExtra("tensu",0);
+        Intent intent_sumtensu = getIntent();//合計点数
+      //  msumnumber = intent_sumtensu.getIntExtra("sumtensu",0);
+      //  msumnumber2 = msumnumber + tensu;
         Intent intent1 = getIntent(); //遷移回数データを受け取る
         mTransitionCount = intent1.getIntExtra("TransitionCount", 0);
         mTransitionCount++;
@@ -434,11 +442,13 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             if (mTransitionCount % 2 == 0) {
                 mmiss_phonetics_symbols2++;
             }
+        //    tensu = 0;
             skipintent.putExtra("miss_phonetics_symbols", mmiss_phonetics_symbols);
             skipintent.putExtra("miss_phonetics_symbols2", mmiss_phonetics_symbols2);
             skipintent.putExtra("skip_id", skip);
             skipintent.putExtra(EXTRA_MESSAGE4, str4);
-
+        //    skipintent.putExtra("tensu",tensu);
+         //   skipintent.putExtra("sumtensu",msumnumber2);
             skipintent.putExtra("id_shuffle_message", id_shuffle_array);
             if (mTransitionCount != 1) {
                 skipintent.putExtra("id_shuffle_message2", id_shuffle_array2);
@@ -459,6 +469,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
             skipintent2.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
             skipintent2.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
             skipintent2.putExtra(EXTRA_MESSAGE4,str4);
+           // skipintent2.putExtra("sumtensu",msumnumber2);
             skipintent2.putExtra("skip_id", skip);
             startActivity(skipintent2);
         }
@@ -571,12 +582,15 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     if (mTransitionCount % 2 == 0) {
                         mmiss_phonetics_symbols2++;
                     }
+            //        tensu = 0;
                     String key = textView.getText().toString();
                     String value = String.valueOf(id_number);
                     skipintent.putExtra("miss_phonetics_symbols", mmiss_phonetics_symbols);
                     skipintent.putExtra("miss_phonetics_symbols2", mmiss_phonetics_symbols2);
                     skipintent.putExtra("skip_id", skip);
                     skipintent.putExtra(EXTRA_MESSAGE4, str4);
+            //        skipintent.putExtra("tensu",tensu);
+            //        skipintent.putExtra("sumtensu",msumnumber2);
                     skipintent.putExtra("id_shuffle_message", id_shuffle_array);
                     if (mTransitionCount != 1) {
                         skipintent.putExtra("id_shuffle_message2", id_shuffle_array2);
@@ -595,10 +609,13 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                     if (mTransitionCount % 2 == 0) {
                         mmiss_phonetics_symbols2++;
                     }
+              //      tensu = 0;
                     skipintent2.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
                     skipintent2.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
                     skipintent2.putExtra(EXTRA_MESSAGE4,str4);
                     skipintent2.putExtra("skip_id", skip);
+             //       skipintent2.putExtra("tensu",tensu);
+             //       skipintent2.putExtra("sumtensu",msumnumber2);
                     startActivity(skipintent2);
                 }
             }
@@ -654,6 +671,7 @@ public  class TestActivity extends AppCompatActivity implements View.OnClickList
                 intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
                 intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
                 intent5.putExtra(EXTRA_MESSAGE4,str4);
+               // intent5.putExtra("sumtensu",msumnumber2);
                 intent5.putExtra("id_bango",id_number);
                 intent5.putExtra("id_shuffle_message",id_shuffle_array);
                 if( mTransitionCount != 1) {

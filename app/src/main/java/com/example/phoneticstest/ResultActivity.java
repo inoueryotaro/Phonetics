@@ -46,6 +46,8 @@ public class ResultActivity extends AppCompatActivity {
     private int mmiss_phonetics_symbols;
     private int mmiss_phonetics_symbols2;
     private int id_number;
+  //  private int msumnumber=0;
+  //  private int tensu=0;
     public static final String EXTRA_MESSAGE
             = "com.example.phoneticstest.ResultActivity.MESSAGE";//カテゴリー名
     private String category;
@@ -111,6 +113,8 @@ public class ResultActivity extends AppCompatActivity {
         //点数表示のtext
         TextView textview16 = findViewById(R.id.textView16);
         Button   nextbutton = findViewById(R.id.button5);
+        Intent sum_intent = getIntent();
+    //    msumnumber = sum_intent.getIntExtra("sumtensu",0);
         Intent intent4 = getIntent();
         mTransitionCount = intent4.getIntExtra("TransitionCount", 0);
         Intent intent5 = getIntent();
@@ -296,12 +300,13 @@ public class ResultActivity extends AppCompatActivity {
         textview16.setText(String.valueOf(distance2.length()));
         if( distance2.length() != 0 ) {
            textview16.setText(String.valueOf(100 / right.length() * (right.length() - distance2.length() / 2)) + "点");
+
        }
        else{
             audioPlay("fanfare3.mp3");
            textview16.setText("100点");
         }
-
+      //  tensu = 100 / right.length() * (right.length() - distance2.length() / 2);
         int Failure = 0;
         if( id_number <= 10 && !(mondai_phonetics.equals(right))){
             mmiss_phonetics_symbols++;
@@ -511,19 +516,23 @@ public class ResultActivity extends AppCompatActivity {
     }
     private void speech(){
         if( mTransitionCount  >= 20){
+        //    msumnumber = msumnumber + tensu;
             Intent intent6 = new Intent(getApplication(),FinishscreenActivity.class);
             intent6.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
             intent6.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
+         //   intent6.putExtra("sumtensu",msumnumber);
             String str = category;
             intent6.putExtra(EXTRA_MESSAGE,str);
             startActivity(intent6);
         }
         else {
             Intent intent5 = new Intent(getApplication(), TestActivity.class);
+         //   msumnumber = msumnumber + tensu;
             intent5.putExtra("TransitionCount", mTransitionCount);
             intent5.putExtra("miss_phonetics_symbols",mmiss_phonetics_symbols);
             intent5.putExtra("miss_phonetics_symbols2",mmiss_phonetics_symbols2);
             intent5.putExtra("id_shuffle_message",id_shuffle_array);
+           // intent5.putExtra("sumtensu",msumnumber);
             if( mTransitionCount != 1) {
                 intent5.putExtra("id_shuffle_message2", id_shuffle_array2);
             }

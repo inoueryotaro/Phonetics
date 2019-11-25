@@ -39,6 +39,8 @@ public class PracticeActivity extends AppCompatActivity {
     private TextView gutairei_text2;
     private TextView gutairei_text3;
     private TextView gutairei_text4;
+    private TextView sumtext;
+  //  private int msumnumber=0;
     private MediaPlayer mediaPlayer=null;
     private TextView textView;
     private TestOpenHelper helper;
@@ -48,7 +50,8 @@ public class PracticeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practice);
-
+        Intent sumintent = getIntent();
+    //    msumnumber = sumintent.getIntExtra("sumtensu",0);
         Intent intent = getIntent();
         zenhan_count =intent.getIntExtra("miss_zenhan",0);
         Intent intent2 = getIntent();
@@ -69,13 +72,15 @@ public class PracticeActivity extends AppCompatActivity {
         gutairei_text2 = findViewById(R.id.gutairei_text2);
         gutairei_text3 = findViewById(R.id.gutairei_text3);
         gutairei_text4 = findViewById(R.id.gutairei_text4);
+        sumtext = findViewById(R.id.sum_tensu);
         Button RegenerationStart = findViewById(R.id.saisei_button);
         Button RegenerationStart2 = findViewById(R.id.saisei_button2);
         Button RegenerationStart3 = findViewById(R.id.saisei_button3);
         Button RegenerationStart4 = findViewById(R.id.saisei_button4);
 
         readData(type_of_mistake);
-        if( type_of_mistake == 3 || type_of_mistake == 1 || type_of_mistake == 2) {
+        if( type_of_mistake == 3 || type_of_mistake == 1 || type_of_mistake == 2 || type_of_mistake == 0) {
+      //      sumtext.setText("合計点数:"+ String.valueOf(msumnumber)+"点"+ "/2000"+"点"+"\n");
             if (category_name.equals("category1.csv")) {
                 RegenerationStart.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -1899,7 +1904,7 @@ public class PracticeActivity extends AppCompatActivity {
                 nigate_phonetics_text.setTextColor(Color.BLACK);
                 nigate_phonetics_text2.setTextColor(Color.BLACK);
             }
-            if( type_of_mistake == 3 || type_of_mistake == 1 || type_of_mistake == 2 ){
+            if( type_of_mistake == 3 || type_of_mistake == 1 || type_of_mistake == 2 || type_of_mistake == 0 ){
                 if( type_of_mistake == 1 || type_of_mistake == 3) {
                     nigate_phonetics_text.setTextColor(Color.RED);
                 }
@@ -2287,7 +2292,7 @@ public class PracticeActivity extends AppCompatActivity {
             cursor.close();
             concrete_tango_text.setText("あなたが発音ミスした単語"+"\n"+sbuilder.toString());
         }*/
-        if( type_of_mistake == 3 || type_of_mistake == 1 || type_of_mistake == 2){
+        if( type_of_mistake == 3 || type_of_mistake == 1 || type_of_mistake == 2 || type_of_mistake == 0){
             for (int i = 0; i < cursor.getCount(); i++) {
                 if( a >= cursor.getInt(1)) {
                     sbuilder.append(cursor.getString(0));
