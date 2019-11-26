@@ -217,7 +217,8 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category1.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
-                deleteDatabase("TestDB.db");
+               deleteDatabase("TestDB.db");
+               deleteDatabase("TestDB2.db");
                 startActivity(intent1);
             }
         });
@@ -231,7 +232,7 @@ public class CategoryActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(getApplication(), TestActivity.class);
                 String str = "category2.csv";
                 intent1.putExtra(EXTRA_MESSAGE,str);
-                deleteDatabase("TestDB.db");
+               deleteDatabase("TestDB.db");
                 startActivity(intent1);
             }
         });

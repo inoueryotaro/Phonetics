@@ -5,6 +5,9 @@ package com.example.phoneticstest;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,8 +32,9 @@ public class WeakActivity extends AppCompatActivity {
     private int exist_nigate;
     private int type_of_mistake;
     private EditText editTextKey, editTextValue;
-    private TestOpenHelper helper;
+    private TestOpenHelper2 helper2;
     private SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,13 +51,22 @@ public class WeakActivity extends AppCompatActivity {
         final String category_name = intent3.getStringExtra(FinishscreenActivity.EXTRA_MESSAGE);//ex "category1.csv"
 
         BackCategory.setOnClickListener(new View.OnClickListener() {
-
+            @Override
             public void onClick(View v) {
+                if(helper2 == null){
+                    helper2 = new TestOpenHelper2(getApplicationContext());
+                }
+                if(db == null){
+                    db = helper2.getWritableDatabase();
+                }
                 function();
             }
 
             private void function() {
                 Intent intent4 = new Intent(getApplication(), CategoryActivity.class);
+                String key = resultingtext.getText().toString();
+                //String value = String.valueOf(id_number);
+                insertData(db, key);
                 if( category_name.equals("category1.csv")){
                     if(zenhan_count < 4 && kohan_count < 4 ){
                         intent4.putExtra("keyword",1);
@@ -484,7 +497,16 @@ public class WeakActivity extends AppCompatActivity {
             ShosaiButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if(helper2 == null){
+                        helper2 = new TestOpenHelper2(getApplicationContext());
+                    }
+                    if(db == null){
+                        db = helper2.getWritableDatabase();
+                    }
                     Intent intent3 = new Intent(getApplication(), PracticeActivity.class);
+                    String key = resultingtext.getText().toString();
+                    //String value = String.valueOf(id_number);
+                    insertData(db, key);
                     intent3.putExtra("miss_zenhan", zenhan_count);
                     intent3.putExtra("miss_kohan", kohan_count);
                     intent3.putExtra("type_mistake", type_of_mistake);
@@ -494,4 +516,68 @@ public class WeakActivity extends AppCompatActivity {
             });
 
     }
+    private void insertData(SQLiteDatabase db, String com){
+        Cursor cursor = db.query(
+                "testdb2",
+                new String[] { "company2", "stockprice2" },
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        Cursor cursor2 = db.query(
+                "testdb2",
+                new String[] { "company2", "stockprice2" },
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+        cursor.moveToFirst();
+        StringBuilder sbuilder = new StringBuilder();
+        StringBuilder sbuilder2 = new StringBuilder();
+
+        if( type_of_mistake == 3 || type_of_mistake == 1 || type_of_mistake == 2 || type_of_mistake == 0){
+            for (int i = 0; i < cursor.getCount(); i++) {
+                if(  (cursor.getString(0)).equals("")) {
+                    sbuilder.append(cursor.getString(0));
+                    sbuilder.append(",");
+                    sbuilder.append("0");
+                    sbuilder.append("\n");
+                }
+                cursor.moveToNext();
+            }
+            cursor.close();
+         /*   cursor2.moveToFirst();
+            for (int i = 0; i < cursor2.getCount(); i++) {
+                if ( a < cursor2.getInt(1)) {
+                    sbuilder2.append(cursor2.getString(0));
+                    //   sbuilder2.append(",");
+                    //   sbuilder2.append(cursor.getInt(1));
+                    sbuilder2.append("\n");
+                }
+                cursor2.moveToNext();
+            }
+            // 忘れずに！
+            cursor2.close();*/
+            //concrete_tango_text.setText("あなたが発音ミスした単語"+"\n"+sbuilder.toString());
+            //concrete_tango_text2.setText("あなたが発音ミスした単語"+"\n"+sbuilder2.toString());
+        }
+
+
+        String price = "";
+        ContentValues values = new ContentValues();
+       // if(  cursor.getCount()== 0){ //データベース自体がない場合，cursor.getCount() == 0となる．
+        //    com = "ああ";
+        //    values.put("company2",com);
+        //    values.put("stockprice2",price);
+        //}//
+
+            values.put("company2", com);
+            values.put("stockprice2", price);
+        db.insert("testdb2", null, values);
+    }
+
 }
