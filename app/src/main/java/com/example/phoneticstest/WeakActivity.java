@@ -66,7 +66,7 @@ public class WeakActivity extends AppCompatActivity {
                 Intent intent4 = new Intent(getApplication(), CategoryActivity.class);
                 String key = resultingtext.getText().toString();
                 //String value = String.valueOf(id_number);
-                insertData(db, key);
+                insertData(db, key,category_name);
                 if( category_name.equals("category1.csv")){
                     if(zenhan_count < 4 && kohan_count < 4 ){
                         intent4.putExtra("keyword",1);
@@ -506,7 +506,7 @@ public class WeakActivity extends AppCompatActivity {
                     Intent intent3 = new Intent(getApplication(), PracticeActivity.class);
                     String key = resultingtext.getText().toString();
                     //String value = String.valueOf(id_number);
-                    insertData(db, key);
+                    insertData(db, key,category_name);
                     intent3.putExtra("miss_zenhan", zenhan_count);
                     intent3.putExtra("miss_kohan", kohan_count);
                     intent3.putExtra("type_mistake", type_of_mistake);
@@ -516,7 +516,7 @@ public class WeakActivity extends AppCompatActivity {
             });
 
     }
-    private void insertData(SQLiteDatabase db, String com){
+    private void insertData(SQLiteDatabase db, String com,String name){
         Cursor cursor = db.query(
                 "testdb2",
                 new String[] { "company2", "stockprice2" },
@@ -535,6 +535,214 @@ public class WeakActivity extends AppCompatActivity {
                 null,
                 null
         );
+        if( cursor.getCount() == 0) {
+            if( com.equals("今回のテストで特に苦手な発音と思われるものはありません!!")) {
+                if( name.equals("category.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category2.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ɑ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","æ");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category3.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","i");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ɪ");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category4.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʊ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","u");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category5.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","e");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ɪ");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category6.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ɔ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","oʊ");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category7.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","s");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","z");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category8.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category9.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category10.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category11.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category12.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category13.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category14.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category15.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category16.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category17.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category18.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category19.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category20.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category21.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category22.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category23.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else if(name.equals("category24.csv")){
+                    ContentValues values = new ContentValues();
+                    values.put("company2","ʌ");
+                    values.put("stockprice2","0");
+                    ContentValues values2 = new ContentValues();
+                    values2.put("company2","ə");
+                    values2.put("stockprice2","0");
+                }
+                else{
+
+                }
+            ContentValues values = new ContentValues();
+            values.put("company2","ə");
+
+            }
+            //String price = "";
+            ContentValues values = new ContentValues();
+            values.put("company2", com);
+            //values.put("stockprice2", price);
+            db.insert("testdb2", null, values);
+        }
+
         cursor.moveToFirst();
         StringBuilder sbuilder = new StringBuilder();
         StringBuilder sbuilder2 = new StringBuilder();
@@ -566,18 +774,6 @@ public class WeakActivity extends AppCompatActivity {
             //concrete_tango_text2.setText("あなたが発音ミスした単語"+"\n"+sbuilder2.toString());
         }
 
-
-        String price = "";
-        ContentValues values = new ContentValues();
-       // if(  cursor.getCount()== 0){ //データベース自体がない場合，cursor.getCount() == 0となる．
-        //    com = "ああ";
-        //    values.put("company2",com);
-        //    values.put("stockprice2",price);
-        //}//
-
-            values.put("company2", com);
-            values.put("stockprice2", price);
-        db.insert("testdb2", null, values);
     }
 
 }
