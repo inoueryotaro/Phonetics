@@ -1033,35 +1033,203 @@ public class WeakActivity extends AppCompatActivity {
             db.insert("testdb2",null,values47);
             db.insert("testdb2",null,values48);
         }
-        if( cursor2.getCount() != 0 ){
-            cursor2.moveToFirst();
-            StringBuilder sbuilder = new StringBuilder();
-            StringBuilder sbuilder2 = new StringBuilder();
-            for (int i = 0; i < cursor2.getCount(); i++) {
-                if(  (cursor2.getString(0)).equals("")) {
-                    sbuilder.append(cursor2.getString(0));
-                    sbuilder.append(",");
-                    sbuilder.append("0");
-                    sbuilder.append("\n");
-                }
-                cursor2.moveToNext();
+        cursor.close();
+        if( symbols >= 1 ){
+            if( symbols == 1){
+                ContentValues val = new ContentValues();
+                val.put("stockprice2","1");
+                db.update("testdb2",val,"id=1",null);
             }
-            cursor2.close();
-            cursor3.moveToFirst();
-            for (int i = 0; i < cursor3.getCount(); i++) {
-                if(  (cursor3.getString(0)).equals("")) {
-                    sbuilder2.append(cursor3.getString(0));
-                    sbuilder2.append(",");
-                    sbuilder2.append("0");
-                    sbuilder2.append("\n");
-                }
-                cursor3.moveToNext();
-            }
-            cursor3.close();
-        }
+            if( symbols == 2){
 
-    }
+            }
+            if( symbols == 3){
+
+            }
+            if( symbols == 4){
+
+            }
+            if( symbols == 5){
+
+            }
+            if( symbols == 6){
+
+            }
+            if( symbols == 7){
+
+            }
+            if( symbols == 8){
+
+            }
+            if( symbols == 9){
+
+            }
+            if( symbols == 10){
+
+            }
+            if( symbols == 11){
+
+            }
+            if( symbols == 12){
+
+            }
+            if( symbols == 13){
+
+            }
+            if( symbols == 14){
+
+            } if( symbols == 15){
+
+            }
+            if( symbols == 16){
+
+            }
+            if( symbols == 17){
+
+            }
+            if( symbols == 18){
+
+            }
+            if( symbols == 19){
+
+            }
+            if( symbols == 20){
+
+            } if( symbols == 21){
+
+            }
+            if( symbols == 22){
+
+            }
+            if( symbols == 23){
+
+            }
+            if( symbols == 24){
+
+            }
+            if( symbols == 25){
+
+            }
+            if( symbols == 26){
+
+            }
+            if( symbols == 27){
+
+            }
+            if( symbols == 28){
+
+            } if( symbols == 29){
+
+            } if( symbols == 30){
+
+            } if( symbols == 31){
+
+            } if( symbols == 32){
+
+            } if( symbols == 33){
+
+            } if( symbols == 34){
+
+            } if( symbols == 35){
+
+            } if( symbols == 36){
+
+            } if( symbols == 37){
+
+            } if( symbols == 38){
+
+            }
+            if( symbols == 39){
+
+            } if( symbols == 40){
+
+            }
+            if( symbols == 41){
+
+            } if( symbols == 42){
+
+            }
+            if( symbols == 43){
+
+            }
+            if( symbols == 44){
+
+            }
+            if( symbols == 45){
+
+            }
+            if( symbols == 46){
+
+            }
+            if( symbols == 47){
+
+            }
+            if( symbols == 48){
+
+            }
+            if( symbols == 49){
+
+            }
+            if( symbols == 50){
+
+            }
+            if( symbols == 51){
+
+            }
+            if( symbols == 52){
+
+            }
+            if( symbols == 53){
+
+            }
+            if( symbols == 54){
+
+            }if( symbols == 55){
+
+            }if( symbols == 56){
+
+            }if( symbols == 57){
+
+            }if( symbols == 58){
+
+            }if( symbols == 59){
+
+            }if( symbols == 60){
+
+            }if( symbols == 61){
+
+            }if( symbols == 62){
+
+            }if( symbols == 63){
+
+            }if( symbols == 64){
+
+            }if( symbols == 65){
+
+            }if( symbols == 66){
+
+            }if( symbols == 67){
+
+            }if( symbols == 68){
+
+            }
+            if( symbols == 69){
+
+            }
+            if( symbols == 70){
+
+            }
+            if( symbols == 71){
+
+            }
+            if( symbols == 72){
+
+            }
+        }
+     }
 
 }
+
+
 
 

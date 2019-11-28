@@ -16,5 +16,13 @@
             android:text="あなたの苦手発音一覧"
             android:layout_gravity="center"
             />
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="[ʌ]の練習"
+            android:layout_gravity="center"
+            />
     </LinearLayout>
 </ScrollView>
